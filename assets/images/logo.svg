@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <rect width="80" height="80" rx="12" fill="#0D3D2E"/>
+  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Georgia, serif" font-size="32" font-weight="700" fill="#C9A84C" letter-spacing="-1">ZM</text>
+  <rect width="80" height="80" rx="12" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity="0.4"/>
+</svg>

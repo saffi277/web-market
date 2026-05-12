@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin | ZAWAN</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    .admin-login { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--clr-bg); }
+    .login-card { background: var(--clr-card); border: 1px solid var(--clr-border); border-radius: var(--radius-lg); padding: 3rem 2.5rem; width: 100%; max-width: 420px; text-align: center; }
+    .login-logo { margin: 0 auto 1.5rem; }
+    .login-title { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; margin-bottom: .5rem; }
+    .login-sub { color: var(--clr-text-muted); font-size: .9rem; margin-bottom: 2rem; }
+    .login-error { background: rgba(255,77,109,.1); border: 1px solid rgba(255,77,109,.3); color: #ff4d6d; border-radius: var(--radius-sm); padding: .6rem 1rem; font-size: .875rem; margin-bottom: 1rem; display: none; }
+    .admin-layout { display: flex; min-height: 100vh; }
+    .admin-sidebar { width: 260px; background: var(--clr-bg2); border-right: 1px solid var(--clr-border); padding: 1.5rem 0; flex-shrink: 0; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; z-index: 100; }
+    .sidebar-brand { padding: 0 1.5rem 1.5rem; border-bottom: 1px solid var(--clr-border); margin-bottom: 1rem; }
+    .sidebar-nav { padding: 0 .75rem; }
+    .sidebar-link { display: flex; align-items: center; gap: .75rem; padding: .75rem 1rem; border-radius: var(--radius-md); color: var(--clr-text-muted); font-size: .9rem; font-weight: 500; transition: var(--transition); margin-bottom: .25rem; cursor: pointer; }
+    .sidebar-link:hover, .sidebar-link.active { background: rgba(108,99,255,.1); color: var(--clr-primary); }
+    .sidebar-link .icon { font-size: 1.1rem; width: 22px; }
+    .admin-main { margin-left: 260px; flex: 1; padding: 2rem; }
+    .admin-topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
+    .admin-topbar h1 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; }
+    .admin-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2rem; }
+    .admin-stat-card { background: var(--clr-card); border: 1px solid var(--clr-border); border-radius: var(--radius-lg); padding: 1.5rem; }
+    .asc-icon { font-size: 1.5rem; margin-bottom: .75rem; }
+    .asc-num { font-family: var(--font-head); font-size: 2rem; font-weight: 700; background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .asc-label { font-size: .85rem; color: var(--clr-text-muted); margin-top: .25rem; }
+    .admin-section { display: none; }
+    .admin-section.active { display: block; }
+    .admin-card { background: var(--clr-card); border: 1px solid var(--clr-border); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 1.5rem; }
+    .admin-card h2 { font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; }
+    .product-list-item { display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--clr-bg); border-radius: var(--radius-md); margin-bottom: .75rem; }
+    .pli-icon { font-size: 1.5rem; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: rgba(108,99,255,.1); border-radius: var(--radius-sm); }
+    .pli-info { flex: 1; }
+    .pli-name { font-weight: 600; font-size: .95rem; }
+    .pli-meta { font-size: .8rem; color: var(--clr-text-muted); }
+    .pli-actions { display: flex; gap: .5rem; }
+    .btn-danger { background: rgba(255,77,109,.1); color: #ff4d6d; border: 1px solid rgba(255,77,109,.2); padding: .3rem .75rem; border-radius: var(--radius-sm); font-size: .8rem; font-weight: 600; cursor: pointer; transition: var(--transition); }
+    .btn-danger:hover { background: rgba(255,77,109,.2); }
+    .ann-item { padding: 1rem; background: var(--clr-bg); border-radius: var(--radius-md); margin-bottom: .75rem; border-left: 3px solid var(--clr-primary); }
+    .ann-item.warning { border-left-color: #FFB800; }
+    .ann-item.success { border-left-color: #00D4FF; }
+    .ann-title { font-weight: 600; font-size: .95rem; margin-bottom: .25rem; }
+    .ann-content { font-size: .85rem; color: var(--clr-text-muted); }
+    .ann-meta { font-size: .75rem; color: var(--clr-text-dim); margin-top: .5rem; }
+    @media (max-width: 768px) {
+      .admin-sidebar { transform: translateX(-100%); transition: transform .3s ease; }
+      .admin-sidebar.open { transform: translateX(0); }
+      .admin-main { margin-left: 0; padding: 1rem; }
+      .admin-stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOGIN SCREEN -->
+  <div id="admin-login" class="admin-login">
+    <div class="login-card">
+      <div class="login-logo">
+        <img src="../assets/images/logo.svg" alt="ZAWAN" width="64" height="64" style="border-radius:12px;margin:0 auto;" />
+      </div>
+      <div class="login-title">Admin Panel</div>
+      <div class="login-sub">ZAWAN Programming Group</div>
+      <div class="login-error" id="login-error">Incorrect password. Please try again.</div>
+      <form id="login-form">
+        <div class="form-group" style="text-align:left;">
+          <label for="admin-pass">Password</label>
+          <input type="password" id="admin-pass" placeholder="Enter admin password" required />
+        </div>
+        <button type="submit" class="btn btn-primary w-full" style="justify-content:center;margin-top:.5rem;">Login to Dashboard</button>
+      </form>
+      <p style="font-size:.8rem;color:var(--clr-text-dim);margin-top:1.5rem;">Default: zawan2026</p>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="admin-dashboard" style="display:none;">
+    <div class="admin-layout">
+      <!-- Sidebar -->
+      <aside class="admin-sidebar" id="admin-sidebar">
+        <div class="sidebar-brand">
+          <a href="../index.html" class="nav-brand"><img src="../assets/images/logo.svg" alt="ZAWAN" class="brand-logo" width="36" height="36" /><span class="brand-name">ZAWAN</span></a>
+          <div style="font-size:.75rem;color:var(--clr-text-dim);margin-top:.5rem;">Admin Panel</div>
+        </div>
+        <nav class="sidebar-nav">
+          <div class="sidebar-link active" data-section="dashboard"><span class="icon">📊</span> Dashboard</div>
+          <div class="sidebar-link" data-section="products"><span class="icon">🛠️</span> Products</div>
+          <div class="sidebar-link" data-section="announcements"><span class="icon">📢</span> Announcements</div>
+          <div class="sidebar-link" data-section="settings"><span class="icon">⚙️</span> Settings</div>
+          <hr style="border-color:var(--clr-border);margin:1rem 0;" />
+          <div class="sidebar-link" id="logout-btn"><span class="icon">🚪</span> Logout</div>
+          <a href="../index.html" class="sidebar-link"><span class="icon">🌐</span> View Website</a>
+        </nav>
+      </aside>
+
+      <!-- Main -->
+      <main class="admin-main">
+        <div class="admin-topbar">
+          <h1 id="section-title">Dashboard</h1>
+          <div style="display:flex;gap:.75rem;align-items:center;">
+            <button class="btn-theme" aria-label="Toggle theme">☀️</button>
+            <div style="font-size:.85rem;color:var(--clr-text-muted);">Welcome, Admin 👋</div>
+          </div>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div class="admin-section active" id="section-dashboard">
+          <div class="admin-stats">
+            <div class="admin-stat-card"><div class="asc-icon">🛠️</div><div class="asc-num" id="stat-products">0</div><div class="asc-label">Total Products</div></div>
+            <div class="admin-stat-card"><div class="asc-icon">👁️</div><div class="asc-num">1.2K</div><div class="asc-label">Monthly Views</div></div>
+            <div class="admin-stat-card"><div class="asc-icon">📢</div><div class="asc-num" id="stat-announcements">0</div><div class="asc-label">Announcements</div></div>
+            <div class="admin-stat-card"><div class="asc-icon">✉️</div><div class="asc-num">24</div><div class="asc-label">Contact Requests</div></div>
+          </div>
+          <div class="admin-card">
+            <h2>Quick Actions</h2>
+            <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+              <button class="btn btn-primary" onclick="switchSection('products')">+ Add New Product</button>
+              <button class="btn btn-outline" onclick="switchSection('announcements')">+ New Announcement</button>
+              <a href="../index.html" class="btn btn-outline" target="_blank">View Website ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Products Section -->
+        <div class="admin-section" id="section-products">
+          <div class="admin-card">
+            <h2>Add New Product</h2>
+            <form id="add-product-form">
+              <div class="form-row">
+                <div class="form-group"><label>Product Name (English) *</label><input type="text" id="p-name-en" placeholder="Task Management System" required /></div>
+                <div class="form-group"><label>اسم المنتج (عربي) *</label><input type="text" id="p-name-ar" placeholder="نظام إدارة المهام" required dir="rtl" /></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Category</label><select id="p-category"><option value="systems">Systems</option><option value="apps">Apps</option><option value="websites">Websites</option><option value="automation">Automation</option></select></div>
+                <div class="form-group"><label>Price ($)</label><input type="number" id="p-price" placeholder="299" min="0" /></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Icon (emoji)</label><input type="text" id="p-icon" placeholder="📋" maxlength="4" /></div>
+                <div class="form-group"><label>Tech Stack (comma separated)</label><input type="text" id="p-tech" placeholder="React, Node.js, PostgreSQL" /></div>
+              </div>
+              <div class="form-group"><label>Description (English) *</label><textarea id="p-desc-en" placeholder="Describe the product..." required></textarea></div>
+              <div class="form-group"><label>الوصف (عربي) *</label><textarea id="p-desc-ar" placeholder="وصف المنتج..." required dir="rtl"></textarea></div>
+              <button type="submit" class="btn btn-primary">Save Product</button>
+            </form>
+          </div>
+          <div class="admin-card">
+            <h2>Published Products</h2>
+            <div id="products-list"><p style="color:var(--clr-text-muted);font-size:.9rem;">No products added yet.</p></div>
+          </div>
+        </div>
+
+        <!-- Announcements Section -->
+        <div class="admin-section" id="section-announcements">
+          <div class="admin-card">
+            <h2>New Announcement</h2>
+            <form id="add-ann-form">
+              <div class="form-group"><label>Title *</label><input type="text" id="ann-title" placeholder="New product launch..." required /></div>
+              <div class="form-group"><label>Content *</label><textarea id="ann-content" placeholder="Announcement details..." required></textarea></div>
+              <div class="form-group"><label>Type</label><select id="ann-type"><option value="info">Info (Purple)</option><option value="warning">Warning (Gold)</option><option value="success">Success (Cyan)</option></select></div>
+              <button type="submit" class="btn btn-primary">Publish</button>
+            </form>
+          </div>
+          <div class="admin-card">
+            <h2>Published Announcements</h2>
+            <div id="announcements-list"><p style="color:var(--clr-text-muted);font-size:.9rem;">No announcements yet.</p></div>
+          </div>
+        </div>
+
+        <!-- Settings Section -->
+        <div class="admin-section" id="section-settings">
+          <div class="admin-card">
+            <h2>Settings</h2>
+            <div class="form-group"><label>Change Admin Password</label><input type="password" id="new-pass" placeholder="New password" /></div>
+            <div class="form-group"><label>Confirm Password</label><input type="password" id="confirm-pass" placeholder="Confirm new password" /></div>
+            <button class="btn btn-primary" id="change-pass-btn">Update Password</button>
+            <hr style="border-color:var(--clr-border);margin:1.5rem 0;" />
+            <div style="font-size:.9rem;color:var(--clr-text-muted);">
+              <p style="margin-bottom:.5rem;"><strong>Database:</strong> localStorage (connect Supabase for production)</p>
+              <p><strong>Version:</strong> ZAWAN Admin v1.0</p>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // Auth
+    const ADMIN_PASS_KEY = 'zawan-admin-pass';
+    const getPass = () => localStorage.getItem(ADMIN_PASS_KEY) || 'zawan2026';
+
+    document.getElementById('login-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const input = document.getElementById('admin-pass').value;
+      if (input === getPass()) {
+        document.getElementById('admin-login').style.display = 'none';
+        document.getElementById('admin-dashboard').style.display = 'block';
+        loadData();
+      } else {
+        document.getElementById('login-error').style.display = 'block';
+      }
+    });
+
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      document.getElementById('admin-login').style.display = 'flex';
+      document.getElementById('admin-dashboard').style.display = 'none';
+    });
+
+    // Sidebar navigation
+    function switchSection(name) {
+      document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.sidebar-link[data-section]').forEach(l => l.classList.remove('active'));
+      document.getElementById('section-' + name)?.classList.add('active');
+      document.querySelector(`.sidebar-link[data-section="${name}"]`)?.classList.add('active');
+      document.getElementById('section-title').textContent = name.charAt(0).toUpperCase() + name.slice(1);
+    }
+
+    document.querySelectorAll('.sidebar-link[data-section]').forEach(link => {
+      link.addEventListener('click', () => switchSection(link.dataset.section));
+    });
+
+    // Theme toggle
+    const root = document.documentElement;
+    const saved = localStorage.getItem('zawn-theme') || 'dark';
+    root.setAttribute('data-theme', saved);
+    document.querySelector('.btn-theme').textContent = saved === 'dark' ? '☀️' : '🌙';
+    document.querySelector('.btn-theme').addEventListener('click', () => {
+      const t = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', t);
+      localStorage.setItem('zawn-theme', t);
+      document.querySelector('.btn-theme').textContent = t === 'dark' ? '☀️' : '🌙';
+    });
+
+    // Products
+    function getProducts() { try { return JSON.parse(localStorage.getItem('zawan-products') || '[]'); } catch { return []; } }
+    function saveProducts(p) { localStorage.setItem('zawan-products', JSON.stringify(p)); }
+
+    function renderProducts() {
+      const list = document.getElementById('products-list');
+      const products = getProducts();
+      document.getElementById('stat-products').textContent = products.length;
+      if (!products.length) { list.innerHTML = '<p style="color:var(--clr-text-muted);font-size:.9rem;">No products added yet.</p>'; return; }
+      list.innerHTML = products.map((p, i) => `
+        <div class="product-list-item">
+          <div class="pli-icon">${p.icon || '📦'}</div>
+          <div class="pli-info"><div class="pli-name">${p.nameEn}</div><div class="pli-meta">${p.category} · $${p.price || 0} · ${p.tech}</div></div>
+          <div class="pli-actions"><button class="btn-danger" onclick="deleteProduct(${i})">Delete</button></div>
+        </div>`).join('');
+    }
+
+    function deleteProduct(i) {
+      const p = getProducts(); p.splice(i, 1); saveProducts(p); renderProducts();
+    }
+
+    document.getElementById('add-product-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const product = {
+        nameEn: document.getElementById('p-name-en').value,
+        nameAr: document.getElementById('p-name-ar').value,
+        category: document.getElementById('p-category').value,
+        price: document.getElementById('p-price').value,
+        icon: document.getElementById('p-icon').value,
+        tech: document.getElementById('p-tech').value,
+        descEn: document.getElementById('p-desc-en').value,
+        descAr: document.getElementById('p-desc-ar').value,
+        createdAt: new Date().toLocaleDateString()
+      };
+      const products = getProducts();
+      products.push(product);
+      saveProducts(products);
+      renderProducts();
+      e.target.reset();
+      alert('Product saved successfully!');
+    });
+
+    // Announcements
+    function getAnnouncements() { try { return JSON.parse(localStorage.getItem('zawan-announcements') || '[]'); } catch { return []; } }
+    function saveAnnouncements(a) { localStorage.setItem('zawan-announcements', JSON.stringify(a)); }
+
+    function renderAnnouncements() {
+      const list = document.getElementById('announcements-list');
+      const anns = getAnnouncements();
+      document.getElementById('stat-announcements').textContent = anns.length;
+      if (!anns.length) { list.innerHTML = '<p style="color:var(--clr-text-muted);font-size:.9rem;">No announcements yet.</p>'; return; }
+      list.innerHTML = anns.map((a, i) => `
+        <div class="ann-item ${a.type}">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+            <div><div class="ann-title">${a.title}</div><div class="ann-content">${a.content}</div><div class="ann-meta">${a.date}</div></div>
+            <button class="btn-danger" onclick="deleteAnn(${i})">Delete</button>
+          </div>
+        </div>`).join('');
+    }
+
+    function deleteAnn(i) {
+      const a = getAnnouncements(); a.splice(i, 1); saveAnnouncements(a); renderAnnouncements();
+    }
+
+    document.getElementById('add-ann-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const ann = {
+        title: document.getElementById('ann-title').value,
+        content: document.getElementById('ann-content').value,
+        type: document.getElementById('ann-type').value,
+        date: new Date().toLocaleDateString()
+      };
+      const anns = getAnnouncements();
+      anns.unshift(ann);
+      saveAnnouncements(anns);
+      renderAnnouncements();
+      e.target.reset();
+      alert('Announcement published!');
+    });
+
+    // Change password
+    document.getElementById('change-pass-btn').addEventListener('click', () => {
+      const np = document.getElementById('new-pass').value;
+      const cp = document.getElementById('confirm-pass').value;
+      if (!np) { alert('Enter a new password'); return; }
+      if (np !== cp) { alert('Passwords do not match'); return; }
+      if (np.length < 6) { alert('Password must be at least 6 characters'); return; }
+      localStorage.setItem(ADMIN_PASS_KEY, np);
+      alert('Password updated successfully!');
+      document.getElementById('new-pass').value = '';
+      document.getElementById('confirm-pass').value = '';
+    });
+
+    function loadData() { renderProducts(); renderAnnouncements(); }
+  </script>
+</body>
+</html>

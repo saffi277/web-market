@@ -230,6 +230,26 @@ ul { list-style: none; }
 }
 .btn-theme:hover { border-color: var(--clr-primary); box-shadow: var(--shadow-glow); }
 
+.btn-lang {
+  padding: .35rem .7rem;
+  border-radius: var(--radius-sm);
+  background: var(--clr-card);
+  border: 1px solid var(--clr-border);
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--clr-text-muted);
+  transition: var(--transition);
+  letter-spacing: .05em;
+}
+.btn-lang:hover { border-color: var(--clr-gold); color: var(--clr-gold); }
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -1284,3 +1304,44 @@ section { padding: 5rem 0; }
   .search-wrap input { width: 100%; }
   .products-controls { flex-direction: column; align-items: stretch; }
 }
+
+/* ---------- RTL Support ---------- */
+[dir="rtl"] {
+  font-family: 'Noto Sans Arabic', var(--font-body);
+}
+[dir="rtl"] .nav-inner { flex-direction: row-reverse; }
+[dir="rtl"] .hero-content { direction: rtl; }
+[dir="rtl"] .float-badge.top-left { left: auto; right: -20px; }
+[dir="rtl"] .float-badge.bot-right { right: auto; left: -20px; }
+[dir="rtl"] .service-card { flex-direction: row-reverse; }
+[dir="rtl"] .footer-grid { direction: rtl; }
+[dir="rtl"] .nav-link::after { right: 0; left: auto; }
+[dir="rtl"] .contact-info-card:hover { transform: translateX(-4px); }
+[dir="rtl"] .step { flex-direction: row-reverse; }
+
+/* ---------- Form Validation ---------- */
+.form-group .field-error {
+  font-size: .8rem;
+  color: #ff4d6d;
+  margin-top: .25rem;
+  display: none;
+}
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea {
+  border-color: #ff4d6d;
+  box-shadow: 0 0 0 3px rgba(255,77,109,.1);
+}
+.form-group.success input,
+.form-group.success select,
+.form-group.success textarea {
+  border-color: #00D4FF;
+}
+.form-group.error .field-error { display: block; }
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  20%,60% { transform: translateX(-6px); }
+  40%,80% { transform: translateX(6px); }
+}
+.shake { animation: shake .4s ease; }
