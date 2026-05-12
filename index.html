@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ZAWN — Engineering the Future, One Line at a Time. We build cutting-edge software solutions from enterprise systems to mobile apps." />
+  <title>ZAWN | Engineering the Future</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loading-screen" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-logo">ZAWN</div>
+      <div class="loader-bar"></div>
+    </div>
+  </div>
+
+  <!-- ======== NAVBAR ======== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-inner">
+
+        <a href="index.html" class="nav-brand" aria-label="ZAWN Home">
+          <div class="brand-icon" aria-hidden="true">Z</div>
+          <span class="brand-name">ZAWN</span>
+        </a>
+
+        <ul class="nav-links" role="list">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="pages/products.html" class="nav-link">Products</a></li>
+          <li><a href="pages/services.html" class="nav-link">Services</a></li>
+          <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="btn-theme" aria-label="Toggle theme">☀️</button>
+          <a href="pages/contact.html" class="btn btn-primary btn-sm">Get Started</a>
+          <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======== HERO ======== -->
+  <section class="hero" id="hero" aria-label="Hero">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-glow-1" aria-hidden="true"></div>
+    <div class="hero-glow-2" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="hero-content">
+
+        <!-- Left: Text -->
+        <div class="hero-text">
+          <div class="hero-badge">
+            <span class="badge-dot" aria-hidden="true"></span>
+            Available for new projects
+          </div>
+
+          <h1 class="hero-title">
+            Engineering the<br />
+            <span class="gradient-text">Future, One Line</span><br />
+            at a Time
+          </h1>
+
+          <div class="typewriter-wrap" aria-live="polite">
+            We build &nbsp;<span id="typewriter"></span><span class="cursor" aria-hidden="true"></span>
+          </div>
+
+          <p class="hero-desc">
+            We build cutting-edge software solutions — from enterprise systems to mobile apps, we turn ideas into powerful digital products.
+          </p>
+
+          <div class="hero-actions">
+            <a href="pages/products.html" class="btn btn-primary btn-lg">Explore Products</a>
+            <a href="pages/services.html" class="btn btn-outline btn-lg">Our Services</a>
+          </div>
+        </div>
+
+        <!-- Right: Floating Card -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="float-badge top-left">🚀 50+ Projects Shipped</div>
+
+          <div class="hero-card-float">
+            <div class="hc-header">
+              <div class="hc-icon">⚡</div>
+              <div>
+                <div class="hc-title">ZAWN Analytics</div>
+                <div class="hc-sub">Performance Dashboard</div>
+              </div>
+            </div>
+
+            <div class="hc-stats">
+              <div class="hc-stat">
+                <div class="hc-stat-num">99%</div>
+                <div class="hc-stat-label">Uptime</div>
+              </div>
+              <div class="hc-stat">
+                <div class="hc-stat-num">100+</div>
+                <div class="hc-stat-label">Clients</div>
+              </div>
+              <div class="hc-stat">
+                <div class="hc-stat-num">3+</div>
+                <div class="hc-stat-label">Years</div>
+              </div>
+              <div class="hc-stat">
+                <div class="hc-stat-num">50+</div>
+                <div class="hc-stat-label">Products</div>
+              </div>
+            </div>
+
+            <div class="hc-bar-wrap">
+              <div class="hc-bar-row">
+                <span>Web Systems</span><span>92%</span>
+              </div>
+              <div class="hc-bar"><div class="hc-bar-fill" data-width="92%"></div></div>
+
+              <div class="hc-bar-row">
+                <span>Mobile Apps</span><span>85%</span>
+              </div>
+              <div class="hc-bar"><div class="hc-bar-fill" data-width="85%"></div></div>
+
+              <div class="hc-bar-row">
+                <span>AI Tools</span><span>78%</span>
+              </div>
+              <div class="hc-bar"><div class="hc-bar-fill" data-width="78%"></div></div>
+            </div>
+          </div>
+
+          <div class="float-badge bot-right">✅ 99% Satisfaction</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== STATS ======== -->
+  <section class="stats-section" aria-label="Key statistics">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item" data-aos>
+          <div class="stat-num" data-target="50" data-suffix="+">0+</div>
+          <div class="stat-label">Projects Delivered</div>
+        </div>
+        <div class="stat-item" data-aos data-aos-delay="100">
+          <div class="stat-num" data-target="100" data-suffix="+">0+</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-item" data-aos data-aos-delay="200">
+          <div class="stat-num" data-target="3" data-suffix="+">0+</div>
+          <div class="stat-label">Years of Experience</div>
+        </div>
+        <div class="stat-item" data-aos data-aos-delay="300">
+          <div class="stat-num" data-target="99" data-suffix="%">0%</div>
+          <div class="stat-label">Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FEATURED PRODUCTS ======== -->
+  <section id="products" aria-labelledby="products-heading">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-tag" data-aos>🛠️ Our Products</div>
+        <h2 class="section-title" id="products-heading" data-aos data-aos-delay="100">
+          Featured <span class="gradient-text">Solutions</span>
+        </h2>
+        <p class="section-subtitle" data-aos data-aos-delay="200">
+          Powerful, scalable, and ready-to-deploy software systems built for modern businesses.
+        </p>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- Card 1 -->
+        <article class="product-card" data-aos data-aos-delay="0">
+          <div class="pc-icon purple" aria-hidden="true">📋</div>
+          <h3 class="pc-title">Task Management System</h3>
+          <p class="pc-desc">Enterprise-grade project and task management with real-time collaboration, Kanban boards, and advanced reporting.</p>
+          <div class="pc-tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag cyan">WebSocket</span>
+          </div>
+          <div class="pc-footer">
+            <span class="pc-price">$299</span>
+            <a href="pages/contact.html" class="btn btn-primary btn-sm">Get it</a>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="product-card" data-aos data-aos-delay="80">
+          <div class="pc-icon cyan" aria-hidden="true">🛒</div>
+          <h3 class="pc-title">E-Commerce Platform</h3>
+          <p class="pc-desc">Full-featured e-commerce solution with inventory, payments, analytics, and multi-vendor support out of the box.</p>
+          <div class="pc-tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">Stripe</span>
+            <span class="tag cyan">PostgreSQL</span>
+          </div>
+          <div class="pc-footer">
+            <span class="pc-price">$499</span>
+            <a href="pages/contact.html" class="btn btn-primary btn-sm">Get it</a>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="product-card" data-aos data-aos-delay="160">
+          <div class="pc-icon green" aria-hidden="true">🏥</div>
+          <h3 class="pc-title">Hospital Management System</h3>
+          <p class="pc-desc">Complete healthcare platform covering patient records, appointments, billing, and staff management with HIPAA compliance.</p>
+          <div class="pc-tags">
+            <span class="tag">Vue.js</span>
+            <span class="tag">Laravel</span>
+            <span class="tag cyan">MySQL</span>
+          </div>
+          <div class="pc-footer">
+            <span class="pc-price">$799</span>
+            <a href="pages/contact.html" class="btn btn-primary btn-sm">Get it</a>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="product-card" data-aos data-aos-delay="0">
+          <div class="pc-icon orange" aria-hidden="true">💬</div>
+          <h3 class="pc-title">Real-time Chat App</h3>
+          <p class="pc-desc">Scalable messaging platform with end-to-end encryption, channels, bots, file sharing, and video call support.</p>
+          <div class="pc-tags">
+            <span class="tag">React Native</span>
+            <span class="tag cyan">Socket.io</span>
+            <span class="tag">Redis</span>
+          </div>
+          <div class="pc-footer">
+            <span class="pc-price">$349</span>
+            <a href="pages/contact.html" class="btn btn-primary btn-sm">Get it</a>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="product-card" data-aos data-aos-delay="80">
+          <div class="pc-icon pink" aria-hidden="true">📦</div>
+          <h3 class="pc-title">Inventory System</h3>
+          <p class="pc-desc">Smart warehouse and stock management with barcode scanning, automated reordering, and multi-location tracking.</p>
+          <div class="pc-tags">
+            <span class="tag">Angular</span>
+            <span class="tag">Python</span>
+            <span class="tag cyan">MongoDB</span>
+          </div>
+          <div class="pc-footer">
+            <span class="pc-price">$249</span>
+            <a href="pages/contact.html" class="btn btn-primary btn-sm">Get it</a>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="product-card" data-aos data-aos-delay="160">
+          <div class="pc-icon blue" aria-hidden="true">🤖</div>
+          <h3 class="pc-title">AI Dashboard</h3>
+          <p class="pc-desc">Unified AI analytics dashboard integrating machine learning models, data pipelines, and business intelligence reports.</p>
+          <div class="pc-tags">
+            <span class="tag">Python</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag cyan">FastAPI</span>
+          </div>
+          <div class="pc-footer">
+            <span class="pc-price">$599</span>
+            <a href="pages/contact.html" class="btn btn-primary btn-sm">Get it</a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="pages/products.html" class="btn btn-outline btn-lg" data-aos>View All Products →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== SERVICES ======== -->
+  <section id="services" style="background:var(--clr-bg2);" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-tag" data-aos>⚙️ What We Do</div>
+        <h2 class="section-title" id="services-heading" data-aos data-aos-delay="100">
+          Our Core <span class="gradient-text">Services</span>
+        </h2>
+        <p class="section-subtitle" data-aos data-aos-delay="200">
+          From concept to deployment — we handle the complete software development lifecycle.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <article class="service-card" data-aos="fade-right">
+          <div class="sc-icon" aria-hidden="true">🌐</div>
+          <div class="sc-body">
+            <h3 class="sc-title">Web Development</h3>
+            <p class="sc-desc">Custom web applications, SaaS platforms, and enterprise portals built with modern frameworks and best practices.</p>
+            <div class="sc-list">
+              <span class="tag">React / Next.js</span>
+              <span class="tag">Vue / Nuxt</span>
+              <span class="tag cyan">APIs</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card" data-aos="fade-left">
+          <div class="sc-icon" aria-hidden="true">📱</div>
+          <div class="sc-body">
+            <h3 class="sc-title">Mobile Apps</h3>
+            <p class="sc-desc">Cross-platform and native iOS/Android applications with seamless UX, offline-first architecture, and push notifications.</p>
+            <div class="sc-list">
+              <span class="tag">React Native</span>
+              <span class="tag">Flutter</span>
+              <span class="tag cyan">Swift / Kotlin</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card" data-aos="fade-right" data-aos-delay="100">
+          <div class="sc-icon" aria-hidden="true">⚙️</div>
+          <div class="sc-body">
+            <h3 class="sc-title">Custom Systems</h3>
+            <p class="sc-desc">Bespoke enterprise systems, ERP integrations, automation workflows, and back-office platforms tailored to your business.</p>
+            <div class="sc-list">
+              <span class="tag">Microservices</span>
+              <span class="tag">DevOps</span>
+              <span class="tag cyan">Cloud</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card" data-aos="fade-left" data-aos-delay="100">
+          <div class="sc-icon" aria-hidden="true">💡</div>
+          <div class="sc-body">
+            <h3 class="sc-title">Technical Consulting</h3>
+            <p class="sc-desc">Architecture reviews, technology strategy, code audits, and expert guidance to help you make the right technical decisions.</p>
+            <div class="sc-list">
+              <span class="tag">Architecture</span>
+              <span class="tag">Code Review</span>
+              <span class="tag cyan">Strategy</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="pages/services.html" class="btn btn-primary btn-lg" data-aos>Explore Services →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== TESTIMONIALS ======== -->
+  <section class="testimonials-section" id="testimonials" aria-labelledby="testimonials-heading">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-tag" data-aos>💬 Testimonials</div>
+        <h2 class="section-title" id="testimonials-heading" data-aos data-aos-delay="100">
+          What Clients <span class="gradient-text">Say</span>
+        </h2>
+      </div>
+
+      <div class="testimonials-grid">
+
+        <article class="testi-card" data-aos data-aos-delay="0">
+          <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="testi-text">"ZAWN delivered our hospital management system on time and beyond expectations. The code quality is exceptional and the team is incredibly responsive."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">AK</div>
+            <div>
+              <div class="testi-name">Ahmed Khalil</div>
+              <div class="testi-role">CTO, MedCore Solutions</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testi-card" data-aos data-aos-delay="100">
+          <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="testi-text">"We hired ZAWN for our e-commerce platform and the result was outstanding. Sales went up 40% after launch. Professional team with cutting-edge solutions."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">SM</div>
+            <div>
+              <div class="testi-name">Sarah Mitchell</div>
+              <div class="testi-role">Founder, ShopZen</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testi-card" data-aos data-aos-delay="200">
+          <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="testi-text">"Their AI dashboard transformed how we analyze data. ZAWN's technical expertise and attention to detail sets them apart from every other vendor we've worked with."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">JL</div>
+            <div>
+              <div class="testi-name">James Lee</div>
+              <div class="testi-role">Head of Data, TechFlow Inc</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CTA BANNER ======== -->
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="container">
+      <div class="cta-inner" data-aos="zoom-in">
+        <h2 class="cta-title" id="cta-heading">Ready to Build Something Great?</h2>
+        <p class="cta-desc">Tell us your idea. We'll turn it into a world-class digital product.</p>
+        <div class="cta-actions">
+          <a href="pages/contact.html" class="btn btn-white btn-lg">Start a Project</a>
+          <a href="pages/products.html" class="btn btn-ghost-white btn-lg">Browse Products</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="index.html" class="nav-brand" aria-label="ZAWN Home">
+            <div class="brand-icon" aria-hidden="true">Z</div>
+            <span class="brand-name">ZAWN</span>
+          </a>
+          <p class="footer-desc">Engineering the Future, One Line at a Time. We build cutting-edge software for businesses worldwide.</p>
+          <div class="social-links" aria-label="Social media links">
+            <a href="#" class="social-link" aria-label="GitHub">🐙</a>
+            <a href="#" class="social-link" aria-label="Twitter / X">🐦</a>
+            <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
+            <a href="#" class="social-link" aria-label="Discord">💬</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul role="list">
+            <li><a href="pages/products.html">Task Manager</a></li>
+            <li><a href="pages/products.html">E-Commerce</a></li>
+            <li><a href="pages/products.html">Hospital System</a></li>
+            <li><a href="pages/products.html">Chat App</a></li>
+            <li><a href="pages/products.html">AI Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul role="list">
+            <li><a href="index.html">About Us</a></li>
+            <li><a href="pages/services.html">Services</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h4>Stay Updated</h4>
+          <p>Get the latest updates on new products and features.</p>
+          <form class="newsletter-form" aria-label="Newsletter signup">
+            <input type="email" placeholder="your@email.com" aria-label="Email address" required />
+            <button type="submit" class="btn btn-primary btn-sm" aria-label="Subscribe">→</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 ZAWN Programming Group. All rights reserved.</span>
+        <span>Built with ❤️ by ZAWN</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
