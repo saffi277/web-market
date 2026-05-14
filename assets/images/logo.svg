@@ -22,33 +22,14 @@
   <!-- Subtle border -->
   <rect x="2" y="2" width="76" height="76" rx="11" ry="11" fill="none" stroke="url(#zmGrad)" stroke-width="1" opacity="0.4"/>
 
-  <!-- Z letter - large, left -->
-  <text x="8" y="56" font-family="Georgia, serif" font-size="44" font-weight="700"
+  <!-- Z letter -->
+  <text x="6" y="58" font-family="Georgia, serif" font-size="52" font-weight="700"
         fill="url(#zmGrad)" opacity="0.75" filter="url(#glow)">Z</text>
 
-  <!-- M letter - large, overlapping -->
-  <text x="32" y="62" font-family="Georgia, serif" font-size="50" font-weight="700"
+  <!-- M letter overlapping -->
+  <text x="34" y="64" font-family="Georgia, serif" font-size="58" font-weight="700"
         fill="url(#zmGrad)" filter="url(#glow)">M</text>
 
-  <!-- Person figure leaning on M -->
-  <!-- Head -->
-  <circle cx="71" cy="16" r="4.5" fill="#00D4FF" opacity="0.9"/>
-  <!-- Hat -->
-  <ellipse cx="71" cy="12.5" rx="7" ry="2" fill="#6C63FF" opacity="0.85"/>
-  <rect x="67" y="8" width="8" height="5.5" rx="1.5" fill="#6C63FF" opacity="0.85"/>
-  <!-- Body -->
-  <rect x="67.5" y="21" width="6" height="16" rx="2.5" fill="#00D4FF" opacity="0.85"/>
-  <!-- Right arm leaning -->
-  <rect x="73" y="22" width="4" height="13" rx="2" fill="#00D4FF" opacity="0.75" transform="rotate(18 73 22)"/>
-  <!-- Left arm -->
-  <rect x="62" y="23" width="6" height="4" rx="2" fill="#00D4FF" opacity="0.75" transform="rotate(-15 62 23)"/>
-  <!-- Legs -->
-  <rect x="67" y="36" width="4" height="16" rx="2" fill="#6C63FF" opacity="0.85" transform="rotate(-4 67 36)"/>
-  <rect x="71" y="36" width="4" height="16" rx="2" fill="#6C63FF" opacity="0.85" transform="rotate(6 71 36)"/>
-  <!-- Shoes -->
-  <ellipse cx="65" cy="52" rx="4" ry="2" fill="#6C63FF" opacity="0.9"/>
-  <ellipse cx="75" cy="53" rx="4" ry="2" fill="#6C63FF" opacity="0.9"/>
-
   <!-- Decorative line -->
-  <line x1="10" y1="68" x2="70" y2="68" stroke="url(#zmGrad)" stroke-width="0.8" opacity="0.4"/>
+  <line x1="8" y1="70" x2="72" y2="70" stroke="url(#zmGrad)" stroke-width="0.8" opacity="0.4"/>
 </svg>
