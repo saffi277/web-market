@@ -397,58 +397,6 @@
   });
 })();
 
-/* ---------- Language Toggle ---------- */
-(function initLanguage() {
-  const saved = localStorage.getItem('zawan-lang') || 'en';
-
-  // Apply on load
-  if (typeof TRANSLATIONS !== 'undefined') {
-    applyLanguage(saved);
-  } else {
-    // Wait for translations to load
-    document.addEventListener('DOMContentLoaded', () => {
-      if (typeof TRANSLATIONS !== 'undefined') applyLanguage(saved);
-    });
-  }
-
-  document.querySelectorAll('.btn-lang').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const current = document.documentElement.lang || 'en';
-      applyLanguage(current === 'en' ? 'ar' : 'en');
-    });
-  });
-})();
-
-function applyLanguage(lang) {
-  if (typeof TRANSLATIONS === 'undefined') return;
-  const t = TRANSLATIONS[lang];
-  if (!t) return;
-
-  document.documentElement.lang = lang;
-  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-  localStorage.setItem('zawan-lang', lang);
-
-  // Apply all translations
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.dataset.i18n;
-    if (t[key] !== undefined) el.textContent = t[key];
-  });
-
-  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
-    const key = el.dataset.i18nPh;
-    if (t[key] !== undefined) el.placeholder = t[key];
-  });
-
-  // Update language button text
-  document.querySelectorAll('.btn-lang').forEach(btn => {
-    btn.textContent = lang === 'en' ? 'AR' : 'EN';
-  });
-
-  // Update typewriter if running
-  if (t.typewriter_phrases) {
-    window._twPhrases = t.typewriter_phrases;
-  }
-}
 
 /* ---------- Smooth page transitions ---------- */
 (function initPageLinks() {
