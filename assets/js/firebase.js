@@ -1,11 +1,12 @@
-// Firebase configuration — replace with your project values
+// Firebase configuration
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyB-RFVGky1poJ5ko3se6iDJPSD_LQ1otTA",
+  authDomain: "zawan-website.firebaseapp.com",
+  projectId: "zawan-website",
+  storageBucket: "zawan-website.firebasestorage.app",
+  messagingSenderId: "62985963332",
+  appId: "1:62985963332:web:26c65a1fd7ebd1b839f911",
+  measurementId: "G-5QX9K11CWH"
 };
 
 firebase.initializeApp(firebaseConfig);
