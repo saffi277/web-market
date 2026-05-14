@@ -301,8 +301,12 @@ const TRANSLATIONS = {
   let currentLang = localStorage.getItem(STORAGE_KEY) || 'en';
 
   function t(key) {
+    const hyphenKey = key.replace(/_/g, '-');
     const lang = TRANSLATIONS[currentLang];
-    return lang && lang[key] !== undefined ? lang[key] : (TRANSLATIONS.en[key] || key);
+    const val = lang && (lang[key] !== undefined ? lang[key] : lang[hyphenKey]);
+    if (val !== undefined) return val;
+    const en = TRANSLATIONS.en;
+    return (en[key] !== undefined ? en[key] : en[hyphenKey]) || key;
   }
 
   function applyTranslations() {
