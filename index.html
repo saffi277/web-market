@@ -3,340 +3,422 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ZAWAN — من فكرة إلى نظام متكامل، نحن نبرمج النجاح" />
   <title>ZAWAN | أنظمة برمجية متكاملة</title>
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- ===== Loading Screen ===== -->
-  <div id="loading-screen" aria-hidden="true">
+  <!-- ======= Loading ======= -->
+  <div id="loading-screen">
     <div class="loader-inner">
       <div class="loader-z">Z</div>
       <div class="loader-bar"><div class="loader-bar-fill"></div></div>
     </div>
   </div>
 
-  <!-- ===== Navbar ===== -->
-  <nav class="navbar" role="navigation" aria-label="القائمة الرئيسية">
-    <div class="nav-container">
+  <!-- ======= Navbar ======= -->
+  <nav class="navbar">
+    <div class="nav-wrap">
+
+      <!-- Counter box -->
+      <div class="nav-counter">04</div>
+
       <!-- Logo -->
       <a href="index.html" class="nav-logo">
-        <span class="logo-icon">Z</span>
-        <span class="logo-text">ZAWAN</span>
+        <span class="logo-box">Z</span>
+        <span class="logo-name">ZAWAN</span>
       </a>
 
       <!-- Links -->
-      <ul class="nav-links" role="list">
-        <li><a href="index.html" class="nav-link active">الرئيسية</a></li>
+      <ul class="nav-links">
+        <li><a href="index.html"          class="nav-link active">الرئيسية</a></li>
         <li><a href="pages/products.html" class="nav-link">الأنظمة</a></li>
-        <li><a href="#projects" class="nav-link">المشاريع</a></li>
-        <li><a href="#pricing" class="nav-link">الأسعار</a></li>
-        <li><a href="#about" class="nav-link">من نحن</a></li>
-        <li><a href="#blog" class="nav-link">المدونة</a></li>
-        <li><a href="pages/contact.html" class="nav-link">تواصل معنا</a></li>
+        <li><a href="#projects"           class="nav-link">المشاريع</a></li>
+        <li><a href="#pricing"            class="nav-link">الأسعار</a></li>
+        <li><a href="#about"              class="nav-link">من نحن</a></li>
+        <li><a href="#blog"               class="nav-link">المدونة</a></li>
+        <li><a href="pages/contact.html"  class="nav-link">تواصل معنا</a></li>
       </ul>
 
       <!-- CTA -->
-      <div class="nav-actions">
-        <a href="pages/products.html" class="btn-nav-cta">جرب الأنظمة</a>
-        <button class="hamburger" aria-label="القائمة"><span></span><span></span><span></span></button>
-      </div>
+      <a href="pages/products.html" class="btn-cta">جرب الأنظمة</a>
+      <button class="hamburger" aria-label="القائمة"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
-  <!-- ===== Hero ===== -->
-  <section class="hero" id="hero">
-    <!-- Background effects -->
-    <div class="hero-bg-glow"></div>
+  <!-- ======= HERO ======= -->
+  <section class="hero">
+    <!-- Ambient glow -->
+    <div class="hero-glow"></div>
+    <!-- Subtle grid -->
     <div class="hero-grid"></div>
 
-    <div class="hero-container">
-      <!-- Left: Text -->
+    <div class="hero-wrap">
+
+      <!-- TEXT side -->
       <div class="hero-text">
         <span class="hero-badge">حلول برمجية متكاملة</span>
-
-        <h1 class="hero-title">
-          من فكرة إلى نظام متكامل<br />
-          <span class="hero-title-accent">نحن نبرمج النجاح</span>
+        <h1 class="hero-h1">
+          من فكرة إلى نظام متكامل<br/>
+          <span class="accent-text">نحن نبرمج النجاح</span>
         </h1>
-
-        <p class="hero-desc">
-          نقدم أنظمة برمجية متكاملة تلبي احتياجات عملك<br />
+        <p class="hero-p">
+          نقدم أنظمة برمجية متكاملة تلبي احتياجات عملك<br/>
           وتساعدك على النمو والتوسع بثقة
         </p>
-
-        <div class="hero-actions">
-          <a href="pages/contact.html" class="btn-hero-outline">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <div class="hero-btns">
+          <a href="pages/contact.html" class="btn-outline">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012 .94h3a2 2 0 012 1.72 12.77 12.77 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.77 12.77 0 002.81.7A2 2 0 0122 16.92z"/></svg>
             تواصل معنا
           </a>
-          <a href="pages/products.html" class="btn-hero-primary">
+          <a href="pages/products.html" class="btn-fill">
             استعرض الأنظمة
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
       </div>
 
-      <!-- Right: 3D Illustration -->
-      <div class="hero-visual">
-        <div class="hero-3d-scene">
-          <!-- Glow behind -->
-          <div class="scene-glow"></div>
+      <!-- 3D CITY -->
+      <div class="hero-scene">
+        <!-- background glow blob -->
+        <div class="scene-blob"></div>
 
-          <!-- Isometric city SVG -->
-          <svg class="city-svg" viewBox="0 0 460 400" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="bldg1Top" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#9B5DE5"/>
-                <stop offset="100%" stop-color="#6C63FF"/>
-              </linearGradient>
-              <linearGradient id="bldg1Left" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#3D2B7A"/>
-                <stop offset="100%" stop-color="#2E1F5E"/>
-              </linearGradient>
-              <linearGradient id="bldg1Right" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#5533AA"/>
-                <stop offset="100%" stop-color="#3D2580"/>
-              </linearGradient>
-              <linearGradient id="centerGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#B45EFF"/>
-                <stop offset="100%" stop-color="#6C63FF"/>
-              </linearGradient>
-              <linearGradient id="cubeTop" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#C084FC"/>
-                <stop offset="100%" stop-color="#8B5CF6"/>
-              </linearGradient>
-              <linearGradient id="cubeLeft" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#4C1D95"/>
-                <stop offset="100%" stop-color="#3730A3"/>
-              </linearGradient>
-              <linearGradient id="cubeRight" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#5B21B6"/>
-                <stop offset="100%" stop-color="#4338CA"/>
-              </linearGradient>
-              <filter id="glow">
-                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-                <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
-              <filter id="glowStrong">
-                <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
-                <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
-              <radialGradient id="groundGrad" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#1a0a3a"/>
-                <stop offset="100%" stop-color="#050510"/>
-              </radialGradient>
-            </defs>
+        <svg class="city-svg" viewBox="0 0 560 470" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <!-- Cube gradients -->
+            <linearGradient id="cubeTop" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#C084FC"/>
+              <stop offset="100%" stop-color="#8B5CF6"/>
+            </linearGradient>
+            <linearGradient id="cubeRight" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#5B21B6"/>
+              <stop offset="100%" stop-color="#4C1D95"/>
+            </linearGradient>
+            <linearGradient id="cubeLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#6D28D9"/>
+              <stop offset="100%" stop-color="#5B21B6"/>
+            </linearGradient>
+            <linearGradient id="zGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#E9D5FF"/>
+              <stop offset="100%" stop-color="#C084FC"/>
+            </linearGradient>
+            <!-- Platform gradient -->
+            <linearGradient id="platTop" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1e103a"/>
+              <stop offset="100%" stop-color="#150c2e"/>
+            </linearGradient>
+            <!-- Building colors -->
+            <linearGradient id="bRight" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#1a0c38"/>
+              <stop offset="100%" stop-color="#0d0620"/>
+            </linearGradient>
+            <linearGradient id="bLeft" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#150a30"/>
+              <stop offset="100%" stop-color="#0a0518"/>
+            </linearGradient>
+            <linearGradient id="bTop" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2a1256"/>
+              <stop offset="100%" stop-color="#1e0c42"/>
+            </linearGradient>
+            <!-- Glow filter -->
+            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="glowStrong" x="-80%" y="-80%" width="260%" height="260%">
+              <feGaussianBlur stdDeviation="12" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="glowSoft" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <!-- Ground radial glow -->
+            <radialGradient id="groundGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#5B21B6" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#5B21B6" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
 
-            <!-- Ground platform -->
-            <ellipse cx="230" cy="310" rx="200" ry="60" fill="url(#groundGrad)" opacity="0.6"/>
+          <!-- === GROUND GLOW === -->
+          <ellipse cx="280" cy="340" rx="240" ry="80" fill="url(#groundGlow)"/>
 
-              <!-- === FAR BACK buildings === -->
-            <!-- Far left small tower -->
-            <polygon points="55,230 80,216 80,310 55,324" fill="#140a2e"/>
-            <polygon points="80,216 105,230 105,324 80,310" fill="#1a0d38"/>
-            <polygon points="55,230 80,216 105,230 80,244" fill="#241455"/>
-            <rect x="60" y="236" width="5" height="7" fill="#7C3AED" opacity="0.8"/>
-            <rect x="70" y="236" width="5" height="7" fill="#00D4FF" opacity="0.6"/>
-            <rect x="60" y="250" width="5" height="7" fill="#6C63FF" opacity="0.7"/>
-            <rect x="70" y="250" width="5" height="7" fill="#9B5DE5" opacity="0.6"/>
-            <rect x="85" y="238" width="5" height="7" fill="#6C63FF" opacity="0.7"/>
-            <rect x="93" y="244" width="5" height="7" fill="#00D4FF" opacity="0.5"/>
+          <!-- === LARGE GROUND PLATFORM === -->
+          <!-- Top surface (visible diamond) -->
+          <polygon points="500,295 280,175 60,295 280,415" fill="url(#platTop)" opacity="0.7"/>
+          <!-- Grid lines on platform -->
+          <line x1="280" y1="175" x2="280" y2="415" stroke="#7C3AED" stroke-width="0.5" opacity="0.25"/>
+          <line x1="60"  y1="295" x2="500" y2="295" stroke="#7C3AED" stroke-width="0.5" opacity="0.25"/>
+          <line x1="170" y1="235" x2="390" y2="355" stroke="#7C3AED" stroke-width="0.5" opacity="0.2"/>
+          <line x1="390" y1="235" x2="170" y2="355" stroke="#7C3AED" stroke-width="0.5" opacity="0.2"/>
+          <line x1="215" y1="205" x2="345" y2="385" stroke="#7C3AED" stroke-width="0.5" opacity="0.15"/>
+          <line x1="345" y1="205" x2="215" y2="385" stroke="#7C3AED" stroke-width="0.5" opacity="0.15"/>
+          <!-- Platform edge glow -->
+          <polygon points="500,295 280,175 60,295 280,415" fill="none" stroke="#8B5CF6" stroke-width="1.2" opacity="0.5" filter="url(#glow)"/>
 
-            <!-- Far right tower -->
-            <polygon points="355,215 390,196 390,310 355,329" fill="#140a2e"/>
-            <polygon points="390,196 425,215 425,329 390,310" fill="#1a0d38"/>
-            <polygon points="355,215 390,196 425,215 390,234" fill="#241455"/>
-            <rect x="360" y="222" width="6" height="8" fill="#00D4FF" opacity="0.8"/>
-            <rect x="372" y="222" width="6" height="8" fill="#7C3AED" opacity="0.7"/>
-            <rect x="360" y="237" width="6" height="8" fill="#9B5DE5" opacity="0.7"/>
-            <rect x="372" y="237" width="6" height="8" fill="#6C63FF" opacity="0.6"/>
-            <rect x="360" y="252" width="6" height="8" fill="#00D4FF" opacity="0.6"/>
-            <rect x="394" y="224" width="6" height="8" fill="#6C63FF" opacity="0.7"/>
-            <rect x="406" y="230" width="6" height="8" fill="#7C3AED" opacity="0.6"/>
-            <rect x="394" y="242" width="6" height="8" fill="#00D4FF" opacity="0.7"/>
-            <rect x="406" y="248" width="6" height="8" fill="#9B5DE5" opacity="0.6"/>
+          <!-- === BUILDING A — Far left, tallest === -->
+          <!-- Right face -->
+          <polygon points="255,238 255,62 205,37 205,213" fill="url(#bRight)"/>
+          <!-- Left face -->
+          <polygon points="205,213 155,238 155,62 205,37" fill="url(#bLeft)"/>
+          <!-- Top face -->
+          <polygon points="255,62 205,37 155,62 205,87" fill="url(#bTop)"/>
+          <!-- Edge glow -->
+          <line x1="205" y1="37" x2="205" y2="213" stroke="#6D28D9" stroke-width="0.8" opacity="0.6"/>
+          <!-- Windows right face -->
+          <rect x="215" y="70"  width="7" height="9" rx="1" fill="#00D4FF" opacity="0.7" filter="url(#glowSoft)"/>
+          <rect x="230" y="70"  width="7" height="9" rx="1" fill="#7C3AED" opacity="0.8" filter="url(#glowSoft)"/>
+          <rect x="244" y="70"  width="7" height="9" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="215" y="88"  width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.7"/>
+          <rect x="230" y="88"  width="7" height="9" rx="1" fill="#00D4FF" opacity="0.7" filter="url(#glowSoft)"/>
+          <rect x="244" y="88"  width="7" height="9" rx="1" fill="#7C3AED" opacity="0.6"/>
+          <rect x="215" y="106" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="230" y="106" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.7"/>
+          <rect x="244" y="106" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.5"/>
+          <rect x="215" y="124" width="7" height="9" rx="1" fill="#7C3AED" opacity="0.7"/>
+          <rect x="230" y="124" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="215" y="142" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.6"/>
+          <rect x="230" y="142" width="7" height="9" rx="1" fill="#7C3AED" opacity="0.5"/>
+          <rect x="215" y="160" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="230" y="160" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.6"/>
+          <!-- Windows left face -->
+          <rect x="162" y="72"  width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.6"/>
+          <rect x="176" y="72"  width="7" height="9" rx="1" fill="#00D4FF" opacity="0.5"/>
+          <rect x="162" y="90"  width="7" height="9" rx="1" fill="#7C3AED" opacity="0.6"/>
+          <rect x="176" y="90"  width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.5"/>
+          <rect x="162" y="108" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.5"/>
+          <rect x="162" y="126" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.5"/>
 
-            <!-- === MID buildings === -->
-            <!-- Mid-left tower -->
-            <polygon points="110,245 155,222 155,318 110,341" fill="#1c0c40"/>
-            <polygon points="155,222 200,245 200,341 155,318" fill="#230e50"/>
-            <polygon points="110,245 155,222 200,245 155,268" fill="#341668"/>
-            <rect x="116" y="253" width="9" height="11" fill="#7C3AED" opacity="0.85"/>
-            <rect x="130" y="253" width="9" height="11" fill="#6C63FF" opacity="0.75"/>
-            <rect x="116" y="271" width="9" height="11" fill="#00D4FF" opacity="0.7"/>
-            <rect x="130" y="271" width="9" height="11" fill="#7C3AED" opacity="0.65"/>
-            <rect x="116" y="289" width="9" height="11" fill="#6C63FF" opacity="0.75"/>
-            <rect x="130" y="289" width="9" height="11" fill="#9B5DE5" opacity="0.7"/>
-            <rect x="160" y="255" width="9" height="11" fill="#9B5DE5" opacity="0.8"/>
-            <rect x="174" y="262" width="9" height="11" fill="#6C63FF" opacity="0.7"/>
-            <rect x="160" y="273" width="9" height="11" fill="#00D4FF" opacity="0.75"/>
-            <rect x="174" y="280" width="9" height="11" fill="#7C3AED" opacity="0.65"/>
-            <rect x="160" y="291" width="9" height="11" fill="#6C63FF" opacity="0.7"/>
+          <!-- === BUILDING B — Left side, medium === -->
+          <!-- Right face -->
+          <polygon points="230,300 230,190 180,165 180,275" fill="url(#bRight)"/>
+          <!-- Left face -->
+          <polygon points="180,275 130,300 130,190 180,165" fill="url(#bLeft)"/>
+          <!-- Top face -->
+          <polygon points="230,190 180,165 130,190 180,215" fill="url(#bTop)"/>
+          <!-- Windows right -->
+          <rect x="188" y="175" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.75" filter="url(#glowSoft)"/>
+          <rect x="202" y="175" width="7" height="8" rx="1" fill="#7C3AED" opacity="0.7"/>
+          <rect x="216" y="175" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="188" y="190" width="7" height="8" rx="1" fill="#8B5CF6" opacity="0.7"/>
+          <rect x="202" y="190" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.65"/>
+          <rect x="216" y="190" width="7" height="8" rx="1" fill="#7C3AED" opacity="0.6"/>
+          <rect x="188" y="205" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="202" y="205" width="7" height="8" rx="1" fill="#8B5CF6" opacity="0.6"/>
+          <rect x="188" y="220" width="7" height="8" rx="1" fill="#7C3AED" opacity="0.55"/>
+          <rect x="202" y="220" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.55"/>
+          <!-- Windows left -->
+          <rect x="138" y="198" width="6" height="8" rx="1" fill="#8B5CF6" opacity="0.55"/>
+          <rect x="152" y="196" width="6" height="8" rx="1" fill="#00D4FF" opacity="0.5"/>
+          <rect x="138" y="213" width="6" height="8" rx="1" fill="#7C3AED" opacity="0.5"/>
+          <rect x="152" y="211" width="6" height="8" rx="1" fill="#8B5CF6" opacity="0.5"/>
 
-            <!-- Mid-right tower -->
-            <polygon points="260,235 305,212 305,318 260,341" fill="#1c0c40"/>
-            <polygon points="305,212 350,235 350,341 305,318" fill="#230e50"/>
-            <polygon points="260,235 305,212 350,235 305,258" fill="#341668"/>
-            <rect x="266" y="243" width="9" height="11" fill="#00D4FF" opacity="0.85"/>
-            <rect x="280" y="243" width="9" height="11" fill="#7C3AED" opacity="0.75"/>
-            <rect x="266" y="261" width="9" height="11" fill="#6C63FF" opacity="0.75"/>
-            <rect x="280" y="261" width="9" height="11" fill="#00D4FF" opacity="0.65"/>
-            <rect x="266" y="279" width="9" height="11" fill="#9B5DE5" opacity="0.75"/>
-            <rect x="280" y="279" width="9" height="11" fill="#6C63FF" opacity="0.7"/>
-            <rect x="310" y="245" width="9" height="11" fill="#6C63FF" opacity="0.8"/>
-            <rect x="324" y="252" width="9" height="11" fill="#7C3AED" opacity="0.7"/>
-            <rect x="310" y="263" width="9" height="11" fill="#00D4FF" opacity="0.75"/>
-            <rect x="324" y="270" width="9" height="11" fill="#6C63FF" opacity="0.65"/>
-            <rect x="310" y="281" width="9" height="11" fill="#9B5DE5" opacity="0.7"/>
+          <!-- === BUILDING C — Far right, tallest === -->
+          <!-- Right face -->
+          <polygon points="355,338 405,363 405,187 355,162" fill="url(#bRight)"/>
+          <!-- Left face -->
+          <polygon points="355,338 355,162 305,187 305,363" fill="url(#bLeft)"/>
+          <!-- Top face -->
+          <polygon points="355,162 405,187 355,212 305,187" fill="url(#bTop)"/>
+          <!-- Edge glow -->
+          <line x1="355" y1="162" x2="355" y2="338" stroke="#6D28D9" stroke-width="0.8" opacity="0.6"/>
+          <!-- Windows right -->
+          <rect x="362" y="195" width="7" height="9" rx="1" fill="#7C3AED" opacity="0.75" filter="url(#glowSoft)"/>
+          <rect x="376" y="195" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.7" filter="url(#glowSoft)"/>
+          <rect x="390" y="198" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.65"/>
+          <rect x="362" y="212" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.7"/>
+          <rect x="376" y="212" width="7" height="9" rx="1" fill="#7C3AED" opacity="0.65"/>
+          <rect x="390" y="215" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="362" y="229" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.65"/>
+          <rect x="376" y="229" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="362" y="246" width="7" height="9" rx="1" fill="#7C3AED" opacity="0.6"/>
+          <rect x="376" y="246" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.55"/>
+          <rect x="362" y="263" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="362" y="280" width="7" height="9" rx="1" fill="#7C3AED" opacity="0.55"/>
+          <!-- Windows left -->
+          <rect x="312" y="195" width="6" height="8" rx="1" fill="#8B5CF6" opacity="0.6"/>
+          <rect x="326" y="197" width="6" height="8" rx="1" fill="#00D4FF" opacity="0.55"/>
+          <rect x="312" y="212" width="6" height="8" rx="1" fill="#7C3AED" opacity="0.6"/>
+          <rect x="326" y="214" width="6" height="8" rx="1" fill="#8B5CF6" opacity="0.55"/>
+          <rect x="312" y="229" width="6" height="8" rx="1" fill="#00D4FF" opacity="0.55"/>
+          <rect x="312" y="246" width="6" height="8" rx="1" fill="#7C3AED" opacity="0.5"/>
 
-            <!-- === CENTER HERO CUBE === -->
-            <g filter="url(#glowStrong)">
-              <!-- Shadow under cube -->
-              <ellipse cx="230" cy="278" rx="72" ry="16" fill="#6C63FF" opacity="0.12"/>
+          <!-- === BUILDING D — Right front, medium === -->
+          <!-- Right face -->
+          <polygon points="255,338 305,363 305,253 255,228" fill="url(#bRight)"/>
+          <!-- Left face -->
+          <polygon points="255,338 255,228 205,253 205,363" fill="url(#bLeft)"/>
+          <!-- Top face -->
+          <polygon points="255,228 305,253 255,278 205,253" fill="url(#bTop)"/>
+          <!-- Windows right -->
+          <rect x="262" y="237" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.7" filter="url(#glowSoft)"/>
+          <rect x="276" y="240" width="7" height="8" rx="1" fill="#7C3AED" opacity="0.65"/>
+          <rect x="290" y="244" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="262" y="252" width="7" height="8" rx="1" fill="#8B5CF6" opacity="0.65"/>
+          <rect x="276" y="255" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="262" y="267" width="7" height="8" rx="1" fill="#7C3AED" opacity="0.6"/>
+          <rect x="276" y="270" width="7" height="8" rx="1" fill="#8B5CF6" opacity="0.55"/>
+          <rect x="262" y="282" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.55"/>
+          <!-- Windows left -->
+          <rect x="212" y="260" width="6" height="8" rx="1" fill="#8B5CF6" opacity="0.55"/>
+          <rect x="226" y="257" width="6" height="8" rx="1" fill="#00D4FF" opacity="0.5"/>
+          <rect x="212" y="275" width="6" height="8" rx="1" fill="#7C3AED" opacity="0.5"/>
 
-              <!-- Left face -->
-              <polygon points="187,172 230,148 230,252 187,276" fill="url(#cubeLeft)"/>
-              <!-- Right face -->
-              <polygon points="230,148 273,172 273,276 230,252" fill="url(#cubeRight)"/>
-              <!-- Top face -->
-              <polygon points="187,172 230,148 273,172 230,196" fill="url(#cubeTop)"/>
+          <!-- === BUILDING E — Front left small === -->
+          <!-- Right face -->
+          <polygon points="230,325 180,300 180,234 230,259" fill="url(#bRight)"/>
+          <!-- Left face -->
+          <polygon points="180,300 130,325 130,259 180,234" fill="url(#bLeft)"/>
+          <!-- Top face -->
+          <polygon points="230,259 180,234 130,259 180,284" fill="url(#bTop)"/>
+          <!-- Windows -->
+          <rect x="188" y="242" width="6" height="7" rx="1" fill="#00D4FF" opacity="0.65"/>
+          <rect x="202" y="245" width="6" height="7" rx="1" fill="#7C3AED" opacity="0.6"/>
+          <rect x="216" y="248" width="6" height="7" rx="1" fill="#00D4FF" opacity="0.55"/>
+          <rect x="188" y="257" width="6" height="7" rx="1" fill="#8B5CF6" opacity="0.6"/>
+          <rect x="202" y="260" width="6" height="7" rx="1" fill="#00D4FF" opacity="0.55"/>
+          <rect x="137" y="266" width="6" height="7" rx="1" fill="#7C3AED" opacity="0.55"/>
+          <rect x="152" y="263" width="6" height="7" rx="1" fill="#8B5CF6" opacity="0.5"/>
 
-              <!-- Top edge glow line -->
-              <polyline points="187,172 230,148 273,172" fill="none" stroke="#D8B4FE" stroke-width="2" opacity="0.9"/>
+          <!-- === RAISED PLATFORM (dais under cube) === -->
+          <!-- Front-right face -->
+          <polygon points="330,278 380,253 380,268 330,293" fill="#1a0840" opacity="0.9"/>
+          <!-- Front-left face -->
+          <polygon points="230,278 280,253 280,268 230,293" fill="#120630" opacity="0.9"/>
+          <!-- Top surface -->
+          <polygon points="330,278 280,253 230,278 280,303" fill="#1e0e4a" opacity="0.9"/>
+          <!-- Platform glow border -->
+          <polygon points="330,278 280,253 230,278 280,303" fill="none" stroke="#8B5CF6" stroke-width="1" opacity="0.6" filter="url(#glow)"/>
+          <!-- Platform grid dots -->
+          <circle cx="280" cy="278" r="2" fill="#8B5CF6" opacity="0.5"/>
+          <circle cx="258" cy="267" r="1.5" fill="#7C3AED" opacity="0.4"/>
+          <circle cx="302" cy="267" r="1.5" fill="#7C3AED" opacity="0.4"/>
 
-              <!-- Z letter -->
-              <text x="207" y="228" font-family="Space Grotesk, sans-serif" font-size="56" font-weight="900" fill="url(#centerGlow)" filter="url(#glowStrong)" opacity="1">Z</text>
+          <!-- === CENTRAL Z CUBE (hero element) === -->
+          <!-- Shadow glow under cube -->
+          <ellipse cx="280" cy="282" rx="60" ry="18" fill="#7C3AED" opacity="0.2" filter="url(#glowStrong)"/>
 
-              <!-- Cube edges -->
-              <line x1="187" y1="172" x2="187" y2="276" stroke="#9B5DE5" stroke-width="1.2" opacity="0.7"/>
-              <line x1="273" y1="172" x2="273" y2="276" stroke="#9B5DE5" stroke-width="1.2" opacity="0.7"/>
-              <line x1="187" y1="276" x2="230" y2="252" stroke="#9B5DE5" stroke-width="1.2" opacity="0.5"/>
-              <line x1="273" y1="276" x2="230" y2="252" stroke="#9B5DE5" stroke-width="1.2" opacity="0.5"/>
-            </g>
+          <!-- Left face -->
+          <polygon points="280,231 230,256 230,146 280,121" fill="url(#cubeLeft)" filter="url(#glow)"/>
+          <!-- Right face -->
+          <polygon points="280,231 330,256 330,146 280,121" fill="url(#cubeRight)" filter="url(#glow)"/>
+          <!-- Top face -->
+          <polygon points="280,121 330,146 280,171 230,146" fill="url(#cubeTop)" filter="url(#glow)"/>
 
-            <!-- Ground ring glow -->
-            <ellipse cx="230" cy="278" rx="90" ry="20" fill="none" stroke="#7C3AED" stroke-width="1.5" opacity="0.5"/>
+          <!-- Glowing top edges -->
+          <polyline points="230,146 280,121 330,146" fill="none" stroke="#E9D5FF" stroke-width="1.8" opacity="0.9" filter="url(#glow)"/>
+          <!-- Vertical edges -->
+          <line x1="280" y1="121" x2="280" y2="231" stroke="#C084FC" stroke-width="1" opacity="0.5"/>
+          <line x1="230" y1="146" x2="230" y2="256" stroke="#9F67E8" stroke-width="0.8" opacity="0.5"/>
+          <line x1="330" y1="146" x2="330" y2="256" stroke="#9F67E8" stroke-width="0.8" opacity="0.5"/>
+          <!-- Bottom edges -->
+          <polyline points="230,256 280,231 330,256" fill="none" stroke="#7C3AED" stroke-width="1" opacity="0.5"/>
 
-            <!-- Floating particles -->
-            <circle cx="155" cy="135" r="2.5" fill="#C084FC" opacity="0.9" filter="url(#glow)"/>
-            <circle cx="310" cy="125" r="2" fill="#00D4FF" opacity="0.8" filter="url(#glow)"/>
-            <circle cx="360" cy="165" r="3" fill="#9B5DE5" opacity="0.7" filter="url(#glow)"/>
-            <circle cx="120" cy="175" r="2" fill="#6C63FF" opacity="0.9" filter="url(#glow)"/>
-            <circle cx="385" cy="230" r="2.5" fill="#C084FC" opacity="0.6" filter="url(#glow)"/>
-            <circle cx="90" cy="240" r="2" fill="#00D4FF" opacity="0.7" filter="url(#glow)"/>
-            <circle cx="340" cy="290" r="1.5" fill="#C084FC" opacity="0.6" filter="url(#glow)"/>
-            <circle cx="135" cy="295" r="1.5" fill="#00D4FF" opacity="0.5" filter="url(#glow)"/>
+          <!-- Z letter -->
+          <text x="249" y="212" font-family="Space Grotesk, sans-serif" font-size="62" font-weight="900"
+                fill="url(#zGrad)" filter="url(#glowStrong)" text-anchor="middle">Z</text>
 
-            <!-- Dashed signal lines -->
-            <line x1="230" y1="148" x2="155" y2="95" stroke="#7C3AED" stroke-width="1" opacity="0.35" stroke-dasharray="5,5"/>
-            <line x1="273" y1="172" x2="360" y2="118" stroke="#6C63FF" stroke-width="1" opacity="0.35" stroke-dasharray="5,5"/>
-          </svg>
+          <!-- Cube strong glow -->
+          <polygon points="280,121 330,146 280,171 230,146" fill="#A855F7" opacity="0.08" filter="url(#glowStrong)"/>
 
-          <!-- Floating UI chips -->
-          <div class="float-chip chip-top">
-            <span class="chip-dot"></span>
-            <span>أنظمة نشطة</span>
-            <strong>50+</strong>
-          </div>
-          <div class="float-chip chip-bottom">
-            <span class="chip-dot chip-green"></span>
-            <span>عميل راضٍ</span>
-            <strong>100+</strong>
-          </div>
+          <!-- === PLATFORM RING GLOW === -->
+          <ellipse cx="280" cy="295" rx="110" ry="28" fill="none" stroke="#8B5CF6" stroke-width="1.5" opacity="0.4" filter="url(#glow)"/>
+          <ellipse cx="280" cy="295" rx="80"  ry="20" fill="none" stroke="#7C3AED" stroke-width="0.8" opacity="0.3"/>
+
+          <!-- === SIGNAL LINES === -->
+          <line x1="280" y1="121" x2="180" y2="70"  stroke="#8B5CF6" stroke-width="0.8" opacity="0.3" stroke-dasharray="5,5"/>
+          <line x1="330" y1="146" x2="400" y2="100" stroke="#6D28D9" stroke-width="0.8" opacity="0.3" stroke-dasharray="5,5"/>
+          <line x1="230" y1="256" x2="140" y2="290" stroke="#8B5CF6" stroke-width="0.6" opacity="0.2" stroke-dasharray="4,6"/>
+
+          <!-- === FLOATING PARTICLES === -->
+          <circle cx="148" cy="150" r="2.5" fill="#C084FC" opacity="0.9" filter="url(#glow)"/>
+          <circle cx="420" cy="140" r="2"   fill="#00D4FF" opacity="0.8" filter="url(#glow)"/>
+          <circle cx="460" cy="210" r="2.8" fill="#A855F7" opacity="0.7" filter="url(#glow)"/>
+          <circle cx="105" cy="220" r="2"   fill="#00D4FF" opacity="0.7" filter="url(#glow)"/>
+          <circle cx="95"  cy="310" r="1.8" fill="#8B5CF6" opacity="0.6" filter="url(#glow)"/>
+          <circle cx="460" cy="320" r="2.2" fill="#C084FC" opacity="0.6" filter="url(#glow)"/>
+          <circle cx="190" cy="95"  r="1.5" fill="#00D4FF" opacity="0.7"/>
+          <circle cx="380" cy="90"  r="1.5" fill="#A855F7" opacity="0.7"/>
+          <circle cx="445" cy="265" r="1.5" fill="#00D4FF" opacity="0.5"/>
+        </svg>
+
+        <!-- Floating UI chips -->
+        <div class="chip chip-1">
+          <span class="chip-dot"></span>
+          <span>أنظمة نشطة</span>
+          <strong>50+</strong>
+        </div>
+        <div class="chip chip-2">
+          <span class="chip-dot green"></span>
+          <span>عميل راضٍ</span>
+          <strong>100+</strong>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== Steps Section ===== -->
-  <section class="steps-section" id="how">
-    <div class="steps-container">
-      <h2 class="steps-title">حياة أسهل مع أنظمة ZAWAN</h2>
-
+  <!-- ======= STEPS ======= -->
+  <section class="steps">
+    <div class="steps-inner">
+      <h2 class="steps-h2">حياة أسهل مع أنظمة ZAWAN</h2>
       <div class="steps-row">
 
-        <!-- Step 01 -->
         <div class="step-card">
-          <div class="step-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <div class="step-ico">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.4 1.11 2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           </div>
-          <div class="step-body">
-            <h3 class="step-title">تواصل معنا</h3>
-            <p class="step-desc">أخبرنا عن احتياجاتك</p>
-          </div>
-          <div class="step-arrow">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-          <span class="step-num">01</span>
+          <h3>تواصل معنا</h3>
+          <p>أخبرنا عن احتياجاتك</p>
+          <div class="step-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <span class="step-n">01</span>
         </div>
 
-        <!-- Step 02 -->
         <div class="step-card">
-          <div class="step-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+          <div class="step-ico">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
           </div>
-          <div class="step-body">
-            <h3 class="step-title">اختيار وتسليم</h3>
-            <p class="step-desc">نختار ونسلم النظام</p>
-          </div>
-          <div class="step-arrow">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-          <span class="step-num">02</span>
+          <h3>اختيار وتسليم</h3>
+          <p>نختار ونسلم النظام</p>
+          <div class="step-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <span class="step-n">02</span>
         </div>
 
-        <!-- Step 03 -->
         <div class="step-card">
-          <div class="step-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          <div class="step-ico">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
           </div>
-          <div class="step-body">
-            <h3 class="step-title">تصميم وتطوير</h3>
-            <p class="step-desc">نطور بطلب المخصص</p>
-          </div>
-          <div class="step-arrow">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-          <span class="step-num">03</span>
+          <h3>تصميم وتطوير</h3>
+          <p>نطور بطلب المخصص</p>
+          <div class="step-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <span class="step-n">03</span>
         </div>
 
-        <!-- Step 04 -->
         <div class="step-card">
-          <div class="step-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <div class="step-ico">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           </div>
-          <div class="step-body">
-            <h3 class="step-title">تحليل المتطلبات</h3>
-            <p class="step-desc">نحلل احتياجات عملك</p>
-          </div>
-          <div class="step-arrow">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-          <span class="step-num">04</span>
+          <h3>تحليل المتطلبات</h3>
+          <p>نحلل احتياجات عملك</p>
+          <div class="step-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <span class="step-n">04</span>
         </div>
 
-        <!-- Step 05 -->
         <div class="step-card">
-          <div class="step-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div class="step-ico">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <div class="step-body">
-            <h3 class="step-title">دعم وتطوير</h3>
-            <p class="step-desc">نستمر بدعمك وتطوير</p>
-          </div>
-          <span class="step-num">05</span>
+          <h3>دعم وتطوير</h3>
+          <p>نستمر بدعمك وتطوير</p>
+          <span class="step-n">05</span>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- JS -->
   <script src="assets/js/firebase.js" defer></script>
   <script src="assets/js/translations.js" defer></script>
   <script src="assets/js/main.js" defer></script>
