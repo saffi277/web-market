@@ -1284,3 +1284,763 @@ section { padding: 5rem 0; }
   .search-wrap input { width: 100%; }
   .products-controls { flex-direction: column; align-items: stretch; }
 }
+
+/* ============================================================
+   ZAWAN Redesign — Dark Purple Brand Identity
+   Arabic RTL-first, English LTR support
+   ============================================================ */
+
+/* ---------- Arabic Font & RTL Layout ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+
+:root {
+  --zawan-primary:       #7C3AED;
+  --zawan-primary-light: #9D5CF6;
+  --zawan-primary-dark:  #5B21B6;
+  --zawan-accent:        #A78BFA;
+  --zawan-bg:            #0A0A1A;
+  --zawan-bg2:           #0D0D20;
+  --zawan-card:          #11112A;
+  --zawan-border:        rgba(124, 58, 237, 0.2);
+  --zawan-glow:          0 0 40px rgba(124, 58, 237, 0.4);
+  --zawan-glow-soft:     0 0 80px rgba(124, 58, 237, 0.15);
+  --zawan-gradient:      linear-gradient(135deg, #7C3AED, #A78BFA);
+  --zawan-gradient-hero: linear-gradient(135deg, #4C1D95, #7C3AED 50%, #9D5CF6);
+  --font-arabic:         'Tajawal', 'Space Grotesk', sans-serif;
+}
+
+/* Override base bg for ZAWAN dark theme */
+.rtl-layout {
+  background: var(--zawan-bg);
+  font-family: var(--font-arabic);
+  direction: rtl;
+}
+
+/* Gradient text now uses purple */
+.rtl-layout .gradient-text {
+  background: var(--zawan-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---------- ZAWAN Navbar ---------- */
+.zawan-navbar {
+  background: transparent;
+}
+.zawan-navbar.scrolled {
+  background: rgba(10, 10, 26, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--zawan-border);
+  box-shadow: 0 1px 0 var(--zawan-border);
+}
+
+.zawan-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  direction: rtl;
+}
+
+.zawan-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-arabic);
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+.zawan-brand-icon {
+  background: var(--zawan-gradient);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+  border-radius: 10px;
+}
+.zawan-brand .brand-name {
+  background: var(--zawan-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.zawan-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  direction: rtl;
+}
+.zawan-nav-links .nav-link {
+  font-family: var(--font-arabic);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease;
+}
+.zawan-nav-links .nav-link::after {
+  background: var(--zawan-gradient);
+}
+.zawan-nav-links .nav-link:hover,
+.zawan-nav-links .nav-link.active {
+  color: #fff;
+}
+
+.zawan-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-direction: row-reverse;
+}
+
+.zawan-cta-btn {
+  background: var(--zawan-gradient) !important;
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4) !important;
+  font-family: var(--font-arabic) !important;
+  font-weight: 700 !important;
+  border-radius: 10px !important;
+}
+.zawan-cta-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.6) !important;
+}
+
+/* ---------- ZAWAN Hero ---------- */
+.zawan-hero {
+  background: var(--zawan-bg);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Override glow orbs to purple */
+.zawan-hero .hero-glow-1 {
+  background: var(--zawan-primary);
+  opacity: 0.2;
+  width: 700px;
+  height: 700px;
+  top: -250px;
+  right: -200px;
+  left: auto;
+}
+.zawan-hero .hero-glow-2 {
+  background: #4C1D95;
+  opacity: 0.15;
+  bottom: -150px;
+  left: -100px;
+  right: auto;
+}
+.zawan-glow-orb-3 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: var(--zawan-primary);
+  border-radius: 50%;
+  filter: blur(150px);
+  opacity: 0.1;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: glow-drift2 12s ease-in-out infinite;
+}
+
+.zawan-hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  direction: rtl;
+}
+
+.zawan-hero-badge {
+  background: rgba(124, 58, 237, 0.12);
+  border: 1px solid rgba(124, 58, 237, 0.35);
+  color: var(--zawan-accent);
+  font-family: var(--font-arabic);
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 100px;
+  margin-bottom: 1.75rem;
+  animation: fade-up 0.6s ease both;
+}
+
+.zawan-hero-title {
+  font-family: var(--font-arabic);
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #fff;
+  animation: fade-up 0.7s ease 0.1s both;
+  direction: rtl;
+}
+
+.zawan-hero-subtitle {
+  font-family: var(--font-arabic);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  background: var(--zawan-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.25rem;
+  animation: fade-up 0.7s ease 0.2s both;
+}
+
+.zawan-hero-desc {
+  font-family: var(--font-arabic);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 520px;
+  margin-bottom: 2.25rem;
+  animation: fade-up 0.7s ease 0.3s both;
+  direction: rtl;
+}
+
+.zawan-hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  animation: fade-up 0.7s ease 0.4s both;
+  direction: rtl;
+}
+
+/* Override button styles for ZAWAN */
+.rtl-layout .btn-primary {
+  background: var(--zawan-gradient);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+  font-family: var(--font-arabic);
+  font-weight: 700;
+  border-radius: 10px;
+}
+.rtl-layout .btn-primary:hover {
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.6);
+}
+.rtl-layout .btn-outline {
+  border-color: rgba(124, 58, 237, 0.4);
+  color: var(--zawan-accent);
+  font-family: var(--font-arabic);
+  font-weight: 600;
+  border-radius: 10px;
+}
+.rtl-layout .btn-outline:hover {
+  border-color: var(--zawan-primary);
+  background: rgba(124, 58, 237, 0.1);
+  color: #fff;
+}
+
+/* ---------- Z Cube 3D Visual ---------- */
+.zawan-hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 400px;
+  animation: fade-in 1s ease 0.3s both;
+}
+
+.zawan-z-cube-wrap {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zawan-z-cube {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: cube-rotate 10s linear infinite;
+}
+
+@keyframes cube-rotate {
+  0%   { transform: rotateX(15deg) rotateY(0deg); }
+  100% { transform: rotateX(15deg) rotateY(360deg); }
+}
+
+.z-face {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border: 2px solid rgba(124, 58, 237, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-arabic);
+  font-size: 5rem;
+  font-weight: 900;
+  color: rgba(167, 139, 250, 0.9);
+  text-shadow: 0 0 30px rgba(124, 58, 237, 1), 0 0 60px rgba(124, 58, 237, 0.5);
+  backface-visibility: visible;
+}
+
+.z-face-front  { transform: translateZ(80px);  background: rgba(124, 58, 237, 0.08); }
+.z-face-back   { transform: rotateY(180deg) translateZ(80px); background: rgba(124, 58, 237, 0.05); }
+.z-face-left   { transform: rotateY(-90deg) translateZ(80px); background: rgba(76, 29, 149, 0.1); }
+.z-face-right  { transform: rotateY(90deg) translateZ(80px);  background: rgba(76, 29, 149, 0.1); }
+.z-face-top    { transform: rotateX(90deg) translateZ(80px);  background: rgba(124, 58, 237, 0.06); }
+.z-face-bottom { transform: rotateX(-90deg) translateZ(80px); background: rgba(124, 58, 237, 0.06); }
+
+.zawan-z-glow {
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.35) 0%, transparent 70%);
+  animation: glow-pulse 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50%       { transform: scale(1.15); opacity: 1; }
+}
+
+.zawan-z-rings {
+  position: absolute;
+  inset: -40px;
+  pointer-events: none;
+}
+.z-ring {
+  position: absolute;
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring-pulse 3s ease-in-out infinite;
+}
+.z-ring-1 { width: 240px; height: 240px; animation-delay: 0s; }
+.z-ring-2 { width: 300px; height: 300px; animation-delay: 0.5s; border-color: rgba(124, 58, 237, 0.15); }
+.z-ring-3 { width: 360px; height: 360px; animation-delay: 1s;   border-color: rgba(124, 58, 237, 0.08); }
+
+@keyframes ring-pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+  50%       { transform: translate(-50%, -50%) scale(1.05); opacity: 0.4; }
+}
+
+/* ---------- ZAWAN Stats ---------- */
+.zawan-stats {
+  background: var(--zawan-bg2);
+  border-top: 1px solid var(--zawan-border);
+  border-bottom: 1px solid var(--zawan-border);
+}
+.zawan-stats .stat-num {
+  background: var(--zawan-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.zawan-stats .stat-label {
+  font-family: var(--font-arabic);
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ---------- ZAWAN Steps Section ---------- */
+.zawan-steps-section {
+  padding: 5rem 0;
+  background: var(--zawan-bg);
+  position: relative;
+  overflow: hidden;
+}
+.zawan-steps-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.zawan-section-title {
+  font-family: var(--font-arabic);
+  font-weight: 800;
+  direction: rtl;
+}
+.zawan-section-tag {
+  background: rgba(124, 58, 237, 0.12);
+  border-color: rgba(124, 58, 237, 0.3);
+  color: var(--zawan-accent);
+  font-family: var(--font-arabic);
+}
+.zawan-section-subtitle {
+  font-family: var(--font-arabic);
+  color: rgba(255, 255, 255, 0.6);
+  direction: rtl;
+  text-align: center;
+  margin-inline: auto;
+}
+
+.zawan-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  direction: rtl;
+}
+
+.zawan-step-card {
+  background: var(--zawan-card);
+  border: 1px solid var(--zawan-border);
+  border-radius: 18px;
+  padding: 2rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+.zawan-step-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--zawan-gradient);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.zawan-step-card:hover {
+  border-color: var(--zawan-primary);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.3), var(--zawan-glow);
+}
+.zawan-step-card:hover::before {
+  opacity: 0.06;
+}
+
+.zawan-step-num {
+  font-family: var(--font-arabic);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--zawan-primary);
+  background: rgba(124, 58, 237, 0.12);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  padding: 0.25rem 0.7rem;
+  border-radius: 100px;
+  letter-spacing: 0.05em;
+}
+
+.zawan-step-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(124, 58, 237, 0.12);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--zawan-accent);
+  transition: all 0.35s ease;
+  position: relative;
+  z-index: 1;
+}
+.zawan-step-icon svg {
+  width: 26px;
+  height: 26px;
+}
+.zawan-step-card:hover .zawan-step-icon {
+  background: rgba(124, 58, 237, 0.25);
+  border-color: var(--zawan-primary);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+  color: #fff;
+}
+
+.zawan-step-title {
+  font-family: var(--font-arabic);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- ZAWAN Products ---------- */
+.zawan-products-section {
+  background: var(--zawan-bg2);
+}
+
+.zawan-products-grid {
+  direction: rtl;
+}
+
+.zawan-product-card {
+  background: var(--zawan-card);
+  border-color: var(--zawan-border);
+  direction: rtl;
+}
+.zawan-product-card::before {
+  background: var(--zawan-gradient);
+}
+.zawan-product-card:hover {
+  border-color: var(--zawan-primary);
+  box-shadow: 0 0 40px rgba(124, 58, 237, 0.25), 0 8px 32px rgba(0,0,0,0.4);
+}
+.zawan-product-card .pc-icon {
+  border-radius: 12px;
+}
+.zawan-product-card .pc-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+}
+.zawan-product-card .pc-icon.purple { color: #A78BFA; }
+.zawan-product-card .pc-icon.cyan   { color: #67E8F9; }
+.zawan-product-card .pc-icon.green  { color: #6EE7B7; }
+.zawan-product-card .pc-icon.orange { color: #FCD34D; }
+.zawan-product-card .pc-icon.pink   { color: #F9A8D4; }
+.zawan-product-card .pc-icon.blue   { color: #93C5FD; }
+
+.zawan-product-card .pc-title {
+  font-family: var(--font-arabic);
+  font-weight: 700;
+  color: #fff;
+}
+.zawan-product-card .pc-desc {
+  font-family: var(--font-arabic);
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+.zawan-product-card .tag {
+  background: rgba(124, 58, 237, 0.1);
+  color: var(--zawan-accent);
+  border-color: rgba(124, 58, 237, 0.2);
+}
+.zawan-product-card .tag.cyan {
+  background: rgba(103, 232, 249, 0.1);
+  color: #67E8F9;
+  border-color: rgba(103, 232, 249, 0.2);
+}
+.zawan-product-card .pc-price {
+  color: var(--zawan-accent);
+  font-family: 'Space Grotesk', sans-serif;
+}
+.zawan-product-card .pc-footer {
+  border-color: var(--zawan-border);
+}
+
+/* ---------- ZAWAN Services ---------- */
+.zawan-services-section {
+  background: var(--zawan-bg);
+}
+.zawan-service-card {
+  background: var(--zawan-card);
+  border-color: var(--zawan-border);
+  direction: rtl;
+}
+.zawan-service-card:hover {
+  border-color: var(--zawan-primary);
+  box-shadow: 0 0 40px rgba(124, 58, 237, 0.25);
+}
+.zawan-service-card .sc-icon {
+  background: rgba(124, 58, 237, 0.12);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  color: var(--zawan-accent);
+}
+.zawan-service-card .sc-icon svg {
+  width: 28px; height: 28px;
+}
+.zawan-service-card .sc-title {
+  font-family: var(--font-arabic);
+  font-weight: 700;
+  color: #fff;
+}
+.zawan-service-card .sc-desc {
+  font-family: var(--font-arabic);
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+}
+.zawan-service-card .tag {
+  background: rgba(124, 58, 237, 0.1);
+  color: var(--zawan-accent);
+  border-color: rgba(124, 58, 237, 0.2);
+}
+.zawan-service-card .tag.cyan {
+  background: rgba(103, 232, 249, 0.1);
+  color: #67E8F9;
+  border-color: rgba(103, 232, 249, 0.2);
+}
+
+/* ---------- ZAWAN Testimonials ---------- */
+.zawan-testimonials {
+  background: var(--zawan-bg2);
+}
+.zawan-testi-card {
+  background: var(--zawan-card);
+  border-color: var(--zawan-border);
+  direction: rtl;
+}
+.zawan-testi-card:hover {
+  border-color: var(--zawan-primary);
+  box-shadow: 0 0 40px rgba(124, 58, 237, 0.2);
+}
+.zawan-testi-card .testi-text {
+  font-family: var(--font-arabic);
+  color: rgba(255,255,255,0.7);
+  line-height: 1.8;
+  font-style: normal;
+}
+.zawan-testi-card .testi-name {
+  font-family: var(--font-arabic);
+  color: #fff;
+}
+.zawan-testi-card .testi-role {
+  color: rgba(255,255,255,0.5);
+}
+.zawan-testi-card .testi-avatar {
+  background: var(--zawan-gradient);
+}
+
+/* ---------- ZAWAN CTA ---------- */
+.zawan-cta-section {
+  background: var(--zawan-bg);
+}
+.zawan-cta-inner {
+  background: linear-gradient(135deg, #4C1D95, #7C3AED 60%, #9D5CF6);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.zawan-cta-inner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.zawan-cta-inner .cta-title,
+.zawan-cta-inner .cta-desc {
+  font-family: var(--font-arabic);
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- ZAWAN Footer ---------- */
+.zawan-footer {
+  background: var(--zawan-bg2);
+  border-color: var(--zawan-border);
+  direction: rtl;
+}
+.zawan-footer .footer-col h4,
+.zawan-footer .footer-col a,
+.zawan-footer .footer-desc,
+.zawan-footer .footer-newsletter p,
+.zawan-footer .footer-bottom span {
+  font-family: var(--font-arabic);
+}
+.zawan-footer .footer-col a:hover {
+  color: var(--zawan-accent);
+}
+.zawan-footer .social-link {
+  background: rgba(124, 58, 237, 0.08);
+  border-color: var(--zawan-border);
+  color: rgba(255,255,255,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.zawan-footer .social-link:hover {
+  background: var(--zawan-primary);
+  border-color: var(--zawan-primary);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.5);
+  transform: translateY(-2px);
+}
+.zawan-footer .newsletter-form input {
+  background: rgba(124, 58, 237, 0.05);
+  border-color: var(--zawan-border);
+  color: #fff;
+  font-family: var(--font-arabic);
+  direction: rtl;
+}
+.zawan-footer .newsletter-form input:focus {
+  border-color: var(--zawan-primary);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+.zawan-footer .footer-bottom {
+  border-color: var(--zawan-border);
+  color: rgba(255,255,255,0.4);
+}
+
+/* ---------- ZAWAN Loader ---------- */
+.zawan-loader-logo {
+  background: var(--zawan-gradient) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+#loading-screen {
+  background: var(--zawan-bg);
+}
+.loader-bar::after {
+  background: var(--zawan-gradient);
+}
+
+/* ---------- Perspective wrapper for 3D cube ---------- */
+.zawan-z-cube-wrap {
+  perspective: 600px;
+}
+
+/* ---------- RTL Responsive ---------- */
+@media (max-width: 1100px) {
+  .zawan-steps-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .zawan-hero-content {
+    grid-template-columns: 1fr;
+    text-align: right;
+  }
+  .zawan-hero-visual {
+    display: none;
+  }
+  .zawan-hero-actions {
+    justify-content: flex-end;
+  }
+  .zawan-hero-desc {
+    max-width: 100%;
+  }
+  .zawan-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .zawan-nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0; right: 0;
+    background: rgba(10, 10, 26, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--zawan-border);
+    padding: 1.5rem;
+    flex-direction: column;
+    gap: 1.25rem;
+    display: none;
+  }
+  .zawan-nav-links.open {
+    display: flex;
+  }
+  .zawan-nav-actions {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 480px) {
+  .zawan-steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .zawan-hero-title {
+    font-size: 2.2rem;
+  }
+}
