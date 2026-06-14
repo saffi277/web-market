@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" dir="ltr" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ZAWN Products — Browse our full catalog of software systems, apps, and platforms." />
-  <title>Products | ZAWN</title>
+  <meta name="description" content="ZAWAN Products — Browse our full catalog of software systems, apps, and platforms." />
+  <title>Products | ZAWAN</title>
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <!-- Loading Screen -->
   <div id="loading-screen" aria-hidden="true">
     <div class="loader-inner">
-      <div class="loader-logo">ZAWN</div>
+      <div class="loader-logo">ZAWAN</div>
       <div class="loader-bar"></div>
     </div>
   </div>
@@ -24,21 +25,22 @@
     <div class="container">
       <div class="nav-inner">
 
-        <a href="../index.html" class="nav-brand" aria-label="ZAWN Home">
-          <div class="brand-icon" aria-hidden="true">Z</div>
-          <span class="brand-name">ZAWN</span>
+        <a href="../index.html" class="nav-brand" aria-label="ZAWAN Home">
+          
+          <span class="brand-name">ZAWAN</span>
         </a>
 
         <ul class="nav-links" role="list">
-          <li><a href="../index.html" class="nav-link">Home</a></li>
-          <li><a href="products.html" class="nav-link active">Products</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="../index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+          <li><a href="products.html" class="nav-link active" data-i18n="nav_products">Products</a></li>
+          <li><a href="services.html" class="nav-link" data-i18n="nav_services">Services</a></li>
+          <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
         </ul>
 
         <div class="nav-actions">
+          <button class="btn-lang" aria-label="Switch language">AR</button>
           <button class="btn-theme" aria-label="Toggle theme">☀️</button>
-          <a href="contact.html" class="btn btn-primary btn-sm">Get Started</a>
+          <a href="contact.html" class="btn btn-primary btn-sm" data-i18n="nav_cta">Get Started</a>
           <button class="hamburger" aria-label="Toggle mobile menu">
             <span></span><span></span><span></span>
           </button>
@@ -335,8 +337,8 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="../index.html" class="nav-brand">
-            <div class="brand-icon" aria-hidden="true">Z</div>
-            <span class="brand-name">ZAWN</span>
+            
+            <span class="brand-name">ZAWAN</span>
           </a>
           <p class="footer-desc">Engineering the Future, One Line at a Time.</p>
           <div class="social-links" aria-label="Social media links">
@@ -374,12 +376,81 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 ZAWN Programming Group. All rights reserved.</span>
-        <span>Built with ❤️ by ZAWN</span>
+        <span>© 2026 ZAWAN Programming Group. All rights reserved.</span>
+        <span>Built with ❤️ by ZAWAN</span>
       </div>
     </div>
   </footer>
 
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="../assets/js/firebase.js"></script>
+  <script src="../assets/js/translations.js"></script>
   <script src="../assets/js/main.js"></script>
+  <script>
+    (function () {
+      // Only replace with Firestore data if Firebase is configured
+      if (typeof firebaseConfig === 'undefined' || firebaseConfig.apiKey === 'YOUR_API_KEY') return;
+
+      var grid = document.getElementById('products-grid');
+      if (!grid) return;
+
+      db.collection('products').orderBy('createdAt', 'desc').get()
+        .then(function (snap) {
+          if (snap.empty) return; // keep static fallback cards
+
+          grid.innerHTML = snap.docs.map(function (doc, i) {
+            var p = doc.data();
+            var tags = (p.tags || '').split(',').map(function (t) { return t.trim(); }).filter(Boolean);
+            var tagHtml = tags.map(function (t, j) {
+              return '<span class="tag' + (j === tags.length - 1 ? ' cyan' : '') + '">' + t + '</span>';
+            }).join('');
+            var delay = (i % 3) * 60;
+            return '<article class="product-card-full" data-category="' + (p.category || 'systems') + '" data-aos data-aos-delay="' + delay + '">' +
+              '<div class="pcf-img">' + (p.icon || '📦') + '<span class="pcf-badge">' + (p.category || '') + '</span></div>' +
+              '<div class="pcf-body">' +
+                '<h2 class="pcf-title">' + (p.nameEn || '') + '</h2>' +
+                '<p class="pcf-desc">' + (p.descEn || '') + '</p>' +
+                '<div class="pc-tags">' + tagHtml + '</div>' +
+              '</div>' +
+              '<div class="pcf-footer">' +
+                '<span class="pcf-price">$' + (p.price || 0) + '</span>' +
+                '<a href="contact.html" class="btn btn-primary btn-sm">Buy / Contact</a>' +
+              '</div>' +
+              '</article>';
+          }).join('');
+
+          // Re-run filter tabs (defined in main.js) after dynamic render
+          var filterBtns = document.querySelectorAll('.filter-btn');
+          var activeFilter = 'all';
+          filterBtns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              filterBtns.forEach(function (b) { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+              btn.classList.add('active');
+              btn.setAttribute('aria-selected', 'true');
+              activeFilter = btn.dataset.filter;
+              applyFilter();
+            });
+          });
+
+          function applyFilter() {
+            var search = (document.getElementById('product-search') || {}).value || '';
+            search = search.toLowerCase();
+            document.querySelectorAll('.product-card-full').forEach(function (card) {
+              var cat = card.dataset.category || '';
+              var txt = card.textContent.toLowerCase();
+              var matchCat = activeFilter === 'all' || cat === activeFilter;
+              var matchSearch = !search || txt.includes(search);
+              card.style.display = (matchCat && matchSearch) ? '' : 'none';
+            });
+          }
+
+          var searchInput = document.getElementById('product-search');
+          if (searchInput) { searchInput.addEventListener('input', applyFilter); }
+        })
+        .catch(function (err) { console.warn('Firestore products error:', err); });
+    })();
+  </script>
 </body>
 </html>

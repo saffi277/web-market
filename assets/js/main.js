@@ -304,24 +304,81 @@
   }
 })();
 
-/* ---------- Contact Form ---------- */
+/* ---------- Form Validation ---------- */
 (function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
+  function showError(group, msg) {
+    group.classList.add('error');
+    group.classList.remove('success');
+    let err = group.querySelector('.field-error');
+    if (!err) { err = document.createElement('div'); err.className = 'field-error'; group.appendChild(err); }
+    err.textContent = msg;
+  }
+
+  function showSuccess(group) {
+    group.classList.remove('error');
+    group.classList.add('success');
+    const err = group.querySelector('.field-error');
+    if (err) err.textContent = '';
+  }
+
+  function validateField(input) {
+    const group = input.closest('.form-group');
+    const lang = document.documentElement.lang || 'en';
+    const t = typeof TRANSLATIONS !== 'undefined' ? TRANSLATIONS[lang] : null;
+    const id = input.id;
+    const val = input.value.trim();
+
+    if (id === 'contact-name') {
+      if (val.length < 3 || !/^[؀-ۿa-zA-Z\s]+$/.test(val)) {
+        showError(group, t ? t.err_name : 'Name must be at least 3 characters (letters only)'); return false;
+      }
+    } else if (id === 'contact-email') {
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+        showError(group, t ? t.err_email : 'Please enter a valid email address'); return false;
+      }
+    } else if (id === 'contact-phone' && val) {
+      if (!/^[\d\s\+\-\(\)]{7,}$/.test(val)) {
+        showError(group, t ? t.err_phone : 'Please enter a valid phone number'); return false;
+      }
+    } else if (id === 'contact-service') {
+      if (!val) { showError(group, t ? t.err_service : 'Please select a service'); return false; }
+    } else if (id === 'contact-message') {
+      if (val.length < 20) { showError(group, t ? t.err_message : 'Message must be at least 20 characters'); return false; }
+    }
+    if (group) showSuccess(group);
+    return true;
+  }
+
+  form.querySelectorAll('input,select,textarea').forEach(input => {
+    input.addEventListener('blur', () => validateField(input));
+    input.addEventListener('input', () => { if (input.closest('.form-group')?.classList.contains('error')) validateField(input); });
+  });
+
   form.addEventListener('submit', e => {
     e.preventDefault();
-    const btn  = form.querySelector('[type="submit"]');
+    const fields = ['contact-name','contact-email','contact-service','contact-message'];
+    let valid = true;
+    fields.forEach(id => { const el = form.querySelector('#'+id); if (el && !validateField(el)) valid = false; });
+    const phone = form.querySelector('#contact-phone');
+    if (phone && phone.value.trim()) validateField(phone);
+
+    if (!valid) {
+      form.classList.add('shake');
+      setTimeout(() => form.classList.remove('shake'), 400);
+      return;
+    }
+
+    const btn = form.querySelector('[type="submit"]');
     const orig = btn.textContent;
-    btn.textContent = '✓ Message Sent!';
-    btn.disabled    = true;
+    const lang = document.documentElement.lang || 'en';
+    const t = typeof TRANSLATIONS !== 'undefined' ? TRANSLATIONS[lang] : null;
+    btn.textContent = t ? t.submit_success : '✓ Message Sent!';
+    btn.disabled = true;
     btn.style.background = 'linear-gradient(135deg,#00D4FF,#00A0CC)';
-    setTimeout(() => {
-      btn.textContent = orig;
-      btn.disabled    = false;
-      btn.style.background = '';
-      form.reset();
-    }, 3200);
+    setTimeout(() => { btn.textContent = orig; btn.disabled = false; btn.style.background = ''; form.reset(); form.querySelectorAll('.form-group').forEach(g => { g.classList.remove('success','error'); }); }, 3200);
   });
 })();
 
@@ -339,6 +396,7 @@
     });
   });
 })();
+
 
 /* ---------- Smooth page transitions ---------- */
 (function initPageLinks() {

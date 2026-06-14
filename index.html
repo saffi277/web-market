@@ -3,543 +3,326 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ZAWAN — من فكرة إلى نظام متكامل. نقدم أنظمة برمجية متكاملة تلبي احتياجات عملك." />
   <title>ZAWAN | أنظمة برمجية متكاملة</title>
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet" />
 </head>
-<body class="rtl-layout">
+<body>
 
-  <!-- Loading Screen -->
-  <div id="loading-screen" aria-hidden="true">
+  <!-- ===== Loading ===== -->
+  <div id="loading-screen">
     <div class="loader-inner">
-      <div class="loader-logo zawan-loader-logo">ZAWAN</div>
-      <div class="loader-bar"></div>
+      <div class="loader-z">Z</div>
+      <div class="loader-bar"><div class="loader-bar-fill"></div></div>
     </div>
   </div>
 
-  <!-- ======== NAVBAR ======== -->
-  <nav class="navbar zawan-navbar" role="navigation" aria-label="Main navigation">
-    <div class="container">
-      <div class="nav-inner zawan-nav-inner">
-
-        <!-- Brand (right side in RTL) -->
-        <a href="index.html" class="nav-brand zawan-brand" aria-label="ZAWAN Home">
-          <div class="brand-icon zawan-brand-icon" aria-hidden="true">Z</div>
-          <span class="brand-name">ZAWAN</span>
-        </a>
-
-        <!-- Navigation links (RTL order) -->
-        <ul class="nav-links zawan-nav-links" role="list">
-          <li><a href="index.html" class="nav-link active" data-i18n="nav.home">الرئيسية</a></li>
-          <li><a href="pages/products.html" class="nav-link" data-i18n="nav.systems">الأنظمة</a></li>
-          <li><a href="#projects" class="nav-link" data-i18n="nav.projects">المشاريع</a></li>
-          <li><a href="#pricing" class="nav-link" data-i18n="nav.pricing">الأسعار</a></li>
-          <li><a href="#about" class="nav-link" data-i18n="nav.about">من نحن</a></li>
-          <li><a href="#blog" class="nav-link" data-i18n="nav.blog">المدونة</a></li>
-          <li><a href="pages/contact.html" class="nav-link" data-i18n="nav.contact">تواصل معنا</a></li>
-        </ul>
-
-        <!-- Actions (left side in RTL) -->
-        <div class="nav-actions zawan-nav-actions">
-          <a href="pages/products.html" class="btn btn-primary btn-sm zawan-cta-btn" data-i18n="nav.cta">جرب الأنظمة</a>
-          <button class="btn-theme" aria-label="Toggle theme">☀️</button>
-          <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-
-      </div>
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar">
+    <div class="nav-wrap">
+      <div class="nav-counter">04</div>
+      <a href="index.html" class="nav-logo">
+        <span class="logo-box">Z</span>
+        <span class="logo-name">ZAWAN</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html"          class="nav-link active">الرئيسية</a></li>
+        <li><a href="pages/products.html" class="nav-link">الأنظمة</a></li>
+        <li><a href="#projects"           class="nav-link">المشاريع</a></li>
+        <li><a href="#pricing"            class="nav-link">الأسعار</a></li>
+        <li><a href="#about"              class="nav-link">من نحن</a></li>
+        <li><a href="#blog"               class="nav-link">المدونة</a></li>
+        <li><a href="pages/contact.html"  class="nav-link">تواصل معنا</a></li>
+      </ul>
+      <a href="pages/products.html" class="btn-cta">جرب الأنظمة</a>
+      <button class="hamburger"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
-  <!-- ======== HERO ======== -->
-  <section class="hero zawan-hero" id="hero" aria-label="Hero">
-    <canvas id="hero-canvas" aria-hidden="true"></canvas>
-    <!-- Purple glow orbs -->
-    <div class="hero-glow-1" aria-hidden="true"></div>
-    <div class="hero-glow-2" aria-hidden="true"></div>
-    <div class="zawan-glow-orb-3" aria-hidden="true"></div>
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-grid"></div>
 
-    <div class="container">
-      <div class="hero-content zawan-hero-content">
+    <!-- LTR wrapper: city LEFT, text RIGHT -->
+    <div class="hero-wrap">
 
-        <!-- Right side: Text (RTL — this is the primary/first column) -->
-        <div class="hero-text zawan-hero-text">
-          <div class="hero-badge zawan-hero-badge" data-i18n="hero.badge">
-            <span class="badge-dot" aria-hidden="true"></span>
-            حلول برمجية متكاملة
-          </div>
+      <!-- CITY (left column) -->
+      <div class="hero-scene">
+        <div class="scene-blob"></div>
 
-          <h1 class="hero-title zawan-hero-title" data-i18n="hero.title">
-            من فكرة إلى<br />
-            <span class="gradient-text">نظام متكامل</span>
-          </h1>
+        <svg class="city-svg" viewBox="0 0 560 470" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ct" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#C084FC"/><stop offset="100%" stop-color="#8B5CF6"/>
+            </linearGradient>
+            <linearGradient id="cr" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#5B21B6"/><stop offset="100%" stop-color="#4C1D95"/>
+            </linearGradient>
+            <linearGradient id="cl" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#6D28D9"/><stop offset="100%" stop-color="#5B21B6"/>
+            </linearGradient>
+            <linearGradient id="zg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#F3E8FF"/><stop offset="100%" stop-color="#C084FC"/>
+            </linearGradient>
+            <linearGradient id="pt" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1e103a"/><stop offset="100%" stop-color="#120830"/>
+            </linearGradient>
+            <linearGradient id="br" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#1c0d40"/><stop offset="100%" stop-color="#0d0620"/>
+            </linearGradient>
+            <linearGradient id="bl" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#160a32"/><stop offset="100%" stop-color="#090418"/>
+            </linearGradient>
+            <linearGradient id="btop" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2a1258"/><stop offset="100%" stop-color="#1c0c40"/>
+            </linearGradient>
+            <filter id="gw" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="gs" x="-80%" y="-80%" width="260%" height="260%">
+              <feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="gf" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <radialGradient id="gg" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#5B21B6" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#5B21B6" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
 
-          <div class="zawan-hero-subtitle" data-i18n="hero.subtitle">
-            نحن نبرمج النجاح
-          </div>
+          <!-- Ground glow -->
+          <ellipse cx="280" cy="340" rx="230" ry="75" fill="url(#gg)"/>
 
-          <p class="hero-desc zawan-hero-desc" data-i18n="hero.desc">
-            نقدم أنظمة برمجية متكاملة تلبي احتياجات عملك وتساعدك على النمو والتوسع بثقة
-          </p>
+          <!-- Ground platform diamond -->
+          <polygon points="500,295 280,175 60,295 280,415" fill="url(#pt)" opacity="0.65"/>
+          <!-- Grid lines -->
+          <line x1="280" y1="175" x2="280" y2="415" stroke="#7C3AED" stroke-width="0.5" opacity="0.22"/>
+          <line x1="60"  y1="295" x2="500" y2="295" stroke="#7C3AED" stroke-width="0.5" opacity="0.22"/>
+          <line x1="170" y1="235" x2="390" y2="355" stroke="#7C3AED" stroke-width="0.5" opacity="0.18"/>
+          <line x1="390" y1="235" x2="170" y2="355" stroke="#7C3AED" stroke-width="0.5" opacity="0.18"/>
+          <line x1="225" y1="205" x2="335" y2="385" stroke="#7C3AED" stroke-width="0.4" opacity="0.14"/>
+          <line x1="335" y1="205" x2="225" y2="385" stroke="#7C3AED" stroke-width="0.4" opacity="0.14"/>
+          <!-- Platform border glow -->
+          <polygon points="500,295 280,175 60,295 280,415" fill="none" stroke="#8B5CF6" stroke-width="1.2" opacity="0.45" filter="url(#gw)"/>
 
-          <div class="hero-actions zawan-hero-actions">
-            <a href="pages/contact.html" class="btn btn-outline btn-lg" data-i18n="hero.btn.contact">تواصل معنا</a>
-            <a href="pages/products.html" class="btn btn-primary btn-lg" data-i18n="hero.btn.explore">استعرض الأنظمة</a>
-          </div>
+          <!-- === BUILDING A — far left tall === -->
+          <polygon points="255,238 255,62 205,37 205,213"  fill="url(#br)"/>
+          <polygon points="205,213 155,238 155,62  205,37"  fill="url(#bl)"/>
+          <polygon points="255,62  205,37  155,62  205,87"  fill="url(#btop)"/>
+          <line x1="205" y1="37" x2="205" y2="213" stroke="#7C3AED" stroke-width="0.8" opacity="0.55"/>
+          <!-- windows -->
+          <rect x="215" y="68"  width="7" height="9" rx="1" fill="#00D4FF" opacity="0.75" filter="url(#gf)"/>
+          <rect x="230" y="68"  width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.8"  filter="url(#gf)"/>
+          <rect x="244" y="70"  width="7" height="9" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="215" y="85"  width="7" height="9" rx="1" fill="#7C3AED" opacity="0.7"/>
+          <rect x="230" y="85"  width="7" height="9" rx="1" fill="#00D4FF" opacity="0.7"  filter="url(#gf)"/>
+          <rect x="244" y="87"  width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.6"/>
+          <rect x="215" y="102" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.65"/>
+          <rect x="230" y="102" width="7" height="9" rx="1" fill="#7C3AED" opacity="0.7"/>
+          <rect x="215" y="119" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.65"/>
+          <rect x="230" y="119" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="215" y="136" width="7" height="9" rx="1" fill="#7C3AED" opacity="0.6"/>
+          <rect x="215" y="153" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.55"/>
+          <rect x="215" y="170" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.55"/>
+          <rect x="163" y="70"  width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.55"/>
+          <rect x="178" y="70"  width="7" height="9" rx="1" fill="#00D4FF" opacity="0.5"/>
+          <rect x="163" y="87"  width="7" height="9" rx="1" fill="#7C3AED" opacity="0.55"/>
+          <rect x="163" y="104" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.5"/>
+          <rect x="163" y="121" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.5"/>
+
+          <!-- === BUILDING B — left medium === -->
+          <polygon points="230,300 230,190 180,165 180,275" fill="url(#br)"/>
+          <polygon points="180,275 130,300 130,190 180,165" fill="url(#bl)"/>
+          <polygon points="230,190 180,165 130,190 180,215" fill="url(#btop)"/>
+          <rect x="188" y="173" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.75" filter="url(#gf)"/>
+          <rect x="202" y="173" width="7" height="8" rx="1" fill="#7C3AED" opacity="0.7"/>
+          <rect x="217" y="177" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="188" y="188" width="7" height="8" rx="1" fill="#8B5CF6" opacity="0.7"/>
+          <rect x="202" y="188" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.65"/>
+          <rect x="188" y="203" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="202" y="203" width="7" height="8" rx="1" fill="#8B5CF6" opacity="0.6"/>
+          <rect x="188" y="218" width="7" height="8" rx="1" fill="#7C3AED" opacity="0.55"/>
+          <rect x="137" y="196" width="6" height="8" rx="1" fill="#8B5CF6" opacity="0.5"/>
+          <rect x="152" y="194" width="6" height="8" rx="1" fill="#00D4FF" opacity="0.5"/>
+          <rect x="137" y="210" width="6" height="8" rx="1" fill="#7C3AED" opacity="0.5"/>
+
+          <!-- === BUILDING C — far right tall === -->
+          <polygon points="355,338 405,363 405,187 355,162" fill="url(#br)"/>
+          <polygon points="355,338 355,162 305,187 305,363" fill="url(#bl)"/>
+          <polygon points="355,162 405,187 355,212 305,187" fill="url(#btop)"/>
+          <line x1="355" y1="162" x2="355" y2="338" stroke="#7C3AED" stroke-width="0.8" opacity="0.55"/>
+          <rect x="362" y="193" width="7" height="9" rx="1" fill="#7C3AED" opacity="0.75" filter="url(#gf)"/>
+          <rect x="376" y="193" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.7"  filter="url(#gf)"/>
+          <rect x="390" y="196" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.6"/>
+          <rect x="362" y="210" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.7"/>
+          <rect x="376" y="210" width="7" height="9" rx="1" fill="#7C3AED" opacity="0.65"/>
+          <rect x="390" y="213" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="362" y="227" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.65"/>
+          <rect x="376" y="227" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="362" y="244" width="7" height="9" rx="1" fill="#7C3AED" opacity="0.6"/>
+          <rect x="362" y="261" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.55"/>
+          <rect x="362" y="278" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.5"/>
+          <rect x="312" y="193" width="6" height="8" rx="1" fill="#8B5CF6" opacity="0.55"/>
+          <rect x="326" y="195" width="6" height="8" rx="1" fill="#00D4FF" opacity="0.5"/>
+          <rect x="312" y="210" width="6" height="8" rx="1" fill="#7C3AED" opacity="0.55"/>
+          <rect x="312" y="227" width="6" height="8" rx="1" fill="#00D4FF" opacity="0.5"/>
+          <rect x="312" y="244" width="6" height="8" rx="1" fill="#7C3AED" opacity="0.5"/>
+
+          <!-- === BUILDING D — right medium === -->
+          <polygon points="255,338 305,363 305,253 255,228" fill="url(#br)"/>
+          <polygon points="255,338 255,228 205,253 205,363" fill="url(#bl)"/>
+          <polygon points="255,228 305,253 255,278 205,253" fill="url(#btop)"/>
+          <rect x="262" y="235" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.7" filter="url(#gf)"/>
+          <rect x="276" y="238" width="7" height="8" rx="1" fill="#7C3AED" opacity="0.65"/>
+          <rect x="290" y="242" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="262" y="250" width="7" height="8" rx="1" fill="#8B5CF6" opacity="0.65"/>
+          <rect x="276" y="253" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="262" y="265" width="7" height="8" rx="1" fill="#7C3AED" opacity="0.6"/>
+          <rect x="262" y="280" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.55"/>
+          <rect x="212" y="258" width="6" height="8" rx="1" fill="#8B5CF6" opacity="0.5"/>
+          <rect x="226" y="255" width="6" height="8" rx="1" fill="#00D4FF" opacity="0.5"/>
+          <rect x="212" y="273" width="6" height="8" rx="1" fill="#7C3AED" opacity="0.5"/>
+
+          <!-- === BUILDING E — front left small === -->
+          <polygon points="230,325 180,300 180,234 230,259" fill="url(#br)"/>
+          <polygon points="180,300 130,325 130,259 180,234" fill="url(#bl)"/>
+          <polygon points="230,259 180,234 130,259 180,284" fill="url(#btop)"/>
+          <rect x="188" y="240" width="6" height="7" rx="1" fill="#00D4FF" opacity="0.65" filter="url(#gf)"/>
+          <rect x="202" y="243" width="6" height="7" rx="1" fill="#7C3AED" opacity="0.6"/>
+          <rect x="217" y="246" width="6" height="7" rx="1" fill="#00D4FF" opacity="0.55"/>
+          <rect x="188" y="255" width="6" height="7" rx="1" fill="#8B5CF6" opacity="0.6"/>
+          <rect x="202" y="258" width="6" height="7" rx="1" fill="#00D4FF" opacity="0.55"/>
+          <rect x="137" y="264" width="6" height="7" rx="1" fill="#7C3AED" opacity="0.5"/>
+          <rect x="152" y="261" width="6" height="7" rx="1" fill="#8B5CF6" opacity="0.5"/>
+
+          <!-- === SUB PLATFORM (dais) === -->
+          <polygon points="330,278 380,253 380,268 330,293" fill="#1a0840" opacity="0.9"/>
+          <polygon points="230,278 280,253 280,268 230,293" fill="#110630" opacity="0.9"/>
+          <polygon points="330,278 280,253 230,278 280,303" fill="#1e0e4c" opacity="0.9"/>
+          <polygon points="330,278 280,253 230,278 280,303" fill="none" stroke="#8B5CF6" stroke-width="1.1" opacity="0.55" filter="url(#gw)"/>
+
+          <!-- === CENTRAL Z CUBE === -->
+          <ellipse cx="280" cy="282" rx="58" ry="17" fill="#7C3AED" opacity="0.18" filter="url(#gs)"/>
+          <!-- Left face -->
+          <polygon points="280,231 230,256 230,146 280,121" fill="url(#cl)" filter="url(#gw)"/>
+          <!-- Right face -->
+          <polygon points="280,231 330,256 330,146 280,121" fill="url(#cr)" filter="url(#gw)"/>
+          <!-- Top face -->
+          <polygon points="280,121 330,146 280,171 230,146" fill="url(#ct)" filter="url(#gw)"/>
+          <!-- Edge glows -->
+          <polyline points="230,146 280,121 330,146" fill="none" stroke="#EDE9FE" stroke-width="2" opacity="0.85" filter="url(#gw)"/>
+          <line x1="280" y1="121" x2="280" y2="231" stroke="#C084FC" stroke-width="1.1" opacity="0.55"/>
+          <line x1="230" y1="146" x2="230" y2="256" stroke="#9B5CF6" stroke-width="0.9" opacity="0.5"/>
+          <line x1="330" y1="146" x2="330" y2="256" stroke="#9B5CF6" stroke-width="0.9" opacity="0.5"/>
+          <polyline points="230,256 280,231 330,256" fill="none" stroke="#7C3AED" stroke-width="1" opacity="0.5"/>
+          <!-- Z letter -->
+          <text x="249" y="214" font-family="Space Grotesk,sans-serif" font-size="64" font-weight="900"
+                fill="url(#zg)" filter="url(#gs)" text-anchor="middle">Z</text>
+
+          <!-- Ring glow under cube -->
+          <ellipse cx="280" cy="295" rx="108" ry="27" fill="none" stroke="#8B5CF6" stroke-width="1.5" opacity="0.4" filter="url(#gw)"/>
+          <ellipse cx="280" cy="295" rx="78"  ry="19" fill="none" stroke="#6D28D9" stroke-width="0.8" opacity="0.3"/>
+
+          <!-- Signal lines -->
+          <line x1="280" y1="121" x2="185" y2="72"  stroke="#8B5CF6" stroke-width="0.8" opacity="0.28" stroke-dasharray="5,5"/>
+          <line x1="330" y1="146" x2="405" y2="102" stroke="#6D28D9" stroke-width="0.8" opacity="0.28" stroke-dasharray="5,5"/>
+
+          <!-- Particles -->
+          <circle cx="148" cy="148" r="2.5" fill="#C084FC" opacity="0.9" filter="url(#gw)"/>
+          <circle cx="420" cy="138" r="2"   fill="#00D4FF" opacity="0.8" filter="url(#gw)"/>
+          <circle cx="458" cy="208" r="2.8" fill="#A855F7" opacity="0.7" filter="url(#gw)"/>
+          <circle cx="105" cy="218" r="2"   fill="#00D4FF" opacity="0.7" filter="url(#gw)"/>
+          <circle cx="458" cy="318" r="2.2" fill="#C084FC" opacity="0.6" filter="url(#gw)"/>
+          <circle cx="188" cy="93"  r="1.8" fill="#00D4FF" opacity="0.7"/>
+          <circle cx="378" cy="88"  r="1.8" fill="#A855F7" opacity="0.7"/>
+          <circle cx="95"  cy="308" r="1.5" fill="#8B5CF6" opacity="0.6"/>
+        </svg>
+
+        <!-- Floating chips -->
+        <div class="chip chip-1">
+          <span class="chip-dot"></span><span>أنظمة نشطة</span><strong>50+</strong>
         </div>
-
-        <!-- Left side: Big Z cube / visual (RTL — second column visually on left) -->
-        <div class="hero-visual zawan-hero-visual" aria-hidden="true">
-          <!-- Glowing Z cube -->
-          <div class="zawan-z-cube-wrap">
-            <div class="zawan-z-cube">
-              <div class="z-face z-face-front">Z</div>
-              <div class="z-face z-face-back">Z</div>
-              <div class="z-face z-face-left"></div>
-              <div class="z-face z-face-right"></div>
-              <div class="z-face z-face-top"></div>
-              <div class="z-face z-face-bottom"></div>
-            </div>
-            <div class="zawan-z-glow" aria-hidden="true"></div>
-            <div class="zawan-z-rings" aria-hidden="true">
-              <div class="z-ring z-ring-1"></div>
-              <div class="z-ring z-ring-2"></div>
-              <div class="z-ring z-ring-3"></div>
-            </div>
-          </div>
+        <div class="chip chip-2">
+          <span class="chip-dot green"></span><span>عميل راضٍ</span><strong>100+</strong>
         </div>
-
       </div>
-    </div>
-  </section>
 
-  <!-- ======== STATS ======== -->
-  <section class="stats-section zawan-stats" aria-label="Key statistics">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item" data-aos>
-          <div class="stat-num" data-target="50" data-suffix="+">0+</div>
-          <div class="stat-label" data-i18n="stats.projects">مشروع منجز</div>
-        </div>
-        <div class="stat-item" data-aos data-aos-delay="100">
-          <div class="stat-num" data-target="100" data-suffix="+">0+</div>
-          <div class="stat-label" data-i18n="stats.clients">عميل سعيد</div>
-        </div>
-        <div class="stat-item" data-aos data-aos-delay="200">
-          <div class="stat-num" data-target="3" data-suffix="+">0+</div>
-          <div class="stat-label" data-i18n="stats.years">سنوات خبرة</div>
-        </div>
-        <div class="stat-item" data-aos data-aos-delay="300">
-          <div class="stat-num" data-target="99" data-suffix="%">0%</div>
-          <div class="stat-label" data-i18n="stats.satisfaction">رضا العملاء</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======== STEPS SECTION ======== -->
-  <section class="zawan-steps-section" id="steps" aria-labelledby="steps-heading">
-    <div class="container">
-      <div class="section-header center">
-        <h2 class="section-title zawan-section-title" id="steps-heading" data-aos data-i18n="steps.title">
-          حياة أسهل مع أنظمة <span class="gradient-text">ZAWAN</span>
-        </h2>
-      </div>
-
-      <div class="zawan-steps-grid" data-aos>
-        <!-- Step 01 -->
-        <div class="zawan-step-card" data-aos data-aos-delay="0">
-          <div class="zawan-step-num">01</div>
-          <div class="zawan-step-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.18.01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.17 6.17l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0121.99 15l-.07 1.92z"/></svg>
-          </div>
-          <h3 class="zawan-step-title" data-i18n="steps.step1">تواصل معنا</h3>
-        </div>
-
-        <!-- Step 02 -->
-        <div class="zawan-step-card" data-aos data-aos-delay="100">
-          <div class="zawan-step-num">02</div>
-          <div class="zawan-step-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-          </div>
-          <h3 class="zawan-step-title" data-i18n="steps.step2">اختبار وتسليم</h3>
-        </div>
-
-        <!-- Step 03 -->
-        <div class="zawan-step-card" data-aos data-aos-delay="200">
-          <div class="zawan-step-num">03</div>
-          <div class="zawan-step-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-          </div>
-          <h3 class="zawan-step-title" data-i18n="steps.step3">تصميم وتطوير</h3>
-        </div>
-
-        <!-- Step 04 -->
-        <div class="zawan-step-card" data-aos data-aos-delay="300">
-          <div class="zawan-step-num">04</div>
-          <div class="zawan-step-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          </div>
-          <h3 class="zawan-step-title" data-i18n="steps.step4">تحليل المتطلبات</h3>
-        </div>
-
-        <!-- Step 05 -->
-        <div class="zawan-step-card" data-aos data-aos-delay="400">
-          <div class="zawan-step-num">05</div>
-          <div class="zawan-step-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-          </div>
-          <h3 class="zawan-step-title" data-i18n="steps.step5">دعم وتطوير</h3>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======== FEATURED PRODUCTS ======== -->
-  <section id="products" aria-labelledby="products-heading" class="zawan-products-section">
-    <div class="container">
-      <div class="section-header center">
-        <div class="section-tag zawan-section-tag" data-aos data-i18n="products.tag">أنظمتنا</div>
-        <h2 class="section-title zawan-section-title" id="products-heading" data-aos data-aos-delay="100" data-i18n="products.title">
-          أنظمة <span class="gradient-text">متكاملة</span>
-        </h2>
-        <p class="section-subtitle zawan-section-subtitle" data-aos data-aos-delay="200" data-i18n="products.subtitle">
-          أنظمة برمجية قوية وجاهزة للنشر مبنية للأعمال الحديثة
+      <!-- TEXT (right column) -->
+      <div class="hero-text">
+        <span class="hero-badge">حلول برمجية متكاملة</span>
+        <h1 class="hero-h1">
+          من فكرة إلى نظام متكامل<br/>
+          <span class="accent-text">نحن نبرمج النجاح</span>
+        </h1>
+        <p class="hero-p">
+          نقدم أنظمة برمجية متكاملة تلبي احتياجات عملك<br/>
+          وتساعدك على النمو والتوسع بثقة
         </p>
-      </div>
-
-      <div class="products-grid zawan-products-grid">
-
-        <article class="product-card zawan-product-card" data-aos data-aos-delay="0">
-          <div class="pc-icon purple" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-          </div>
-          <h3 class="pc-title" data-i18n="products.p1.title">نظام إدارة المهام</h3>
-          <p class="pc-desc" data-i18n="products.p1.desc">نظام متكامل لإدارة المشاريع والمهام مع التعاون الفوري ولوحات كانبان وتقارير متقدمة.</p>
-          <div class="pc-tags">
-            <span class="tag">React</span>
-            <span class="tag">Node.js</span>
-            <span class="tag cyan">WebSocket</span>
-          </div>
-          <div class="pc-footer">
-            <span class="pc-price">$299</span>
-            <a href="pages/contact.html" class="btn btn-primary btn-sm" data-i18n="products.getit">احصل عليه</a>
-          </div>
-        </article>
-
-        <article class="product-card zawan-product-card" data-aos data-aos-delay="80">
-          <div class="pc-icon cyan" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.99 1.61h9.72a2 2 0 001.99-1.61L23 6H6"/></svg>
-          </div>
-          <h3 class="pc-title" data-i18n="products.p2.title">منصة التجارة الإلكترونية</h3>
-          <p class="pc-desc" data-i18n="products.p2.desc">حل متكامل للتجارة الإلكترونية مع إدارة المخزون والمدفوعات والتحليلات ودعم متعدد البائعين.</p>
-          <div class="pc-tags">
-            <span class="tag">Next.js</span>
-            <span class="tag">Stripe</span>
-            <span class="tag cyan">PostgreSQL</span>
-          </div>
-          <div class="pc-footer">
-            <span class="pc-price">$499</span>
-            <a href="pages/contact.html" class="btn btn-primary btn-sm" data-i18n="products.getit">احصل عليه</a>
-          </div>
-        </article>
-
-        <article class="product-card zawan-product-card" data-aos data-aos-delay="160">
-          <div class="pc-icon green" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          </div>
-          <h3 class="pc-title" data-i18n="products.p3.title">نظام إدارة المستشفى</h3>
-          <p class="pc-desc" data-i18n="products.p3.desc">منصة صحية متكاملة تشمل سجلات المرضى والمواعيد والفواتير وإدارة الموظفين مع الامتثال لمعايير HIPAA.</p>
-          <div class="pc-tags">
-            <span class="tag">Vue.js</span>
-            <span class="tag">Laravel</span>
-            <span class="tag cyan">MySQL</span>
-          </div>
-          <div class="pc-footer">
-            <span class="pc-price">$799</span>
-            <a href="pages/contact.html" class="btn btn-primary btn-sm" data-i18n="products.getit">احصل عليه</a>
-          </div>
-        </article>
-
-        <article class="product-card zawan-product-card" data-aos data-aos-delay="0">
-          <div class="pc-icon orange" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-          </div>
-          <h3 class="pc-title" data-i18n="products.p4.title">تطبيق الدردشة الفورية</h3>
-          <p class="pc-desc" data-i18n="products.p4.desc">منصة مراسلة قابلة للتطوير مع تشفير من طرف إلى طرف وقنوات ومشاركة ملفات ودعم مكالمات فيديو.</p>
-          <div class="pc-tags">
-            <span class="tag">React Native</span>
-            <span class="tag cyan">Socket.io</span>
-            <span class="tag">Redis</span>
-          </div>
-          <div class="pc-footer">
-            <span class="pc-price">$349</span>
-            <a href="pages/contact.html" class="btn btn-primary btn-sm" data-i18n="products.getit">احصل عليه</a>
-          </div>
-        </article>
-
-        <article class="product-card zawan-product-card" data-aos data-aos-delay="80">
-          <div class="pc-icon pink" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
-          </div>
-          <h3 class="pc-title" data-i18n="products.p5.title">نظام إدارة المخزون</h3>
-          <p class="pc-desc" data-i18n="products.p5.desc">إدارة المستودعات والمخزون بذكاء مع مسح الباركود والطلب التلقائي وتتبع مواقع متعددة.</p>
-          <div class="pc-tags">
-            <span class="tag">Angular</span>
-            <span class="tag">Python</span>
-            <span class="tag cyan">MongoDB</span>
-          </div>
-          <div class="pc-footer">
-            <span class="pc-price">$249</span>
-            <a href="pages/contact.html" class="btn btn-primary btn-sm" data-i18n="products.getit">احصل عليه</a>
-          </div>
-        </article>
-
-        <article class="product-card zawan-product-card" data-aos data-aos-delay="160">
-          <div class="pc-icon blue" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-          </div>
-          <h3 class="pc-title" data-i18n="products.p6.title">لوحة تحكم الذكاء الاصطناعي</h3>
-          <p class="pc-desc" data-i18n="products.p6.desc">لوحة تحليلات ذكاء اصطناعي موحدة تدمج نماذج تعلم الآلة وخطوط البيانات وتقارير ذكاء الأعمال.</p>
-          <div class="pc-tags">
-            <span class="tag">Python</span>
-            <span class="tag">TensorFlow</span>
-            <span class="tag cyan">FastAPI</span>
-          </div>
-          <div class="pc-footer">
-            <span class="pc-price">$599</span>
-            <a href="pages/contact.html" class="btn btn-primary btn-sm" data-i18n="products.getit">احصل عليه</a>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="text-center mt-4">
-        <a href="pages/products.html" class="btn btn-outline btn-lg" data-aos data-i18n="products.viewall">استعرض كل الأنظمة ←</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======== SERVICES ======== -->
-  <section id="services" class="zawan-services-section" aria-labelledby="services-heading">
-    <div class="container">
-      <div class="section-header center">
-        <div class="section-tag zawan-section-tag" data-aos data-i18n="services.tag">ماذا نقدم</div>
-        <h2 class="section-title zawan-section-title" id="services-heading" data-aos data-aos-delay="100" data-i18n="services.title">
-          خدماتنا <span class="gradient-text">الأساسية</span>
-        </h2>
-        <p class="section-subtitle zawan-section-subtitle" data-aos data-aos-delay="200" data-i18n="services.subtitle">
-          من الفكرة إلى النشر — نتولى دورة تطوير البرمجيات بالكامل
-        </p>
-      </div>
-
-      <div class="services-grid">
-
-        <article class="service-card zawan-service-card" data-aos="fade-right">
-          <div class="sc-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-          </div>
-          <div class="sc-body">
-            <h3 class="sc-title" data-i18n="services.s1.title">تطوير الويب</h3>
-            <p class="sc-desc" data-i18n="services.s1.desc">تطبيقات ويب مخصصة ومنصات SaaS وبوابات مؤسسية مبنية بأحدث الأطر وأفضل الممارسات.</p>
-            <div class="sc-list">
-              <span class="tag">React / Next.js</span>
-              <span class="tag">Vue / Nuxt</span>
-              <span class="tag cyan">APIs</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="service-card zawan-service-card" data-aos="fade-left">
-          <div class="sc-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-          </div>
-          <div class="sc-body">
-            <h3 class="sc-title" data-i18n="services.s2.title">تطبيقات الجوال</h3>
-            <p class="sc-desc" data-i18n="services.s2.desc">تطبيقات iOS/Android متعددة المنصات مع تجربة مستخدم سلسة وبنية offline-first وإشعارات فورية.</p>
-            <div class="sc-list">
-              <span class="tag">React Native</span>
-              <span class="tag">Flutter</span>
-              <span class="tag cyan">Swift / Kotlin</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="service-card zawan-service-card" data-aos="fade-right" data-aos-delay="100">
-          <div class="sc-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
-          </div>
-          <div class="sc-body">
-            <h3 class="sc-title" data-i18n="services.s3.title">أنظمة مخصصة</h3>
-            <p class="sc-desc" data-i18n="services.s3.desc">أنظمة مؤسسية مخصصة وتكاملات ERP وسير عمل آلية ومنصات خلفية مصممة خصيصاً لأعمالك.</p>
-            <div class="sc-list">
-              <span class="tag">Microservices</span>
-              <span class="tag">DevOps</span>
-              <span class="tag cyan">Cloud</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="service-card zawan-service-card" data-aos="fade-left" data-aos-delay="100">
-          <div class="sc-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <div class="sc-body">
-            <h3 class="sc-title" data-i18n="services.s4.title">الاستشارات التقنية</h3>
-            <p class="sc-desc" data-i18n="services.s4.desc">مراجعات المعمارية واستراتيجية التكنولوجيا ومراجعات الكود وإرشادات الخبراء لمساعدتك على اتخاذ القرارات التقنية الصحيحة.</p>
-            <div class="sc-list">
-              <span class="tag">Architecture</span>
-              <span class="tag">Code Review</span>
-              <span class="tag cyan">Strategy</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="text-center mt-4">
-        <a href="pages/services.html" class="btn btn-primary btn-lg" data-aos data-i18n="services.explore">استكشف الخدمات ←</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======== TESTIMONIALS ======== -->
-  <section class="testimonials-section zawan-testimonials" id="testimonials" aria-labelledby="testimonials-heading">
-    <div class="container">
-      <div class="section-header center">
-        <div class="section-tag zawan-section-tag" data-aos data-i18n="testi.tag">آراء العملاء</div>
-        <h2 class="section-title zawan-section-title" id="testimonials-heading" data-aos data-aos-delay="100" data-i18n="testi.title">
-          ماذا يقول <span class="gradient-text">عملاؤنا</span>
-        </h2>
-      </div>
-
-      <div class="testimonials-grid">
-
-        <article class="testi-card zawan-testi-card" data-aos data-aos-delay="0">
-          <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <p class="testi-text">"قدمت ZAWAN نظام إدارة المستشفى في الوقت المحدد وتجاوز التوقعات. جودة الكود استثنائية والفريق سريع الاستجابة بشكل لا يصدق."</p>
-          <div class="testi-author">
-            <div class="testi-avatar" aria-hidden="true">أخ</div>
-            <div>
-              <div class="testi-name">أحمد خليل</div>
-              <div class="testi-role">CTO, MedCore Solutions</div>
-            </div>
-          </div>
-        </article>
-
-        <article class="testi-card zawan-testi-card" data-aos data-aos-delay="100">
-          <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <p class="testi-text">"وظفنا ZAWAN لمنصة التجارة الإلكترونية الخاصة بنا وكانت النتيجة رائعة. ارتفعت المبيعات بنسبة 40٪ بعد الإطلاق. فريق محترف بحلول متطورة."</p>
-          <div class="testi-author">
-            <div class="testi-avatar" aria-hidden="true">SM</div>
-            <div>
-              <div class="testi-name">Sarah Mitchell</div>
-              <div class="testi-role">Founder, ShopZen</div>
-            </div>
-          </div>
-        </article>
-
-        <article class="testi-card zawan-testi-card" data-aos data-aos-delay="200">
-          <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <p class="testi-text">"غيّرت لوحة تحكم الذكاء الاصطناعي الخاصة بهم طريقة تحليلنا للبيانات. خبرة ZAWAN التقنية واهتمامها بالتفاصيل يميزها عن كل مورد آخر عملنا معه."</p>
-          <div class="testi-author">
-            <div class="testi-avatar" aria-hidden="true">JL</div>
-            <div>
-              <div class="testi-name">James Lee</div>
-              <div class="testi-role">Head of Data, TechFlow Inc</div>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ======== CTA BANNER ======== -->
-  <section class="cta-section zawan-cta-section" aria-labelledby="cta-heading">
-    <div class="container">
-      <div class="cta-inner zawan-cta-inner" data-aos="zoom-in">
-        <h2 class="cta-title" id="cta-heading" data-i18n="cta.title">هل أنت مستعد لبناء شيء عظيم؟</h2>
-        <p class="cta-desc" data-i18n="cta.desc">أخبرنا بفكرتك. سنحولها إلى منتج رقمي عالمي المستوى.</p>
-        <div class="cta-actions">
-          <a href="pages/contact.html" class="btn btn-white btn-lg" data-i18n="cta.start">ابدأ مشروعك</a>
-          <a href="pages/products.html" class="btn btn-ghost-white btn-lg" data-i18n="cta.browse">استعرض الأنظمة</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======== FOOTER ======== -->
-  <footer class="footer zawan-footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-grid">
-
-        <div class="footer-brand">
-          <a href="index.html" class="nav-brand zawan-brand" aria-label="ZAWAN Home">
-            <div class="brand-icon zawan-brand-icon" aria-hidden="true">Z</div>
-            <span class="brand-name">ZAWAN</span>
+        <div class="hero-btns">
+          <a href="pages/contact.html" class="btn-outline">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81A19.79 19.79 0 01.4 1.11 2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            تواصل معنا
           </a>
-          <p class="footer-desc" data-i18n="footer.desc">من فكرة إلى نظام متكامل. نبني برمجيات متطورة للأعمال في جميع أنحاء العالم.</p>
-          <div class="social-links" aria-label="Social media links">
-            <a href="#" class="social-link" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
-            <a href="#" class="social-link" aria-label="Twitter / X">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            <a href="#" class="social-link" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </a>
-            <a href="#" class="social-link" aria-label="WhatsApp">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </a>
-          </div>
+          <a href="pages/products.html" class="btn-fill">
+            استعرض الأنظمة
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
-
-        <div class="footer-col">
-          <h4 data-i18n="footer.products">الأنظمة</h4>
-          <ul role="list">
-            <li><a href="pages/products.html" data-i18n="footer.p1">نظام المهام</a></li>
-            <li><a href="pages/products.html" data-i18n="footer.p2">التجارة الإلكترونية</a></li>
-            <li><a href="pages/products.html" data-i18n="footer.p3">نظام المستشفى</a></li>
-            <li><a href="pages/products.html" data-i18n="footer.p4">تطبيق الدردشة</a></li>
-            <li><a href="pages/products.html" data-i18n="footer.p5">لوحة الذكاء الاصطناعي</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4 data-i18n="footer.company">الشركة</h4>
-          <ul role="list">
-            <li><a href="index.html" data-i18n="footer.about">من نحن</a></li>
-            <li><a href="pages/services.html" data-i18n="footer.services">الخدمات</a></li>
-            <li><a href="pages/contact.html" data-i18n="footer.contact">تواصل معنا</a></li>
-            <li><a href="#" data-i18n="footer.privacy">سياسة الخصوصية</a></li>
-            <li><a href="#" data-i18n="footer.terms">شروط الخدمة</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col footer-newsletter">
-          <h4 data-i18n="footer.newsletter">ابق على اطلاع</h4>
-          <p data-i18n="footer.newsletter.desc">احصل على آخر المستجدات حول الأنظمة والميزات الجديدة.</p>
-          <form class="newsletter-form" aria-label="Newsletter signup">
-            <input type="email" placeholder="بريدك الإلكتروني" aria-label="Email address" required />
-            <button type="submit" class="btn btn-primary btn-sm" aria-label="Subscribe">←</button>
-          </form>
-        </div>
-
       </div>
 
-      <div class="footer-bottom">
-        <span data-i18n="footer.rights">© 2026 مجموعة ZAWAN البرمجية. جميع الحقوق محفوظة.</span>
-        <span data-i18n="footer.built">صُنع بـ ❤️ من ZAWAN</span>
+    </div>
+  </section>
+
+  <!-- ===== Steps ===== -->
+  <section class="steps">
+    <div class="steps-inner">
+      <h2 class="steps-h2">حياة أسهل مع أنظمة ZAWAN</h2>
+      <div class="steps-row">
+
+        <div class="step-card">
+          <div class="step-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81A19.79 19.79 0 01.4 1.11 2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <h3>تواصل معنا</h3><p>أخبرنا عن احتياجاتك</p>
+          <div class="step-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <span class="step-n">01</span>
+        </div>
+
+        <div class="step-card">
+          <div class="step-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg></div>
+          <h3>اختيار وتسليم</h3><p>نختار ونسلم النظام</p>
+          <div class="step-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <span class="step-n">02</span>
+        </div>
+
+        <div class="step-card">
+          <div class="step-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+          <h3>تصميم وتطوير</h3><p>نطور بطلب المخصص</p>
+          <div class="step-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <span class="step-n">03</span>
+        </div>
+
+        <div class="step-card">
+          <div class="step-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+          <h3>تحليل المتطلبات</h3><p>نحلل احتياجات عملك</p>
+          <div class="step-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <span class="step-n">04</span>
+        </div>
+
+        <div class="step-card">
+          <div class="step-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>دعم وتطوير</h3><p>نستمر بدعمك وتطوير</p>
+          <span class="step-n">05</span>
+        </div>
+
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/firebase.js" defer></script>
+  <script src="assets/js/translations.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

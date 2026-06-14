@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" dir="ltr" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ZAWN Services — Custom software development, mobile apps, web solutions, and technical consulting." />
-  <title>Services | ZAWN</title>
+  <meta name="description" content="ZAWAN Services — Custom software development, mobile apps, web solutions, and technical consulting." />
+  <title>Services | ZAWAN</title>
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <div id="loading-screen" aria-hidden="true">
     <div class="loader-inner">
-      <div class="loader-logo">ZAWN</div>
+      <div class="loader-logo">ZAWAN</div>
       <div class="loader-bar"></div>
     </div>
   </div>
@@ -21,19 +22,20 @@
   <nav class="navbar scrolled" role="navigation" aria-label="Main navigation">
     <div class="container">
       <div class="nav-inner">
-        <a href="../index.html" class="nav-brand" aria-label="ZAWN Home">
-          <div class="brand-icon" aria-hidden="true">Z</div>
-          <span class="brand-name">ZAWN</span>
+        <a href="../index.html" class="nav-brand" aria-label="ZAWAN Home">
+          
+          <span class="brand-name">ZAWAN</span>
         </a>
         <ul class="nav-links" role="list">
-          <li><a href="../index.html" class="nav-link">Home</a></li>
-          <li><a href="products.html" class="nav-link">Products</a></li>
-          <li><a href="services.html" class="nav-link active">Services</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="../index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+          <li><a href="products.html" class="nav-link" data-i18n="nav_products">Products</a></li>
+          <li><a href="services.html" class="nav-link active" data-i18n="nav_services">Services</a></li>
+          <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
         </ul>
         <div class="nav-actions">
+          <button class="btn-lang" aria-label="Switch language">AR</button>
           <button class="btn-theme" aria-label="Toggle theme">☀️</button>
-          <a href="contact.html" class="btn btn-primary btn-sm">Get Started</a>
+          <a href="contact.html" class="btn btn-primary btn-sm" data-i18n="nav_cta">Get Started</a>
           <button class="hamburger" aria-label="Toggle mobile menu">
             <span></span><span></span><span></span>
           </button>
@@ -46,12 +48,12 @@
   <header class="page-hero" aria-labelledby="page-title">
     <div class="page-hero-glow" aria-hidden="true"></div>
     <div class="container">
-      <div class="section-tag" data-aos>⚙️ What We Offer</div>
+      <div class="section-tag" data-aos data-i18n="services_tag">⚙️ What We Do</div>
       <h1 class="section-title mt-2" id="page-title" data-aos data-aos-delay="100">
-        Our <span class="gradient-text">Services</span>
+        <span data-i18n="services_title">Our Core</span> <span class="gradient-text" data-i18n="services_title_grad">Services</span>
       </h1>
-      <p class="section-subtitle" style="margin-inline:auto;" data-aos data-aos-delay="200">
-        End-to-end software development services from strategy and design to deployment and support.
+      <p class="section-subtitle" style="margin-inline:auto;" data-aos data-aos-delay="200" data-i18n="services_subtitle">
+        From concept to deployment — we handle the complete software development lifecycle.
       </p>
     </div>
   </header>
@@ -68,11 +70,11 @@
           <div class="sdc-header">
             <div class="sdc-icon" aria-hidden="true">🌐</div>
             <div>
-              <h2 class="sdc-title">Web Development</h2>
+              <h2 class="sdc-title" data-i18n="s1_title">Web Development</h2>
               <p class="sdc-sub">Custom web apps, SaaS platforms, and enterprise portals</p>
             </div>
           </div>
-          <p style="font-size:.9rem;color:var(--clr-text-muted);margin-bottom:1rem;">We build performant, scalable, and maintainable web applications using the latest technologies and modern engineering practices.</p>
+          <p style="font-size:.9rem;color:var(--clr-text-muted);margin-bottom:1rem;" data-i18n="s1_desc">We build performant, scalable, and maintainable web applications using the latest technologies and modern engineering practices.</p>
           <div class="pc-tags" style="margin-bottom:1rem;">
             <span class="tag">React / Next.js</span>
             <span class="tag">Vue / Nuxt</span>
@@ -81,34 +83,10 @@
             <span class="tag cyan">GraphQL</span>
           </div>
           <div class="process-steps">
-            <div class="step">
-              <div class="step-num">1</div>
-              <div class="step-content">
-                <h5>Discovery & Planning</h5>
-                <p>Requirements gathering, user stories, and technical architecture planning.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">2</div>
-              <div class="step-content">
-                <h5>Design & Prototyping</h5>
-                <p>UI/UX wireframes, interactive prototypes, and design system creation.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">3</div>
-              <div class="step-content">
-                <h5>Development & Testing</h5>
-                <p>Agile sprints, code reviews, automated testing, and continuous integration.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">4</div>
-              <div class="step-content">
-                <h5>Deployment & Support</h5>
-                <p>Cloud deployment, monitoring setup, and ongoing maintenance support.</p>
-              </div>
-            </div>
+            <div class="step"><div class="step-num">1</div><div class="step-content"><h5>Discovery &amp; Planning</h5><p>Requirements gathering, user stories, and technical architecture planning.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-content"><h5>Design &amp; Prototyping</h5><p>UI/UX wireframes, interactive prototypes, and design system creation.</p></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-content"><h5>Development &amp; Testing</h5><p>Agile sprints, code reviews, automated testing, and continuous integration.</p></div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-content"><h5>Deployment &amp; Support</h5><p>Cloud deployment, monitoring setup, and ongoing maintenance support.</p></div></div>
           </div>
         </article>
 
@@ -117,11 +95,11 @@
           <div class="sdc-header">
             <div class="sdc-icon" aria-hidden="true">📱</div>
             <div>
-              <h2 class="sdc-title">Mobile App Development</h2>
+              <h2 class="sdc-title" data-i18n="s2_title">Mobile App Development</h2>
               <p class="sdc-sub">iOS, Android, and cross-platform mobile applications</p>
             </div>
           </div>
-          <p style="font-size:.9rem;color:var(--clr-text-muted);margin-bottom:1rem;">From concept to App Store — we build high-performance mobile apps with great UX, offline support, and seamless backend integration.</p>
+          <p style="font-size:.9rem;color:var(--clr-text-muted);margin-bottom:1rem;" data-i18n="s2_desc">From concept to App Store — we build high-performance mobile apps with great UX, offline support, and seamless backend integration.</p>
           <div class="pc-tags" style="margin-bottom:1rem;">
             <span class="tag">React Native</span>
             <span class="tag">Flutter</span>
@@ -130,34 +108,10 @@
             <span class="tag cyan">Firebase</span>
           </div>
           <div class="process-steps">
-            <div class="step">
-              <div class="step-num">1</div>
-              <div class="step-content">
-                <h5>Platform Strategy</h5>
-                <p>Choosing the right platform (native vs. cross-platform) for your audience.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">2</div>
-              <div class="step-content">
-                <h5>UX Design</h5>
-                <p>Mobile-first interface design following iOS Human Interface and Material Design guidelines.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">3</div>
-              <div class="step-content">
-                <h5>Development</h5>
-                <p>Clean code architecture, performance optimization, and device testing.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">4</div>
-              <div class="step-content">
-                <h5>Store Submission</h5>
-                <p>App Store and Google Play submission, review management, and updates.</p>
-              </div>
-            </div>
+            <div class="step"><div class="step-num">1</div><div class="step-content"><h5>Platform Strategy</h5><p>Choosing the right platform (native vs. cross-platform) for your audience.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-content"><h5>UX Design</h5><p>Mobile-first interface design following iOS Human Interface and Material Design guidelines.</p></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-content"><h5>Development</h5><p>Clean code architecture, performance optimization, and device testing.</p></div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-content"><h5>Store Submission</h5><p>App Store and Google Play submission, review management, and updates.</p></div></div>
           </div>
         </article>
 
@@ -166,11 +120,11 @@
           <div class="sdc-header">
             <div class="sdc-icon" aria-hidden="true">⚙️</div>
             <div>
-              <h2 class="sdc-title">Custom Systems</h2>
-              <p class="sdc-sub">Enterprise platforms, ERP integrations & automation</p>
+              <h2 class="sdc-title" data-i18n="s3_title">Custom Systems</h2>
+              <p class="sdc-sub">Enterprise platforms, ERP integrations &amp; automation</p>
             </div>
           </div>
-          <p style="font-size:.9rem;color:var(--clr-text-muted);margin-bottom:1rem;">We design and build bespoke enterprise software tailored precisely to your workflows, replacing outdated legacy systems with modern scalable solutions.</p>
+          <p style="font-size:.9rem;color:var(--clr-text-muted);margin-bottom:1rem;" data-i18n="s3_desc">We design and build bespoke enterprise software tailored precisely to your workflows, replacing outdated legacy systems with modern scalable solutions.</p>
           <div class="pc-tags" style="margin-bottom:1rem;">
             <span class="tag">Microservices</span>
             <span class="tag">Docker / K8s</span>
@@ -178,34 +132,10 @@
             <span class="tag">CI/CD</span>
           </div>
           <div class="process-steps">
-            <div class="step">
-              <div class="step-num">1</div>
-              <div class="step-content">
-                <h5>Business Analysis</h5>
-                <p>Deep dive into your existing processes, pain points, and data flows.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">2</div>
-              <div class="step-content">
-                <h5>System Architecture</h5>
-                <p>Designing scalable, fault-tolerant architectures suited to your scale.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">3</div>
-              <div class="step-content">
-                <h5>Iterative Build</h5>
-                <p>Modular development with regular stakeholder demos and feedback loops.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">4</div>
-              <div class="step-content">
-                <h5>Migration & Training</h5>
-                <p>Data migration from legacy systems and team training and documentation.</p>
-              </div>
-            </div>
+            <div class="step"><div class="step-num">1</div><div class="step-content"><h5>Business Analysis</h5><p>Deep dive into your existing processes, pain points, and data flows.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-content"><h5>System Architecture</h5><p>Designing scalable, fault-tolerant architectures suited to your scale.</p></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-content"><h5>Iterative Build</h5><p>Modular development with regular stakeholder demos and feedback loops.</p></div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-content"><h5>Migration &amp; Training</h5><p>Data migration from legacy systems and team training and documentation.</p></div></div>
           </div>
         </article>
 
@@ -214,11 +144,11 @@
           <div class="sdc-header">
             <div class="sdc-icon" aria-hidden="true">💡</div>
             <div>
-              <h2 class="sdc-title">Technical Consulting</h2>
-              <p class="sdc-sub">Strategy, architecture reviews & expert guidance</p>
+              <h2 class="sdc-title" data-i18n="s4_title">Technical Consulting</h2>
+              <p class="sdc-sub">Strategy, architecture reviews &amp; expert guidance</p>
             </div>
           </div>
-          <p style="font-size:.9rem;color:var(--clr-text-muted);margin-bottom:1rem;">Leverage our expertise to make the right technical decisions — from choosing the right technology stack to optimizing existing systems.</p>
+          <p style="font-size:.9rem;color:var(--clr-text-muted);margin-bottom:1rem;" data-i18n="s4_desc">Leverage our expertise to make the right technical decisions — from choosing the right technology stack to optimizing existing systems.</p>
           <div class="pc-tags" style="margin-bottom:1rem;">
             <span class="tag">Architecture</span>
             <span class="tag">Code Audit</span>
@@ -226,34 +156,10 @@
             <span class="tag">Security</span>
           </div>
           <div class="process-steps">
-            <div class="step">
-              <div class="step-num">1</div>
-              <div class="step-content">
-                <h5>Initial Assessment</h5>
-                <p>Comprehensive review of your current codebase, infrastructure, and processes.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">2</div>
-              <div class="step-content">
-                <h5>Gap Analysis</h5>
-                <p>Identifying bottlenecks, security risks, technical debt, and scaling issues.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">3</div>
-              <div class="step-content">
-                <h5>Roadmap Creation</h5>
-                <p>Prioritized improvement roadmap with clear timelines and ROI estimates.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">4</div>
-              <div class="step-content">
-                <h5>Implementation Support</h5>
-                <p>Hands-on guidance as your team executes the improvements.</p>
-              </div>
-            </div>
+            <div class="step"><div class="step-num">1</div><div class="step-content"><h5>Initial Assessment</h5><p>Comprehensive review of your current codebase, infrastructure, and processes.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-content"><h5>Gap Analysis</h5><p>Identifying bottlenecks, security risks, technical debt, and scaling issues.</p></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-content"><h5>Roadmap Creation</h5><p>Prioritized improvement roadmap with clear timelines and ROI estimates.</p></div></div>
+            <div class="step"><div class="step-num">4</div><div class="step-content"><h5>Implementation Support</h5><p>Hands-on guidance as your team executes the improvements.</p></div></div>
           </div>
         </article>
 
@@ -275,8 +181,6 @@
       </div>
 
       <div class="pricing-grid">
-
-        <!-- Basic -->
         <article class="pricing-card" data-aos data-aos-delay="0">
           <div class="pricing-plan">Basic</div>
           <div class="pricing-price">$1,500 <span>/ project</span></div>
@@ -293,7 +197,6 @@
           <a href="contact.html" class="btn btn-outline w-full" style="justify-content:center;">Get Started</a>
         </article>
 
-        <!-- Pro -->
         <article class="pricing-card popular" data-aos data-aos-delay="100">
           <div class="popular-badge">Most Popular</div>
           <div class="pricing-plan">Pro</div>
@@ -311,7 +214,6 @@
           <a href="contact.html" class="btn btn-primary w-full" style="justify-content:center;">Get Started</a>
         </article>
 
-        <!-- Enterprise -->
         <article class="pricing-card" data-aos data-aos-delay="200">
           <div class="pricing-plan">Enterprise</div>
           <div class="pricing-price">Custom <span>pricing</span></div>
@@ -327,7 +229,6 @@
           </ul>
           <a href="contact.html" class="btn btn-outline w-full" style="justify-content:center;">Contact Sales</a>
         </article>
-
       </div>
     </div>
   </section>
@@ -340,7 +241,7 @@
         <p class="cta-desc">Let's talk. We'll help you find the perfect solution for your budget and goals.</p>
         <div class="cta-actions">
           <a href="contact.html" class="btn btn-white btn-lg">Book a Free Call</a>
-          <a href="products.html" class="btn btn-ghost-white btn-lg">Browse Products</a>
+          <a href="products.html" class="btn btn-ghost-white btn-lg" data-i18n="cta_btn2">Browse Products</a>
         </div>
       </div>
     </div>
@@ -351,10 +252,10 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="../index.html" class="nav-brand">
-            <div class="brand-icon" aria-hidden="true">Z</div>
-            <span class="brand-name">ZAWN</span>
+            
+            <span class="brand-name">ZAWAN</span>
           </a>
-          <p class="footer-desc">Engineering the Future, One Line at a Time.</p>
+          <p class="footer-desc" data-i18n="footer_desc">Engineering the Future, One Line at a Time.</p>
           <div class="social-links">
             <a href="#" class="social-link" aria-label="GitHub">🐙</a>
             <a href="#" class="social-link" aria-label="Twitter">🐦</a>
@@ -363,26 +264,26 @@
           </div>
         </div>
         <div class="footer-col">
-          <h4>Products</h4>
+          <h4 data-i18n="footer_products">Products</h4>
           <ul role="list">
-            <li><a href="products.html">Task Manager</a></li>
-            <li><a href="products.html">E-Commerce</a></li>
-            <li><a href="products.html">Hospital System</a></li>
-            <li><a href="products.html">AI Dashboard</a></li>
+            <li><a href="products.html" data-i18n="p1_title">Task Manager</a></li>
+            <li><a href="products.html" data-i18n="p2_title">E-Commerce</a></li>
+            <li><a href="products.html" data-i18n="p3_title">Hospital System</a></li>
+            <li><a href="products.html" data-i18n="p6_title">AI Dashboard</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Company</h4>
+          <h4 data-i18n="footer_company">Company</h4>
           <ul role="list">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="../index.html" data-i18n="footer_about">About Us</a></li>
+            <li><a href="services.html" data-i18n="nav_services">Services</a></li>
+            <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+            <li><a href="#" data-i18n="footer_privacy">Privacy Policy</a></li>
           </ul>
         </div>
         <div class="footer-col footer-newsletter">
-          <h4>Stay Updated</h4>
-          <p>Get updates on new services and products.</p>
+          <h4 data-i18n="footer_updated">Stay Updated</h4>
+          <p data-i18n="footer_newsletter_desc">Get updates on new services and products.</p>
           <form class="newsletter-form" aria-label="Newsletter signup">
             <input type="email" placeholder="your@email.com" aria-label="Email" required />
             <button type="submit" class="btn btn-primary btn-sm">→</button>
@@ -390,8 +291,8 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 ZAWN Programming Group. All rights reserved.</span>
-        <span>Built with ❤️ by ZAWN</span>
+        <span data-i18n="footer_copyright">© 2026 ZAWAN Programming Group. All rights reserved.</span>
+        <span data-i18n="footer_built">Built with ❤️ by ZAWAN</span>
       </div>
     </div>
   </footer>
@@ -402,6 +303,7 @@
     }
   </style>
 
+  <script src="../assets/js/translations.js"></script>
   <script src="../assets/js/main.js"></script>
 </body>
 </html>

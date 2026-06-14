@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" dir="ltr" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact ZAWN — Get in touch for custom software development, mobile apps, and technical consulting." />
-  <title>Contact | ZAWN</title>
+  <meta name="description" content="Contact ZAWAN — Get in touch for custom software development, mobile apps, and technical consulting." />
+  <title>Contact | ZAWAN</title>
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <div id="loading-screen" aria-hidden="true">
     <div class="loader-inner">
-      <div class="loader-logo">ZAWN</div>
+      <div class="loader-logo">ZAWAN</div>
       <div class="loader-bar"></div>
     </div>
   </div>
@@ -21,19 +22,20 @@
   <nav class="navbar scrolled" role="navigation" aria-label="Main navigation">
     <div class="container">
       <div class="nav-inner">
-        <a href="../index.html" class="nav-brand" aria-label="ZAWN Home">
-          <div class="brand-icon" aria-hidden="true">Z</div>
-          <span class="brand-name">ZAWN</span>
+        <a href="../index.html" class="nav-brand" aria-label="ZAWAN Home">
+          
+          <span class="brand-name">ZAWAN</span>
         </a>
         <ul class="nav-links" role="list">
-          <li><a href="../index.html" class="nav-link">Home</a></li>
-          <li><a href="products.html" class="nav-link">Products</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+          <li><a href="../index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+          <li><a href="products.html" class="nav-link" data-i18n="nav_products">Products</a></li>
+          <li><a href="services.html" class="nav-link" data-i18n="nav_services">Services</a></li>
+          <li><a href="contact.html" class="nav-link active" data-i18n="nav_contact">Contact</a></li>
         </ul>
         <div class="nav-actions">
+          <button class="btn-lang" aria-label="Switch language">AR</button>
           <button class="btn-theme" aria-label="Toggle theme">☀️</button>
-          <a href="contact.html" class="btn btn-primary btn-sm">Get Started</a>
+          <a href="contact.html" class="btn btn-primary btn-sm" data-i18n="nav_cta">Get Started</a>
           <button class="hamburger" aria-label="Toggle mobile menu">
             <span></span><span></span><span></span>
           </button>
@@ -46,11 +48,11 @@
   <header class="page-hero" aria-labelledby="page-title">
     <div class="page-hero-glow" aria-hidden="true"></div>
     <div class="container">
-      <div class="section-tag" data-aos>📬 Get In Touch</div>
+      <div class="section-tag" data-aos data-i18n="contact_tag">📬 Get In Touch</div>
       <h1 class="section-title mt-2" id="page-title" data-aos data-aos-delay="100">
-        Let's Build <span class="gradient-text">Together</span>
+        <span data-i18n="contact_title">Let's Build</span> <span class="gradient-text" data-i18n="contact_title_grad">Together</span>
       </h1>
-      <p class="section-subtitle" style="margin-inline:auto;" data-aos data-aos-delay="200">
+      <p class="section-subtitle" style="margin-inline:auto;" data-aos data-aos-delay="200" data-i18n="contact_subtitle">
         Have a project in mind? We'd love to hear about it. Send us a message and we'll get back to you within 24 hours.
       </p>
     </div>
@@ -65,59 +67,59 @@
         <div data-aos="fade-right">
           <div class="contact-form-wrap">
             <h2 style="font-family:var(--font-head);font-size:1.4rem;font-weight:700;margin-bottom:1.75rem;">
-              Send Us a <span class="gradient-text">Message</span>
+              <span data-i18n="form_title">Send Us a</span> <span class="gradient-text" data-i18n="form_title_grad">Message</span>
             </h2>
 
             <form id="contact-form" novalidate aria-label="Contact form">
 
               <div class="form-row">
                 <div class="form-group">
-                  <label for="contact-name">Full Name *</label>
-                  <input type="text" id="contact-name" name="name" placeholder="John Smith" required autocomplete="name" />
+                  <label for="contact-name" data-i18n="label_name">Full Name *</label>
+                  <input type="text" id="contact-name" name="name" placeholder="John Smith" data-i18n-ph="ph_name" required autocomplete="name" />
                 </div>
                 <div class="form-group">
-                  <label for="contact-email">Email Address *</label>
-                  <input type="email" id="contact-email" name="email" placeholder="john@company.com" required autocomplete="email" />
+                  <label for="contact-email" data-i18n="label_email">Email Address *</label>
+                  <input type="email" id="contact-email" name="email" placeholder="john@company.com" data-i18n-ph="ph_email" required autocomplete="email" />
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group">
-                  <label for="contact-phone">Phone Number</label>
-                  <input type="tel" id="contact-phone" name="phone" placeholder="+1 (555) 000-0000" autocomplete="tel" />
+                  <label for="contact-phone" data-i18n="label_phone">Phone Number</label>
+                  <input type="tel" id="contact-phone" name="phone" placeholder="+1 (555) 000-0000" data-i18n-ph="ph_phone" autocomplete="tel" />
                 </div>
                 <div class="form-group">
-                  <label for="contact-service">Service Interested In *</label>
+                  <label for="contact-service" data-i18n="label_service">Service Interested In *</label>
                   <select id="contact-service" name="service" required>
-                    <option value="" disabled selected>Select a service…</option>
-                    <option value="web">Web Development</option>
-                    <option value="mobile">Mobile App Development</option>
-                    <option value="system">Custom System / ERP</option>
-                    <option value="consulting">Technical Consulting</option>
-                    <option value="product">Product License</option>
-                    <option value="other">Other</option>
+                    <option value="" disabled selected data-i18n="select_service">Select a service…</option>
+                    <option value="web" data-i18n="opt_web">Web Development</option>
+                    <option value="mobile" data-i18n="opt_mobile">Mobile App Development</option>
+                    <option value="system" data-i18n="opt_system">Custom System / ERP</option>
+                    <option value="consulting" data-i18n="opt_consulting">Technical Consulting</option>
+                    <option value="product" data-i18n="opt_product">Product License</option>
+                    <option value="other" data-i18n="opt_other">Other</option>
                   </select>
                 </div>
               </div>
 
               <div class="form-group">
-                <label for="contact-budget">Project Budget</label>
+                <label for="contact-budget" data-i18n="label_budget">Project Budget</label>
                 <select id="contact-budget" name="budget">
-                  <option value="" disabled selected>Select your budget range…</option>
-                  <option value="under-1k">Under $1,000</option>
-                  <option value="1k-5k">$1,000 – $5,000</option>
-                  <option value="5k-15k">$5,000 – $15,000</option>
-                  <option value="15k-50k">$15,000 – $50,000</option>
-                  <option value="50k+">$50,000+</option>
+                  <option value="" disabled selected data-i18n="select_budget">Select your budget range…</option>
+                  <option value="under-1k" data-i18n="opt_under1k">Under $1,000</option>
+                  <option value="1k-5k" data-i18n="opt_1k5k">$1,000 – $5,000</option>
+                  <option value="5k-15k" data-i18n="opt_5k15k">$5,000 – $15,000</option>
+                  <option value="15k-50k" data-i18n="opt_15k50k">$15,000 – $50,000</option>
+                  <option value="50k+" data-i18n="opt_50kplus">$50,000+</option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label for="contact-message">Project Details *</label>
-                <textarea id="contact-message" name="message" placeholder="Describe your project, goals, timeline, and any other details that would help us understand your needs…" required></textarea>
+                <label for="contact-message" data-i18n="label_message">Project Details *</label>
+                <textarea id="contact-message" name="message" placeholder="Describe your project, goals, timeline..." data-i18n-ph="ph_message" required></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary btn-lg w-full" style="justify-content:center;">
+              <button type="submit" class="btn btn-primary btn-lg w-full" style="justify-content:center;" data-i18n="submit_btn">
                 Send Message →
               </button>
 
@@ -131,19 +133,19 @@
           <div class="contact-info">
 
             <h2 style="font-family:var(--font-head);font-size:1.3rem;font-weight:700;margin-bottom:.25rem;">
-              Contact <span class="gradient-text">Information</span>
+              <span data-i18n="contact_info_title">Contact</span> <span class="gradient-text" data-i18n="contact_info_grad">Information</span>
             </h2>
-            <p style="font-size:.9rem;color:var(--clr-text-muted);margin-bottom:1.25rem;">
+            <p style="font-size:.9rem;color:var(--clr-text-muted);margin-bottom:1.25rem;" data-i18n="contact_info_sub">
               Reach us through any of the channels below. We typically respond within a few hours.
             </p>
 
             <div class="contact-info-card">
               <div class="cic-icon" aria-hidden="true">✉️</div>
               <div>
-                <div class="cic-title">Email Us</div>
+                <div class="cic-title" data-i18n="cic1_title">Email Us</div>
                 <div class="cic-value">
-                  <a href="mailto:hello@zawn.dev" style="color:var(--clr-accent);">hello@zawn.dev</a><br />
-                  <a href="mailto:support@zawn.dev" style="color:var(--clr-text-muted);font-size:.85rem;">support@zawn.dev</a>
+                  <a href="mailto:hello@zawan.dev" style="color:var(--clr-accent);">hello@zawan.dev</a><br />
+                  <a href="mailto:support@zawan.dev" style="color:var(--clr-text-muted);font-size:.85rem;">support@zawan.dev</a>
                 </div>
               </div>
             </div>
@@ -151,7 +153,7 @@
             <div class="contact-info-card">
               <div class="cic-icon" aria-hidden="true">📞</div>
               <div>
-                <div class="cic-title">Call Us</div>
+                <div class="cic-title" data-i18n="cic2_title">Call Us</div>
                 <div class="cic-value">
                   <a href="tel:+15550001234" style="color:var(--clr-accent);">+1 (555) 000-1234</a><br />
                   <span style="font-size:.85rem;color:var(--clr-text-muted);">Mon – Fri, 9 AM – 6 PM EST</span>
@@ -162,10 +164,10 @@
             <div class="contact-info-card">
               <div class="cic-icon" aria-hidden="true">📍</div>
               <div>
-                <div class="cic-title">Our Location</div>
+                <div class="cic-title" data-i18n="cic3_title">Our Location</div>
                 <div class="cic-value">
-                  Remote-first team<br />
-                  <span style="font-size:.85rem;color:var(--clr-text-muted);">Working globally across all timezones</span>
+                  <span data-i18n="cic3_val">Remote-first team</span><br />
+                  <span style="font-size:.85rem;color:var(--clr-text-muted);" data-i18n="cic3_sub">Working globally across all timezones</span>
                 </div>
               </div>
             </div>
@@ -173,10 +175,10 @@
             <div class="contact-info-card">
               <div class="cic-icon" aria-hidden="true">⏱️</div>
               <div>
-                <div class="cic-title">Response Time</div>
+                <div class="cic-title" data-i18n="cic4_title">Response Time</div>
                 <div class="cic-value">
-                  <span style="color:var(--clr-accent);">Under 24 hours</span><br />
-                  <span style="font-size:.85rem;color:var(--clr-text-muted);">Usually within a few hours</span>
+                  <span style="color:var(--clr-accent);" data-i18n="cic4_val">Under 24 hours</span><br />
+                  <span style="font-size:.85rem;color:var(--clr-text-muted);" data-i18n="cic4_sub">Usually within a few hours</span>
                 </div>
               </div>
             </div>
@@ -185,7 +187,7 @@
 
           <!-- Social Links -->
           <div class="contact-social" data-aos data-aos-delay="200">
-            <h4>Follow Us</h4>
+            <h4 data-i18n="follow_us">Follow Us</h4>
             <div class="social-links">
               <a href="#" class="social-link" aria-label="GitHub" title="GitHub">🐙</a>
               <a href="#" class="social-link" aria-label="Twitter / X" title="Twitter">🐦</a>
@@ -197,19 +199,19 @@
 
           <!-- FAQ quick -->
           <div style="margin-top:2rem;" data-aos data-aos-delay="250">
-            <h4 style="font-family:var(--font-head);font-weight:700;margin-bottom:1rem;">Quick FAQ</h4>
+            <h4 style="font-family:var(--font-head);font-weight:700;margin-bottom:1rem;" data-i18n="faq_title">Quick FAQ</h4>
             <div style="display:flex;flex-direction:column;gap:.85rem;">
               <div style="background:var(--clr-card);border:1px solid var(--clr-border);border-radius:var(--radius-md);padding:1rem;">
-                <div style="font-weight:600;font-size:.9rem;margin-bottom:.3rem;">How long does a project take?</div>
-                <div style="font-size:.85rem;color:var(--clr-text-muted);">Simple websites: 2–4 weeks. Complex systems: 2–6 months depending on scope.</div>
+                <div style="font-weight:600;font-size:.9rem;margin-bottom:.3rem;" data-i18n="faq1_q">How long does a project take?</div>
+                <div style="font-size:.85rem;color:var(--clr-text-muted);" data-i18n="faq1_a">Simple websites: 2–4 weeks. Complex systems: 2–6 months depending on scope.</div>
               </div>
               <div style="background:var(--clr-card);border:1px solid var(--clr-border);border-radius:var(--radius-md);padding:1rem;">
-                <div style="font-weight:600;font-size:.9rem;margin-bottom:.3rem;">Do you offer post-launch support?</div>
-                <div style="font-size:.85rem;color:var(--clr-text-muted);">Yes. All projects include at minimum 30 days of free support. Extended plans available.</div>
+                <div style="font-weight:600;font-size:.9rem;margin-bottom:.3rem;" data-i18n="faq2_q">Do you offer post-launch support?</div>
+                <div style="font-size:.85rem;color:var(--clr-text-muted);" data-i18n="faq2_a">Yes. All projects include at minimum 30 days of free support. Extended plans available.</div>
               </div>
               <div style="background:var(--clr-card);border:1px solid var(--clr-border);border-radius:var(--radius-md);padding:1rem;">
-                <div style="font-weight:600;font-size:.9rem;margin-bottom:.3rem;">Can I see the source code?</div>
-                <div style="font-size:.85rem;color:var(--clr-text-muted);">Absolutely. All custom projects come with full source code ownership transferred to you.</div>
+                <div style="font-weight:600;font-size:.9rem;margin-bottom:.3rem;" data-i18n="faq3_q">Can I see the source code?</div>
+                <div style="font-size:.85rem;color:var(--clr-text-muted);" data-i18n="faq3_a">Absolutely. All custom projects come with full source code ownership transferred to you.</div>
               </div>
             </div>
           </div>
@@ -224,10 +226,10 @@
     <div class="container">
       <div class="cta-inner" data-aos="zoom-in">
         <h2 class="cta-title">Ready to Transform Your Business?</h2>
-        <p class="cta-desc">Join 100+ businesses that trust ZAWN to power their digital products.</p>
+        <p class="cta-desc">Join 100+ businesses that trust ZAWAN to power their digital products.</p>
         <div class="cta-actions">
-          <a href="products.html" class="btn btn-white btn-lg">Browse Products</a>
-          <a href="services.html" class="btn btn-ghost-white btn-lg">Our Services</a>
+          <a href="products.html" class="btn btn-white btn-lg" data-i18n="cta_btn2">Browse Products</a>
+          <a href="services.html" class="btn btn-ghost-white btn-lg" data-i18n="nav_services">Our Services</a>
         </div>
       </div>
     </div>
@@ -238,10 +240,10 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="../index.html" class="nav-brand">
-            <div class="brand-icon" aria-hidden="true">Z</div>
-            <span class="brand-name">ZAWN</span>
+            
+            <span class="brand-name">ZAWAN</span>
           </a>
-          <p class="footer-desc">Engineering the Future, One Line at a Time.</p>
+          <p class="footer-desc" data-i18n="footer_desc">Engineering the Future, One Line at a Time.</p>
           <div class="social-links">
             <a href="#" class="social-link" aria-label="GitHub">🐙</a>
             <a href="#" class="social-link" aria-label="Twitter">🐦</a>
@@ -250,26 +252,26 @@
           </div>
         </div>
         <div class="footer-col">
-          <h4>Products</h4>
+          <h4 data-i18n="footer_products">Products</h4>
           <ul role="list">
-            <li><a href="products.html">Task Manager</a></li>
-            <li><a href="products.html">E-Commerce</a></li>
-            <li><a href="products.html">Hospital System</a></li>
-            <li><a href="products.html">AI Dashboard</a></li>
+            <li><a href="products.html" data-i18n="p1_title">Task Manager</a></li>
+            <li><a href="products.html" data-i18n="p2_title">E-Commerce</a></li>
+            <li><a href="products.html" data-i18n="p3_title">Hospital System</a></li>
+            <li><a href="products.html" data-i18n="p6_title">AI Dashboard</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Company</h4>
+          <h4 data-i18n="footer_company">Company</h4>
           <ul role="list">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="../index.html" data-i18n="footer_about">About Us</a></li>
+            <li><a href="services.html" data-i18n="nav_services">Services</a></li>
+            <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+            <li><a href="#" data-i18n="footer_privacy">Privacy Policy</a></li>
           </ul>
         </div>
         <div class="footer-col footer-newsletter">
-          <h4>Stay Updated</h4>
-          <p>Get updates on new products and services.</p>
+          <h4 data-i18n="footer_updated">Stay Updated</h4>
+          <p data-i18n="footer_newsletter_desc">Get updates on new products and services.</p>
           <form class="newsletter-form" aria-label="Newsletter signup">
             <input type="email" placeholder="your@email.com" aria-label="Email" required />
             <button type="submit" class="btn btn-primary btn-sm">→</button>
@@ -277,12 +279,83 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 ZAWN Programming Group. All rights reserved.</span>
-        <span>Built with ❤️ by ZAWN</span>
+        <span data-i18n="footer_copyright">© 2026 ZAWAN Programming Group. All rights reserved.</span>
+        <span data-i18n="footer_built">Built with ❤️ by ZAWAN</span>
       </div>
     </div>
   </footer>
 
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="../assets/js/firebase.js"></script>
+  <script src="../assets/js/translations.js"></script>
   <script src="../assets/js/main.js"></script>
+  <script>
+    (function () {
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+
+      // Inject feedback elements after the submit button
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var successMsg = document.createElement('div');
+      successMsg.id = 'form-success';
+      successMsg.style.cssText = 'display:none;margin-top:1rem;padding:.85rem 1.2rem;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.3);border-radius:8px;color:#00D4FF;font-size:.9rem;font-weight:500;';
+      successMsg.textContent = 'Message sent successfully! We\'ll get back to you within 24 hours.';
+
+      var errorMsg = document.createElement('div');
+      errorMsg.id = 'form-error';
+      errorMsg.style.cssText = 'display:none;margin-top:1rem;padding:.85rem 1.2rem;background:rgba(255,77,109,.08);border:1px solid rgba(255,77,109,.3);border-radius:8px;color:#ff4d6d;font-size:.9rem;font-weight:500;';
+      errorMsg.textContent = 'Failed to send message. Please try again or contact us directly.';
+
+      submitBtn.after(errorMsg);
+      submitBtn.after(successMsg);
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Hide previous messages
+        successMsg.style.display = 'none';
+        errorMsg.style.display = 'none';
+
+        var data = {
+          name: document.getElementById('contact-name').value.trim(),
+          email: document.getElementById('contact-email').value.trim(),
+          phone: document.getElementById('contact-phone').value.trim(),
+          service: document.getElementById('contact-service').value,
+          budget: document.getElementById('contact-budget').value,
+          message: document.getElementById('contact-message').value.trim(),
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+          status: 'new'
+        };
+
+        // Only save to Firestore if Firebase is configured
+        if (firebaseConfig.apiKey === 'YOUR_API_KEY') {
+          // Not configured — show success anyway (demo mode)
+          successMsg.style.display = 'block';
+          form.reset();
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+
+        db.collection('messages').add(data)
+          .then(function () {
+            successMsg.style.display = 'block';
+            form.reset();
+          })
+          .catch(function (err) {
+            console.error('Firestore error:', err);
+            errorMsg.style.display = 'block';
+          })
+          .finally(function () {
+            submitBtn.disabled = false;
+            submitBtn.setAttribute('data-i18n', 'submit_btn');
+            submitBtn.textContent = 'Send Message →';
+          });
+      });
+    })();
+  </script>
 </body>
 </html>
