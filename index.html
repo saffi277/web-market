@@ -11,7 +11,7 @@
 </head>
 <body>
 
-  <!-- ======= Loading ======= -->
+  <!-- ===== Loading ===== -->
   <div id="loading-screen">
     <div class="loader-inner">
       <div class="loader-z">Z</div>
@@ -19,20 +19,14 @@
     </div>
   </div>
 
-  <!-- ======= Navbar ======= -->
+  <!-- ===== Navbar ===== -->
   <nav class="navbar">
     <div class="nav-wrap">
-
-      <!-- Counter box -->
       <div class="nav-counter">04</div>
-
-      <!-- Logo -->
       <a href="index.html" class="nav-logo">
         <span class="logo-box">Z</span>
         <span class="logo-name">ZAWAN</span>
       </a>
-
-      <!-- Links -->
       <ul class="nav-links">
         <li><a href="index.html"          class="nav-link active">الرئيسية</a></li>
         <li><a href="pages/products.html" class="nav-link">الأنظمة</a></li>
@@ -42,23 +36,222 @@
         <li><a href="#blog"               class="nav-link">المدونة</a></li>
         <li><a href="pages/contact.html"  class="nav-link">تواصل معنا</a></li>
       </ul>
-
-      <!-- CTA -->
       <a href="pages/products.html" class="btn-cta">جرب الأنظمة</a>
-      <button class="hamburger" aria-label="القائمة"><span></span><span></span><span></span></button>
+      <button class="hamburger"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
-  <!-- ======= HERO ======= -->
+  <!-- ===== Hero ===== -->
   <section class="hero">
-    <!-- Ambient glow -->
     <div class="hero-glow"></div>
-    <!-- Subtle grid -->
     <div class="hero-grid"></div>
 
+    <!-- LTR wrapper: city LEFT, text RIGHT -->
     <div class="hero-wrap">
 
-      <!-- TEXT side -->
+      <!-- CITY (left column) -->
+      <div class="hero-scene">
+        <div class="scene-blob"></div>
+
+        <svg class="city-svg" viewBox="0 0 560 470" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ct" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#C084FC"/><stop offset="100%" stop-color="#8B5CF6"/>
+            </linearGradient>
+            <linearGradient id="cr" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#5B21B6"/><stop offset="100%" stop-color="#4C1D95"/>
+            </linearGradient>
+            <linearGradient id="cl" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#6D28D9"/><stop offset="100%" stop-color="#5B21B6"/>
+            </linearGradient>
+            <linearGradient id="zg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#F3E8FF"/><stop offset="100%" stop-color="#C084FC"/>
+            </linearGradient>
+            <linearGradient id="pt" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1e103a"/><stop offset="100%" stop-color="#120830"/>
+            </linearGradient>
+            <linearGradient id="br" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#1c0d40"/><stop offset="100%" stop-color="#0d0620"/>
+            </linearGradient>
+            <linearGradient id="bl" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#160a32"/><stop offset="100%" stop-color="#090418"/>
+            </linearGradient>
+            <linearGradient id="btop" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2a1258"/><stop offset="100%" stop-color="#1c0c40"/>
+            </linearGradient>
+            <filter id="gw" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="gs" x="-80%" y="-80%" width="260%" height="260%">
+              <feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="gf" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <radialGradient id="gg" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#5B21B6" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#5B21B6" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <!-- Ground glow -->
+          <ellipse cx="280" cy="340" rx="230" ry="75" fill="url(#gg)"/>
+
+          <!-- Ground platform diamond -->
+          <polygon points="500,295 280,175 60,295 280,415" fill="url(#pt)" opacity="0.65"/>
+          <!-- Grid lines -->
+          <line x1="280" y1="175" x2="280" y2="415" stroke="#7C3AED" stroke-width="0.5" opacity="0.22"/>
+          <line x1="60"  y1="295" x2="500" y2="295" stroke="#7C3AED" stroke-width="0.5" opacity="0.22"/>
+          <line x1="170" y1="235" x2="390" y2="355" stroke="#7C3AED" stroke-width="0.5" opacity="0.18"/>
+          <line x1="390" y1="235" x2="170" y2="355" stroke="#7C3AED" stroke-width="0.5" opacity="0.18"/>
+          <line x1="225" y1="205" x2="335" y2="385" stroke="#7C3AED" stroke-width="0.4" opacity="0.14"/>
+          <line x1="335" y1="205" x2="225" y2="385" stroke="#7C3AED" stroke-width="0.4" opacity="0.14"/>
+          <!-- Platform border glow -->
+          <polygon points="500,295 280,175 60,295 280,415" fill="none" stroke="#8B5CF6" stroke-width="1.2" opacity="0.45" filter="url(#gw)"/>
+
+          <!-- === BUILDING A — far left tall === -->
+          <polygon points="255,238 255,62 205,37 205,213"  fill="url(#br)"/>
+          <polygon points="205,213 155,238 155,62  205,37"  fill="url(#bl)"/>
+          <polygon points="255,62  205,37  155,62  205,87"  fill="url(#btop)"/>
+          <line x1="205" y1="37" x2="205" y2="213" stroke="#7C3AED" stroke-width="0.8" opacity="0.55"/>
+          <!-- windows -->
+          <rect x="215" y="68"  width="7" height="9" rx="1" fill="#00D4FF" opacity="0.75" filter="url(#gf)"/>
+          <rect x="230" y="68"  width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.8"  filter="url(#gf)"/>
+          <rect x="244" y="70"  width="7" height="9" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="215" y="85"  width="7" height="9" rx="1" fill="#7C3AED" opacity="0.7"/>
+          <rect x="230" y="85"  width="7" height="9" rx="1" fill="#00D4FF" opacity="0.7"  filter="url(#gf)"/>
+          <rect x="244" y="87"  width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.6"/>
+          <rect x="215" y="102" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.65"/>
+          <rect x="230" y="102" width="7" height="9" rx="1" fill="#7C3AED" opacity="0.7"/>
+          <rect x="215" y="119" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.65"/>
+          <rect x="230" y="119" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="215" y="136" width="7" height="9" rx="1" fill="#7C3AED" opacity="0.6"/>
+          <rect x="215" y="153" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.55"/>
+          <rect x="215" y="170" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.55"/>
+          <rect x="163" y="70"  width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.55"/>
+          <rect x="178" y="70"  width="7" height="9" rx="1" fill="#00D4FF" opacity="0.5"/>
+          <rect x="163" y="87"  width="7" height="9" rx="1" fill="#7C3AED" opacity="0.55"/>
+          <rect x="163" y="104" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.5"/>
+          <rect x="163" y="121" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.5"/>
+
+          <!-- === BUILDING B — left medium === -->
+          <polygon points="230,300 230,190 180,165 180,275" fill="url(#br)"/>
+          <polygon points="180,275 130,300 130,190 180,165" fill="url(#bl)"/>
+          <polygon points="230,190 180,165 130,190 180,215" fill="url(#btop)"/>
+          <rect x="188" y="173" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.75" filter="url(#gf)"/>
+          <rect x="202" y="173" width="7" height="8" rx="1" fill="#7C3AED" opacity="0.7"/>
+          <rect x="217" y="177" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="188" y="188" width="7" height="8" rx="1" fill="#8B5CF6" opacity="0.7"/>
+          <rect x="202" y="188" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.65"/>
+          <rect x="188" y="203" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="202" y="203" width="7" height="8" rx="1" fill="#8B5CF6" opacity="0.6"/>
+          <rect x="188" y="218" width="7" height="8" rx="1" fill="#7C3AED" opacity="0.55"/>
+          <rect x="137" y="196" width="6" height="8" rx="1" fill="#8B5CF6" opacity="0.5"/>
+          <rect x="152" y="194" width="6" height="8" rx="1" fill="#00D4FF" opacity="0.5"/>
+          <rect x="137" y="210" width="6" height="8" rx="1" fill="#7C3AED" opacity="0.5"/>
+
+          <!-- === BUILDING C — far right tall === -->
+          <polygon points="355,338 405,363 405,187 355,162" fill="url(#br)"/>
+          <polygon points="355,338 355,162 305,187 305,363" fill="url(#bl)"/>
+          <polygon points="355,162 405,187 355,212 305,187" fill="url(#btop)"/>
+          <line x1="355" y1="162" x2="355" y2="338" stroke="#7C3AED" stroke-width="0.8" opacity="0.55"/>
+          <rect x="362" y="193" width="7" height="9" rx="1" fill="#7C3AED" opacity="0.75" filter="url(#gf)"/>
+          <rect x="376" y="193" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.7"  filter="url(#gf)"/>
+          <rect x="390" y="196" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.6"/>
+          <rect x="362" y="210" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.7"/>
+          <rect x="376" y="210" width="7" height="9" rx="1" fill="#7C3AED" opacity="0.65"/>
+          <rect x="390" y="213" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="362" y="227" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.65"/>
+          <rect x="376" y="227" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="362" y="244" width="7" height="9" rx="1" fill="#7C3AED" opacity="0.6"/>
+          <rect x="362" y="261" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.55"/>
+          <rect x="362" y="278" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.5"/>
+          <rect x="312" y="193" width="6" height="8" rx="1" fill="#8B5CF6" opacity="0.55"/>
+          <rect x="326" y="195" width="6" height="8" rx="1" fill="#00D4FF" opacity="0.5"/>
+          <rect x="312" y="210" width="6" height="8" rx="1" fill="#7C3AED" opacity="0.55"/>
+          <rect x="312" y="227" width="6" height="8" rx="1" fill="#00D4FF" opacity="0.5"/>
+          <rect x="312" y="244" width="6" height="8" rx="1" fill="#7C3AED" opacity="0.5"/>
+
+          <!-- === BUILDING D — right medium === -->
+          <polygon points="255,338 305,363 305,253 255,228" fill="url(#br)"/>
+          <polygon points="255,338 255,228 205,253 205,363" fill="url(#bl)"/>
+          <polygon points="255,228 305,253 255,278 205,253" fill="url(#btop)"/>
+          <rect x="262" y="235" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.7" filter="url(#gf)"/>
+          <rect x="276" y="238" width="7" height="8" rx="1" fill="#7C3AED" opacity="0.65"/>
+          <rect x="290" y="242" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="262" y="250" width="7" height="8" rx="1" fill="#8B5CF6" opacity="0.65"/>
+          <rect x="276" y="253" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.6"/>
+          <rect x="262" y="265" width="7" height="8" rx="1" fill="#7C3AED" opacity="0.6"/>
+          <rect x="262" y="280" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.55"/>
+          <rect x="212" y="258" width="6" height="8" rx="1" fill="#8B5CF6" opacity="0.5"/>
+          <rect x="226" y="255" width="6" height="8" rx="1" fill="#00D4FF" opacity="0.5"/>
+          <rect x="212" y="273" width="6" height="8" rx="1" fill="#7C3AED" opacity="0.5"/>
+
+          <!-- === BUILDING E — front left small === -->
+          <polygon points="230,325 180,300 180,234 230,259" fill="url(#br)"/>
+          <polygon points="180,300 130,325 130,259 180,234" fill="url(#bl)"/>
+          <polygon points="230,259 180,234 130,259 180,284" fill="url(#btop)"/>
+          <rect x="188" y="240" width="6" height="7" rx="1" fill="#00D4FF" opacity="0.65" filter="url(#gf)"/>
+          <rect x="202" y="243" width="6" height="7" rx="1" fill="#7C3AED" opacity="0.6"/>
+          <rect x="217" y="246" width="6" height="7" rx="1" fill="#00D4FF" opacity="0.55"/>
+          <rect x="188" y="255" width="6" height="7" rx="1" fill="#8B5CF6" opacity="0.6"/>
+          <rect x="202" y="258" width="6" height="7" rx="1" fill="#00D4FF" opacity="0.55"/>
+          <rect x="137" y="264" width="6" height="7" rx="1" fill="#7C3AED" opacity="0.5"/>
+          <rect x="152" y="261" width="6" height="7" rx="1" fill="#8B5CF6" opacity="0.5"/>
+
+          <!-- === SUB PLATFORM (dais) === -->
+          <polygon points="330,278 380,253 380,268 330,293" fill="#1a0840" opacity="0.9"/>
+          <polygon points="230,278 280,253 280,268 230,293" fill="#110630" opacity="0.9"/>
+          <polygon points="330,278 280,253 230,278 280,303" fill="#1e0e4c" opacity="0.9"/>
+          <polygon points="330,278 280,253 230,278 280,303" fill="none" stroke="#8B5CF6" stroke-width="1.1" opacity="0.55" filter="url(#gw)"/>
+
+          <!-- === CENTRAL Z CUBE === -->
+          <ellipse cx="280" cy="282" rx="58" ry="17" fill="#7C3AED" opacity="0.18" filter="url(#gs)"/>
+          <!-- Left face -->
+          <polygon points="280,231 230,256 230,146 280,121" fill="url(#cl)" filter="url(#gw)"/>
+          <!-- Right face -->
+          <polygon points="280,231 330,256 330,146 280,121" fill="url(#cr)" filter="url(#gw)"/>
+          <!-- Top face -->
+          <polygon points="280,121 330,146 280,171 230,146" fill="url(#ct)" filter="url(#gw)"/>
+          <!-- Edge glows -->
+          <polyline points="230,146 280,121 330,146" fill="none" stroke="#EDE9FE" stroke-width="2" opacity="0.85" filter="url(#gw)"/>
+          <line x1="280" y1="121" x2="280" y2="231" stroke="#C084FC" stroke-width="1.1" opacity="0.55"/>
+          <line x1="230" y1="146" x2="230" y2="256" stroke="#9B5CF6" stroke-width="0.9" opacity="0.5"/>
+          <line x1="330" y1="146" x2="330" y2="256" stroke="#9B5CF6" stroke-width="0.9" opacity="0.5"/>
+          <polyline points="230,256 280,231 330,256" fill="none" stroke="#7C3AED" stroke-width="1" opacity="0.5"/>
+          <!-- Z letter -->
+          <text x="249" y="214" font-family="Space Grotesk,sans-serif" font-size="64" font-weight="900"
+                fill="url(#zg)" filter="url(#gs)" text-anchor="middle">Z</text>
+
+          <!-- Ring glow under cube -->
+          <ellipse cx="280" cy="295" rx="108" ry="27" fill="none" stroke="#8B5CF6" stroke-width="1.5" opacity="0.4" filter="url(#gw)"/>
+          <ellipse cx="280" cy="295" rx="78"  ry="19" fill="none" stroke="#6D28D9" stroke-width="0.8" opacity="0.3"/>
+
+          <!-- Signal lines -->
+          <line x1="280" y1="121" x2="185" y2="72"  stroke="#8B5CF6" stroke-width="0.8" opacity="0.28" stroke-dasharray="5,5"/>
+          <line x1="330" y1="146" x2="405" y2="102" stroke="#6D28D9" stroke-width="0.8" opacity="0.28" stroke-dasharray="5,5"/>
+
+          <!-- Particles -->
+          <circle cx="148" cy="148" r="2.5" fill="#C084FC" opacity="0.9" filter="url(#gw)"/>
+          <circle cx="420" cy="138" r="2"   fill="#00D4FF" opacity="0.8" filter="url(#gw)"/>
+          <circle cx="458" cy="208" r="2.8" fill="#A855F7" opacity="0.7" filter="url(#gw)"/>
+          <circle cx="105" cy="218" r="2"   fill="#00D4FF" opacity="0.7" filter="url(#gw)"/>
+          <circle cx="458" cy="318" r="2.2" fill="#C084FC" opacity="0.6" filter="url(#gw)"/>
+          <circle cx="188" cy="93"  r="1.8" fill="#00D4FF" opacity="0.7"/>
+          <circle cx="378" cy="88"  r="1.8" fill="#A855F7" opacity="0.7"/>
+          <circle cx="95"  cy="308" r="1.5" fill="#8B5CF6" opacity="0.6"/>
+        </svg>
+
+        <!-- Floating chips -->
+        <div class="chip chip-1">
+          <span class="chip-dot"></span><span>أنظمة نشطة</span><strong>50+</strong>
+        </div>
+        <div class="chip chip-2">
+          <span class="chip-dot green"></span><span>عميل راضٍ</span><strong>100+</strong>
+        </div>
+      </div>
+
+      <!-- TEXT (right column) -->
       <div class="hero-text">
         <span class="hero-badge">حلول برمجية متكاملة</span>
         <h1 class="hero-h1">
@@ -71,7 +264,7 @@
         </p>
         <div class="hero-btns">
           <a href="pages/contact.html" class="btn-outline">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012 .94h3a2 2 0 012 1.72 12.77 12.77 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.77 12.77 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81A19.79 19.79 0 01.4 1.11 2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
             تواصل معنا
           </a>
           <a href="pages/products.html" class="btn-fill">
@@ -81,337 +274,46 @@
         </div>
       </div>
 
-      <!-- 3D CITY -->
-      <div class="hero-scene">
-        <!-- background glow blob -->
-        <div class="scene-blob"></div>
-
-        <svg class="city-svg" viewBox="0 0 560 470" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <!-- Cube gradients -->
-            <linearGradient id="cubeTop" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#C084FC"/>
-              <stop offset="100%" stop-color="#8B5CF6"/>
-            </linearGradient>
-            <linearGradient id="cubeRight" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#5B21B6"/>
-              <stop offset="100%" stop-color="#4C1D95"/>
-            </linearGradient>
-            <linearGradient id="cubeLeft" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#6D28D9"/>
-              <stop offset="100%" stop-color="#5B21B6"/>
-            </linearGradient>
-            <linearGradient id="zGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#E9D5FF"/>
-              <stop offset="100%" stop-color="#C084FC"/>
-            </linearGradient>
-            <!-- Platform gradient -->
-            <linearGradient id="platTop" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#1e103a"/>
-              <stop offset="100%" stop-color="#150c2e"/>
-            </linearGradient>
-            <!-- Building colors -->
-            <linearGradient id="bRight" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#1a0c38"/>
-              <stop offset="100%" stop-color="#0d0620"/>
-            </linearGradient>
-            <linearGradient id="bLeft" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#150a30"/>
-              <stop offset="100%" stop-color="#0a0518"/>
-            </linearGradient>
-            <linearGradient id="bTop" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#2a1256"/>
-              <stop offset="100%" stop-color="#1e0c42"/>
-            </linearGradient>
-            <!-- Glow filter -->
-            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="5" result="blur"/>
-              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-            <filter id="glowStrong" x="-80%" y="-80%" width="260%" height="260%">
-              <feGaussianBlur stdDeviation="12" result="blur"/>
-              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-            <filter id="glowSoft" x="-30%" y="-30%" width="160%" height="160%">
-              <feGaussianBlur stdDeviation="3" result="blur"/>
-              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-            <!-- Ground radial glow -->
-            <radialGradient id="groundGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#5B21B6" stop-opacity="0.3"/>
-              <stop offset="100%" stop-color="#5B21B6" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-
-          <!-- === GROUND GLOW === -->
-          <ellipse cx="280" cy="340" rx="240" ry="80" fill="url(#groundGlow)"/>
-
-          <!-- === LARGE GROUND PLATFORM === -->
-          <!-- Top surface (visible diamond) -->
-          <polygon points="500,295 280,175 60,295 280,415" fill="url(#platTop)" opacity="0.7"/>
-          <!-- Grid lines on platform -->
-          <line x1="280" y1="175" x2="280" y2="415" stroke="#7C3AED" stroke-width="0.5" opacity="0.25"/>
-          <line x1="60"  y1="295" x2="500" y2="295" stroke="#7C3AED" stroke-width="0.5" opacity="0.25"/>
-          <line x1="170" y1="235" x2="390" y2="355" stroke="#7C3AED" stroke-width="0.5" opacity="0.2"/>
-          <line x1="390" y1="235" x2="170" y2="355" stroke="#7C3AED" stroke-width="0.5" opacity="0.2"/>
-          <line x1="215" y1="205" x2="345" y2="385" stroke="#7C3AED" stroke-width="0.5" opacity="0.15"/>
-          <line x1="345" y1="205" x2="215" y2="385" stroke="#7C3AED" stroke-width="0.5" opacity="0.15"/>
-          <!-- Platform edge glow -->
-          <polygon points="500,295 280,175 60,295 280,415" fill="none" stroke="#8B5CF6" stroke-width="1.2" opacity="0.5" filter="url(#glow)"/>
-
-          <!-- === BUILDING A — Far left, tallest === -->
-          <!-- Right face -->
-          <polygon points="255,238 255,62 205,37 205,213" fill="url(#bRight)"/>
-          <!-- Left face -->
-          <polygon points="205,213 155,238 155,62 205,37" fill="url(#bLeft)"/>
-          <!-- Top face -->
-          <polygon points="255,62 205,37 155,62 205,87" fill="url(#bTop)"/>
-          <!-- Edge glow -->
-          <line x1="205" y1="37" x2="205" y2="213" stroke="#6D28D9" stroke-width="0.8" opacity="0.6"/>
-          <!-- Windows right face -->
-          <rect x="215" y="70"  width="7" height="9" rx="1" fill="#00D4FF" opacity="0.7" filter="url(#glowSoft)"/>
-          <rect x="230" y="70"  width="7" height="9" rx="1" fill="#7C3AED" opacity="0.8" filter="url(#glowSoft)"/>
-          <rect x="244" y="70"  width="7" height="9" rx="1" fill="#00D4FF" opacity="0.6"/>
-          <rect x="215" y="88"  width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.7"/>
-          <rect x="230" y="88"  width="7" height="9" rx="1" fill="#00D4FF" opacity="0.7" filter="url(#glowSoft)"/>
-          <rect x="244" y="88"  width="7" height="9" rx="1" fill="#7C3AED" opacity="0.6"/>
-          <rect x="215" y="106" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.6"/>
-          <rect x="230" y="106" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.7"/>
-          <rect x="244" y="106" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.5"/>
-          <rect x="215" y="124" width="7" height="9" rx="1" fill="#7C3AED" opacity="0.7"/>
-          <rect x="230" y="124" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.6"/>
-          <rect x="215" y="142" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.6"/>
-          <rect x="230" y="142" width="7" height="9" rx="1" fill="#7C3AED" opacity="0.5"/>
-          <rect x="215" y="160" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.6"/>
-          <rect x="230" y="160" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.6"/>
-          <!-- Windows left face -->
-          <rect x="162" y="72"  width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.6"/>
-          <rect x="176" y="72"  width="7" height="9" rx="1" fill="#00D4FF" opacity="0.5"/>
-          <rect x="162" y="90"  width="7" height="9" rx="1" fill="#7C3AED" opacity="0.6"/>
-          <rect x="176" y="90"  width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.5"/>
-          <rect x="162" y="108" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.5"/>
-          <rect x="162" y="126" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.5"/>
-
-          <!-- === BUILDING B — Left side, medium === -->
-          <!-- Right face -->
-          <polygon points="230,300 230,190 180,165 180,275" fill="url(#bRight)"/>
-          <!-- Left face -->
-          <polygon points="180,275 130,300 130,190 180,165" fill="url(#bLeft)"/>
-          <!-- Top face -->
-          <polygon points="230,190 180,165 130,190 180,215" fill="url(#bTop)"/>
-          <!-- Windows right -->
-          <rect x="188" y="175" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.75" filter="url(#glowSoft)"/>
-          <rect x="202" y="175" width="7" height="8" rx="1" fill="#7C3AED" opacity="0.7"/>
-          <rect x="216" y="175" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.6"/>
-          <rect x="188" y="190" width="7" height="8" rx="1" fill="#8B5CF6" opacity="0.7"/>
-          <rect x="202" y="190" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.65"/>
-          <rect x="216" y="190" width="7" height="8" rx="1" fill="#7C3AED" opacity="0.6"/>
-          <rect x="188" y="205" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.6"/>
-          <rect x="202" y="205" width="7" height="8" rx="1" fill="#8B5CF6" opacity="0.6"/>
-          <rect x="188" y="220" width="7" height="8" rx="1" fill="#7C3AED" opacity="0.55"/>
-          <rect x="202" y="220" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.55"/>
-          <!-- Windows left -->
-          <rect x="138" y="198" width="6" height="8" rx="1" fill="#8B5CF6" opacity="0.55"/>
-          <rect x="152" y="196" width="6" height="8" rx="1" fill="#00D4FF" opacity="0.5"/>
-          <rect x="138" y="213" width="6" height="8" rx="1" fill="#7C3AED" opacity="0.5"/>
-          <rect x="152" y="211" width="6" height="8" rx="1" fill="#8B5CF6" opacity="0.5"/>
-
-          <!-- === BUILDING C — Far right, tallest === -->
-          <!-- Right face -->
-          <polygon points="355,338 405,363 405,187 355,162" fill="url(#bRight)"/>
-          <!-- Left face -->
-          <polygon points="355,338 355,162 305,187 305,363" fill="url(#bLeft)"/>
-          <!-- Top face -->
-          <polygon points="355,162 405,187 355,212 305,187" fill="url(#bTop)"/>
-          <!-- Edge glow -->
-          <line x1="355" y1="162" x2="355" y2="338" stroke="#6D28D9" stroke-width="0.8" opacity="0.6"/>
-          <!-- Windows right -->
-          <rect x="362" y="195" width="7" height="9" rx="1" fill="#7C3AED" opacity="0.75" filter="url(#glowSoft)"/>
-          <rect x="376" y="195" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.7" filter="url(#glowSoft)"/>
-          <rect x="390" y="198" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.65"/>
-          <rect x="362" y="212" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.7"/>
-          <rect x="376" y="212" width="7" height="9" rx="1" fill="#7C3AED" opacity="0.65"/>
-          <rect x="390" y="215" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.6"/>
-          <rect x="362" y="229" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.65"/>
-          <rect x="376" y="229" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.6"/>
-          <rect x="362" y="246" width="7" height="9" rx="1" fill="#7C3AED" opacity="0.6"/>
-          <rect x="376" y="246" width="7" height="9" rx="1" fill="#8B5CF6" opacity="0.55"/>
-          <rect x="362" y="263" width="7" height="9" rx="1" fill="#00D4FF" opacity="0.6"/>
-          <rect x="362" y="280" width="7" height="9" rx="1" fill="#7C3AED" opacity="0.55"/>
-          <!-- Windows left -->
-          <rect x="312" y="195" width="6" height="8" rx="1" fill="#8B5CF6" opacity="0.6"/>
-          <rect x="326" y="197" width="6" height="8" rx="1" fill="#00D4FF" opacity="0.55"/>
-          <rect x="312" y="212" width="6" height="8" rx="1" fill="#7C3AED" opacity="0.6"/>
-          <rect x="326" y="214" width="6" height="8" rx="1" fill="#8B5CF6" opacity="0.55"/>
-          <rect x="312" y="229" width="6" height="8" rx="1" fill="#00D4FF" opacity="0.55"/>
-          <rect x="312" y="246" width="6" height="8" rx="1" fill="#7C3AED" opacity="0.5"/>
-
-          <!-- === BUILDING D — Right front, medium === -->
-          <!-- Right face -->
-          <polygon points="255,338 305,363 305,253 255,228" fill="url(#bRight)"/>
-          <!-- Left face -->
-          <polygon points="255,338 255,228 205,253 205,363" fill="url(#bLeft)"/>
-          <!-- Top face -->
-          <polygon points="255,228 305,253 255,278 205,253" fill="url(#bTop)"/>
-          <!-- Windows right -->
-          <rect x="262" y="237" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.7" filter="url(#glowSoft)"/>
-          <rect x="276" y="240" width="7" height="8" rx="1" fill="#7C3AED" opacity="0.65"/>
-          <rect x="290" y="244" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.6"/>
-          <rect x="262" y="252" width="7" height="8" rx="1" fill="#8B5CF6" opacity="0.65"/>
-          <rect x="276" y="255" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.6"/>
-          <rect x="262" y="267" width="7" height="8" rx="1" fill="#7C3AED" opacity="0.6"/>
-          <rect x="276" y="270" width="7" height="8" rx="1" fill="#8B5CF6" opacity="0.55"/>
-          <rect x="262" y="282" width="7" height="8" rx="1" fill="#00D4FF" opacity="0.55"/>
-          <!-- Windows left -->
-          <rect x="212" y="260" width="6" height="8" rx="1" fill="#8B5CF6" opacity="0.55"/>
-          <rect x="226" y="257" width="6" height="8" rx="1" fill="#00D4FF" opacity="0.5"/>
-          <rect x="212" y="275" width="6" height="8" rx="1" fill="#7C3AED" opacity="0.5"/>
-
-          <!-- === BUILDING E — Front left small === -->
-          <!-- Right face -->
-          <polygon points="230,325 180,300 180,234 230,259" fill="url(#bRight)"/>
-          <!-- Left face -->
-          <polygon points="180,300 130,325 130,259 180,234" fill="url(#bLeft)"/>
-          <!-- Top face -->
-          <polygon points="230,259 180,234 130,259 180,284" fill="url(#bTop)"/>
-          <!-- Windows -->
-          <rect x="188" y="242" width="6" height="7" rx="1" fill="#00D4FF" opacity="0.65"/>
-          <rect x="202" y="245" width="6" height="7" rx="1" fill="#7C3AED" opacity="0.6"/>
-          <rect x="216" y="248" width="6" height="7" rx="1" fill="#00D4FF" opacity="0.55"/>
-          <rect x="188" y="257" width="6" height="7" rx="1" fill="#8B5CF6" opacity="0.6"/>
-          <rect x="202" y="260" width="6" height="7" rx="1" fill="#00D4FF" opacity="0.55"/>
-          <rect x="137" y="266" width="6" height="7" rx="1" fill="#7C3AED" opacity="0.55"/>
-          <rect x="152" y="263" width="6" height="7" rx="1" fill="#8B5CF6" opacity="0.5"/>
-
-          <!-- === RAISED PLATFORM (dais under cube) === -->
-          <!-- Front-right face -->
-          <polygon points="330,278 380,253 380,268 330,293" fill="#1a0840" opacity="0.9"/>
-          <!-- Front-left face -->
-          <polygon points="230,278 280,253 280,268 230,293" fill="#120630" opacity="0.9"/>
-          <!-- Top surface -->
-          <polygon points="330,278 280,253 230,278 280,303" fill="#1e0e4a" opacity="0.9"/>
-          <!-- Platform glow border -->
-          <polygon points="330,278 280,253 230,278 280,303" fill="none" stroke="#8B5CF6" stroke-width="1" opacity="0.6" filter="url(#glow)"/>
-          <!-- Platform grid dots -->
-          <circle cx="280" cy="278" r="2" fill="#8B5CF6" opacity="0.5"/>
-          <circle cx="258" cy="267" r="1.5" fill="#7C3AED" opacity="0.4"/>
-          <circle cx="302" cy="267" r="1.5" fill="#7C3AED" opacity="0.4"/>
-
-          <!-- === CENTRAL Z CUBE (hero element) === -->
-          <!-- Shadow glow under cube -->
-          <ellipse cx="280" cy="282" rx="60" ry="18" fill="#7C3AED" opacity="0.2" filter="url(#glowStrong)"/>
-
-          <!-- Left face -->
-          <polygon points="280,231 230,256 230,146 280,121" fill="url(#cubeLeft)" filter="url(#glow)"/>
-          <!-- Right face -->
-          <polygon points="280,231 330,256 330,146 280,121" fill="url(#cubeRight)" filter="url(#glow)"/>
-          <!-- Top face -->
-          <polygon points="280,121 330,146 280,171 230,146" fill="url(#cubeTop)" filter="url(#glow)"/>
-
-          <!-- Glowing top edges -->
-          <polyline points="230,146 280,121 330,146" fill="none" stroke="#E9D5FF" stroke-width="1.8" opacity="0.9" filter="url(#glow)"/>
-          <!-- Vertical edges -->
-          <line x1="280" y1="121" x2="280" y2="231" stroke="#C084FC" stroke-width="1" opacity="0.5"/>
-          <line x1="230" y1="146" x2="230" y2="256" stroke="#9F67E8" stroke-width="0.8" opacity="0.5"/>
-          <line x1="330" y1="146" x2="330" y2="256" stroke="#9F67E8" stroke-width="0.8" opacity="0.5"/>
-          <!-- Bottom edges -->
-          <polyline points="230,256 280,231 330,256" fill="none" stroke="#7C3AED" stroke-width="1" opacity="0.5"/>
-
-          <!-- Z letter -->
-          <text x="249" y="212" font-family="Space Grotesk, sans-serif" font-size="62" font-weight="900"
-                fill="url(#zGrad)" filter="url(#glowStrong)" text-anchor="middle">Z</text>
-
-          <!-- Cube strong glow -->
-          <polygon points="280,121 330,146 280,171 230,146" fill="#A855F7" opacity="0.08" filter="url(#glowStrong)"/>
-
-          <!-- === PLATFORM RING GLOW === -->
-          <ellipse cx="280" cy="295" rx="110" ry="28" fill="none" stroke="#8B5CF6" stroke-width="1.5" opacity="0.4" filter="url(#glow)"/>
-          <ellipse cx="280" cy="295" rx="80"  ry="20" fill="none" stroke="#7C3AED" stroke-width="0.8" opacity="0.3"/>
-
-          <!-- === SIGNAL LINES === -->
-          <line x1="280" y1="121" x2="180" y2="70"  stroke="#8B5CF6" stroke-width="0.8" opacity="0.3" stroke-dasharray="5,5"/>
-          <line x1="330" y1="146" x2="400" y2="100" stroke="#6D28D9" stroke-width="0.8" opacity="0.3" stroke-dasharray="5,5"/>
-          <line x1="230" y1="256" x2="140" y2="290" stroke="#8B5CF6" stroke-width="0.6" opacity="0.2" stroke-dasharray="4,6"/>
-
-          <!-- === FLOATING PARTICLES === -->
-          <circle cx="148" cy="150" r="2.5" fill="#C084FC" opacity="0.9" filter="url(#glow)"/>
-          <circle cx="420" cy="140" r="2"   fill="#00D4FF" opacity="0.8" filter="url(#glow)"/>
-          <circle cx="460" cy="210" r="2.8" fill="#A855F7" opacity="0.7" filter="url(#glow)"/>
-          <circle cx="105" cy="220" r="2"   fill="#00D4FF" opacity="0.7" filter="url(#glow)"/>
-          <circle cx="95"  cy="310" r="1.8" fill="#8B5CF6" opacity="0.6" filter="url(#glow)"/>
-          <circle cx="460" cy="320" r="2.2" fill="#C084FC" opacity="0.6" filter="url(#glow)"/>
-          <circle cx="190" cy="95"  r="1.5" fill="#00D4FF" opacity="0.7"/>
-          <circle cx="380" cy="90"  r="1.5" fill="#A855F7" opacity="0.7"/>
-          <circle cx="445" cy="265" r="1.5" fill="#00D4FF" opacity="0.5"/>
-        </svg>
-
-        <!-- Floating UI chips -->
-        <div class="chip chip-1">
-          <span class="chip-dot"></span>
-          <span>أنظمة نشطة</span>
-          <strong>50+</strong>
-        </div>
-        <div class="chip chip-2">
-          <span class="chip-dot green"></span>
-          <span>عميل راضٍ</span>
-          <strong>100+</strong>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- ======= STEPS ======= -->
+  <!-- ===== Steps ===== -->
   <section class="steps">
     <div class="steps-inner">
       <h2 class="steps-h2">حياة أسهل مع أنظمة ZAWAN</h2>
       <div class="steps-row">
 
         <div class="step-card">
-          <div class="step-ico">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.4 1.11 2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          </div>
-          <h3>تواصل معنا</h3>
-          <p>أخبرنا عن احتياجاتك</p>
+          <div class="step-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81A19.79 19.79 0 01.4 1.11 2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <h3>تواصل معنا</h3><p>أخبرنا عن احتياجاتك</p>
           <div class="step-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
           <span class="step-n">01</span>
         </div>
 
         <div class="step-card">
-          <div class="step-ico">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
-          </div>
-          <h3>اختيار وتسليم</h3>
-          <p>نختار ونسلم النظام</p>
+          <div class="step-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg></div>
+          <h3>اختيار وتسليم</h3><p>نختار ونسلم النظام</p>
           <div class="step-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
           <span class="step-n">02</span>
         </div>
 
         <div class="step-card">
-          <div class="step-ico">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-          </div>
-          <h3>تصميم وتطوير</h3>
-          <p>نطور بطلب المخصص</p>
+          <div class="step-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+          <h3>تصميم وتطوير</h3><p>نطور بطلب المخصص</p>
           <div class="step-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
           <span class="step-n">03</span>
         </div>
 
         <div class="step-card">
-          <div class="step-ico">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-          </div>
-          <h3>تحليل المتطلبات</h3>
-          <p>نحلل احتياجات عملك</p>
+          <div class="step-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+          <h3>تحليل المتطلبات</h3><p>نحلل احتياجات عملك</p>
           <div class="step-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
           <span class="step-n">04</span>
         </div>
 
         <div class="step-card">
-          <div class="step-ico">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3>دعم وتطوير</h3>
-          <p>نستمر بدعمك وتطوير</p>
+          <div class="step-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>دعم وتطوير</h3><p>نستمر بدعمك وتطوير</p>
           <span class="step-n">05</span>
         </div>
 
