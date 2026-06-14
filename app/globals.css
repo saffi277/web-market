@@ -1,36 +1,28 @@
 @import "tailwindcss";
 
-:root {
-  --purple:    #8B5CF6;
-  --purple-d:  #7C3AED;
-  --purple-dd: #5B21B6;
-  --purple-l:  #A78BFA;
-  --cyan:      #00D4FF;
-  --bg:        #06030f;
-  --bg2:       #0a0618;
-  --card:      #0e0920;
-}
+:root { --bg:#03040b; --purple:#8b36ff; --purple2:#b05cff; }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+body { margin:0; background:var(--bg); color:white; direction:rtl; font-family: Arial, Helvetica, sans-serif; }
 
-body {
-  background: #050008;
-  color: white;
-  overflow-x: hidden;
-  line-height: 1.7;
+.hero-grid {
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(139,54,255,.20), transparent 34%),
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 100% 100%, 46px 46px, 46px 46px;
 }
+
+.glow { box-shadow: 0 0 35px rgba(139,54,255,.45), inset 0 0 24px rgba(139,54,255,.18); }
+.city-line { filter: drop-shadow(0 0 8px rgba(145, 64, 255, .9)); }
+
+.float { animation: float 4s ease-in-out infinite; }
+.pulse-soft { animation: pulseSoft 2.8s ease-in-out infinite; }
+
+@keyframes float      { 0%,100%{ transform: translateY(0) } 50%{ transform: translateY(-12px) } }
+@keyframes pulseSoft  { 0%,100%{ opacity:.55 } 50%{ opacity:1 } }
 
 ::-webkit-scrollbar       { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--purple-d); border-radius: 3px; }
-
-@keyframes float    { 0%,100%{transform:translateY(0)}  50%{transform:translateY(-14px)} }
-@keyframes blink    { 0%,100%{opacity:1}                50%{opacity:.3} }
-@keyframes chipBob  { 0%,100%{transform:translateY(0)}  50%{transform:translateY(-6px)} }
-@keyframes pulse    { 0%,100%{opacity:1}                50%{opacity:.4} }
-@keyframes loadBar  { 0%{width:0%} 100%{width:100%} }
-
-.city-float { animation: float   4s ease-in-out infinite; }
-.chip-bob   { animation: chipBob 3s ease-in-out infinite; }
-.dot-blink  { animation: blink   1.5s ease-in-out infinite; }
+::-webkit-scrollbar-thumb { background: #6d28d9; border-radius: 3px; }
