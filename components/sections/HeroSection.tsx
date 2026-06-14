@@ -24,7 +24,7 @@ export default function HeroSection() {
       {/* Content */}
       <div
         className="relative z-10 max-w-[1300px] mx-auto px-6 flex flex-row items-center gap-8"
-        style={{ direction: 'ltr', minHeight: 'calc(100vh - 64px)', paddingTop: '64px' }}
+        style={{ direction: 'ltr', minHeight: '100vh', paddingTop: '80px', paddingBottom: '40px' }}
       >
 
         {/* LEFT: 3D City */}
