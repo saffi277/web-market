@@ -2,16 +2,17 @@
 
 export default function CityScene() {
   return (
-    <div className="relative w-full h-full flex items-center justify-center">
+    <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
 
       {/* Background glow */}
-      <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'radial-gradient(ellipse 65% 70% at 50% 55%, rgba(91,33,182,.38) 0%, transparent 70%)',
+      <div style={{
+        position: 'absolute', inset: 0, pointerEvents: 'none',
+        background: 'radial-gradient(ellipse 70% 75% at 50% 50%, rgba(91,33,182,.38) 0%, transparent 70%)',
       }}/>
 
       <svg
-        className="city-float w-full h-auto"
-        style={{ maxHeight: '92vh', filter: 'drop-shadow(0 0 45px rgba(109,40,217,.4))' }}
+        className="city-float"
+        style={{ width: '100%', height: '100%', maxHeight: 'calc(100vh - 80px)', filter: 'drop-shadow(0 0 45px rgba(109,40,217,.4))' }}
         viewBox="0 0 600 600"
         xmlns="http://www.w3.org/2000/svg"
       >

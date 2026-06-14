@@ -3,38 +3,41 @@ import CityScene from '@/components/ui/CityScene';
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden" style={{ background: 'var(--bg)', height: '100vh', minHeight: 680 }}>
-
+    <section
+      className="relative overflow-hidden"
+      style={{ background: 'var(--bg)', height: '100vh', minHeight: 640 }}
+    >
       {/* Ambient glow */}
       <div
-        className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] pointer-events-none z-0"
-        style={{ background: 'radial-gradient(ellipse, rgba(91,33,182,.22) 0%, rgba(91,33,182,.06) 45%, transparent 70%)' }}
+        className="absolute inset-0 pointer-events-none z-0"
+        style={{ background: 'radial-gradient(ellipse 70% 60% at 30% 55%, rgba(91,33,182,.25) 0%, transparent 65%)' }}
       />
 
       {/* Grid overlay */}
       <div
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
-          backgroundImage: 'linear-gradient(rgba(139,92,246,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,.035) 1px, transparent 1px)',
+          backgroundImage: 'linear-gradient(rgba(139,92,246,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(139,92,246,.03) 1px,transparent 1px)',
           backgroundSize: '55px 55px',
-          maskImage: 'radial-gradient(ellipse 80% 80% at 50% 40%, black 20%, transparent 100%)',
+          maskImage: 'radial-gradient(ellipse 90% 90% at 50% 50%, black 20%, transparent 100%)',
         }}
       />
 
-      {/* Content */}
+      {/* Two-column layout: city LEFT, text RIGHT */}
       <div
-        className="relative z-10 w-full h-full max-w-[1300px] mx-auto px-6 flex flex-row items-center gap-8"
-        style={{ direction: 'ltr', height: '100%', paddingTop: '72px' }}
+        className="relative z-10 h-full max-w-[1300px] mx-auto px-6"
+        style={{ direction: 'ltr', display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'center', paddingTop: 64 }}
       >
-
-        {/* LEFT: 3D City */}
-        <div className="flex-1 min-w-0 flex items-center justify-center">
+        {/* LEFT: City fills full column height */}
+        <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
           <CityScene />
         </div>
 
         {/* RIGHT: Text */}
-        <div className="flex-1 min-w-0 flex flex-col gap-6" style={{ direction: 'rtl' }}>
-
+        <div
+          className="flex flex-col gap-6"
+          style={{ direction: 'rtl', paddingRight: '1rem' }}
+        >
           <span
             className="inline-flex items-center gap-2 px-4 py-1.5 text-sm w-fit rounded-full"
             style={{ border: '1px solid rgba(139,92,246,.38)', color: '#A78BFA', background: 'rgba(139,92,246,.07)' }}
@@ -42,7 +45,7 @@ export default function HeroSection() {
             حلول برمجية متكاملة
           </span>
 
-          <h1 className="text-4xl xl:text-5xl font-black leading-snug text-white">
+          <h1 className="font-black leading-snug text-white" style={{ fontSize: 'clamp(2rem,3.5vw,3.2rem)' }}>
             من فكرة إلى نظام متكامل
             <br />
             <span
@@ -53,7 +56,7 @@ export default function HeroSection() {
             </span>
           </h1>
 
-          <p className="text-slate-400 text-base leading-loose max-w-md">
+          <p className="text-slate-400 leading-loose" style={{ fontSize: '1rem', maxWidth: 400 }}>
             نقدم أنظمة برمجية متكاملة تلبي احتياجات عملك
             <br />
             وتساعدك على النمو والتوسع بثقة
