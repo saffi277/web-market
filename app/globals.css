@@ -15,7 +15,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--bg);
+  background: #050008;
   color: white;
   overflow-x: hidden;
   line-height: 1.7;

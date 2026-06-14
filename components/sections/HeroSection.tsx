@@ -3,89 +3,63 @@ import CityScene from '@/components/ui/CityScene';
 
 export default function HeroSection() {
   return (
-    <section
-      className="relative overflow-hidden"
-      style={{ background: 'var(--bg)', height: '100vh', minHeight: 640 }}
-    >
-      {/* Ambient glow */}
-      <div
-        className="absolute inset-0 pointer-events-none z-0"
-        style={{ background: 'radial-gradient(ellipse 70% 60% at 30% 55%, rgba(91,33,182,.25) 0%, transparent 65%)' }}
-      />
+    <section className="relative min-h-screen overflow-hidden text-white" style={{ background: '#050008' }}>
 
-      {/* Grid overlay */}
-      <div
-        className="absolute inset-0 z-0 pointer-events-none"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(139,92,246,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(139,92,246,.03) 1px,transparent 1px)',
-          backgroundSize: '55px 55px',
-          maskImage: 'radial-gradient(ellipse 90% 90% at 50% 50%, black 20%, transparent 100%)',
-        }}
-      />
+      {/* Radial glows */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: 'radial-gradient(circle at 70% 25%, rgba(168,85,247,.28), transparent 34%), radial-gradient(circle at 18% 78%, rgba(124,58,237,.22), transparent 32%)',
+      }}/>
 
-      {/* Two-column layout: city LEFT, text RIGHT */}
-      <div
-        className="relative z-10 h-full max-w-[1300px] mx-auto px-6"
-        style={{ direction: 'ltr', display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'center', paddingTop: 64 }}
-      >
-        {/* LEFT: City fills full column height */}
-        <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
-          <CityScene />
-        </div>
+      {/* Grid */}
+      <div className="absolute inset-0 pointer-events-none opacity-[.08]" style={{
+        backgroundImage: 'linear-gradient(rgba(255,255,255,.7) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.7) 1px, transparent 1px)',
+        backgroundSize: '72px 72px',
+      }}/>
 
-        {/* RIGHT: Text */}
-        <div
-          className="flex flex-col gap-6"
-          style={{ direction: 'rtl', paddingRight: '1rem' }}
-        >
-          <span
-            className="inline-flex items-center gap-2 px-4 py-1.5 text-sm w-fit rounded-full"
-            style={{ border: '1px solid rgba(139,92,246,.38)', color: '#A78BFA', background: 'rgba(139,92,246,.07)' }}
-          >
+      {/* Main grid: text LEFT (RTL), city RIGHT */}
+      <main className="relative z-10 mx-auto grid min-h-[calc(100vh-88px)] max-w-7xl items-center gap-10 px-6 pb-16 pt-24 lg:grid-cols-[1.05fr_.95fr]">
+
+        {/* LEFT: Text + products */}
+        <div style={{ direction: 'rtl' }}>
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-purple-400/30 bg-white/5 px-4 py-2 text-sm text-purple-100 backdrop-blur">
+            <span className="h-2 w-2 rounded-full bg-purple-300" style={{ boxShadow: '0 0 15px rgba(216,180,254,.9)' }}/>
             حلول برمجية متكاملة
-          </span>
+          </div>
 
-          <h1 className="font-black leading-snug text-white" style={{ fontSize: 'clamp(2rem,3.5vw,3.2rem)' }}>
-            من فكرة إلى نظام متكامل
-            <br />
-            <span
-              className="bg-clip-text text-transparent"
-              style={{ backgroundImage: 'linear-gradient(135deg, #C084FC, #A855F7)' }}
-            >
-              نحن نبرمج النجاح
+          <h1 className="max-w-2xl font-black leading-tight tracking-tight" style={{ fontSize: 'clamp(2.4rem,5vw,4.2rem)' }}>
+            من فكرة إلى
+            <span className="block bg-gradient-to-r from-purple-200 via-fuchsia-300 to-purple-500 bg-clip-text text-transparent">
+              نظام متكامل
             </span>
           </h1>
 
-          <p className="text-slate-400 leading-loose" style={{ fontSize: '1rem', maxWidth: 400 }}>
-            نقدم أنظمة برمجية متكاملة تلبي احتياجات عملك
-            <br />
-            وتساعدك على النمو والتوسع بثقة
+          <p className="mt-6 max-w-xl text-lg leading-9" style={{ color: 'rgba(255,255,255,.72)' }}>
+            نحن في <b className="text-purple-200">ZAWAN</b> نبني أنظمة ومواقع وتطبيقات تساعد الشركات على البيع، الإدارة، والنمو بثقة.
           </p>
 
-          <div className="flex gap-4 flex-wrap">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-white rounded-lg text-[.93rem] font-medium transition-all duration-300 hover:-translate-y-0.5"
-              style={{ border: '1px solid rgba(139,92,246,.32)', background: 'rgba(139,92,246,.07)' }}
-            >
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81A19.79 19.79 0 01.4 1.11 2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-              </svg>
-              تواصل معنا
-            </Link>
+          <div className="mt-9 flex flex-col gap-4 sm:flex-row" style={{ direction: 'rtl' }}>
             <Link
               href="/products"
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-white rounded-lg text-[.93rem] font-semibold transition-all duration-300 hover:-translate-y-0.5"
-              style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)', boxShadow: '0 4px 22px rgba(139,92,246,.35)' }}
+              className="rounded-2xl px-7 py-4 text-center font-bold transition hover:brightness-110"
+              style={{ background: '#a855f7', boxShadow: '0 0 35px rgba(168,85,247,.55)' }}
             >
               استعرض الأنظمة
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
+            </Link>
+            <Link
+              href="/contact"
+              className="rounded-2xl border border-purple-300/30 bg-white/5 px-7 py-4 text-center font-bold text-purple-100 backdrop-blur transition hover:bg-white/10"
+            >
+              تواصل معنا
             </Link>
           </div>
         </div>
-      </div>
+
+        {/* RIGHT: City */}
+        <div className="relative mx-auto h-[520px] w-full max-w-[640px]">
+          <div className="absolute inset-0 rounded-[3rem] border border-purple-300/15 bg-purple-500/5" />
+          <CityScene />
+        </div>
+      </main>
     </section>
   );
 }
