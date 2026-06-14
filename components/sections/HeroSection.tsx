@@ -3,7 +3,7 @@ import CityScene from '@/components/ui/CityScene';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden" style={{ background: 'var(--bg)' }}>
+    <section className="relative overflow-hidden" style={{ background: 'var(--bg)', height: '100vh', minHeight: 680 }}>
 
       {/* Ambient glow */}
       <div
@@ -23,8 +23,8 @@ export default function HeroSection() {
 
       {/* Content */}
       <div
-        className="relative z-10 max-w-[1300px] mx-auto px-6 flex flex-row items-center gap-8"
-        style={{ direction: 'ltr', minHeight: '100vh', paddingTop: '80px', paddingBottom: '40px' }}
+        className="relative z-10 w-full h-full max-w-[1300px] mx-auto px-6 flex flex-row items-center gap-8"
+        style={{ direction: 'ltr', height: '100%', paddingTop: '72px' }}
       >
 
         {/* LEFT: 3D City */}
