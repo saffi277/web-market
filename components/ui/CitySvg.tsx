@@ -1,54 +1,65 @@
 export default function CitySvg() {
   const towers = [
-    { x: 40,  y: 150, h: 145 },
-    { x: 96,  y: 210, h: 88  },
-    { x: 158, y: 128, h: 170 },
-    { x: 505, y: 130, h: 165 },
-    { x: 575, y: 188, h: 104 },
-    { x: 655, y: 224, h: 68  },
+    { x: 62, y: 116, w: 36, h: 155 },
+    { x: 130, y: 150, w: 42, h: 128 },
+    { x: 205, y: 98, w: 50, h: 180 },
+    { x: 520, y: 108, w: 48, h: 172 },
+    { x: 600, y: 165, w: 44, h: 117 },
+    { x: 682, y: 205, w: 36, h: 78 },
   ];
+
   return (
-    <svg viewBox="0 0 760 480" className="h-full w-full city-line" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 780 470" className="h-full w-full city-glow" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs>
-        <linearGradient id="p" x1="0" x2="1">
-          <stop stopColor="#5b18ff"/>
-          <stop offset="1" stopColor="#d26bff"/>
+        <linearGradient id="zawanPurple" x1="0" x2="1" y1="0" y2="1">
+          <stop stopColor="#5718ff" />
+          <stop offset=".48" stopColor="#8f2cff" />
+          <stop offset="1" stopColor="#e06cff" />
         </linearGradient>
-        <filter id="g">
-          <feGaussianBlur stdDeviation="3" result="b"/>
-          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
+        <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+          <stop stopColor="#e06cff" />
+          <stop offset="1" stopColor="#7b22ff" stopOpacity="0" />
+        </radialGradient>
+        <filter id="neon"><feGaussianBlur stdDeviation="3.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
       </defs>
 
-      <path d="M30 375 L180 305 L380 385 L720 265" stroke="#5b18ff" opacity=".45" />
-      <path d="M20 405 H720 M70 352 H700 M130 438 H640" stroke="#35106d" opacity=".8"/>
-      <path d="M85 394 L185 345 L292 392 L190 442 Z M465 347 L555 300 L662 348 L558 407 Z" stroke="url(#p)" opacity=".8"/>
+      <g opacity=".85">
+        <path d="M26 355 L120 312 L244 368 L390 300 L528 360 L738 263" stroke="url(#zawanPurple)" opacity=".55" />
+        <path d="M28 405 H725 M82 374 H668 M164 438 H606" stroke="#321063" opacity=".75" />
+        <path d="M91 384 L186 337 L289 386 L189 433 Z" stroke="url(#zawanPurple)" opacity=".78" />
+        <path d="M505 345 L610 292 L714 342 L610 397 Z" stroke="url(#zawanPurple)" opacity=".78" />
+        <path d="M330 355 L397 320 L463 355 L397 389 Z" stroke="#6627d4" opacity=".55" />
+      </g>
 
       {towers.map((t, i) => (
-        <g key={i} opacity=".9">
-          <path d={`M${t.x} ${t.y} L${t.x+32} ${t.y-18} L${t.x+68} ${t.y} L${t.x+68} ${t.y+t.h} L${t.x+32} ${t.y+t.h+18} L${t.x} ${t.y+t.h} Z`} fill="#090b1a" stroke="url(#p)"/>
-          <path d={`M${t.x+32} ${t.y-18} V${t.y+t.h+18} M${t.x} ${t.y} L${t.x+32} ${t.y+18} L${t.x+68} ${t.y}`} stroke="#7c2dff" opacity=".65"/>
-          {Array.from({ length: Math.floor(t.h / 24) }).map((_, j) => (
-            <path key={j} d={`M${t.x+14} ${t.y+28+j*24} h12 M${t.x+43} ${t.y+20+j*24} h12`} stroke="#b86cff" opacity=".7"/>
+        <g key={i} opacity=".88">
+          <path d={`M${t.x} ${t.y} L${t.x + t.w / 2} ${t.y - 16} L${t.x + t.w} ${t.y} L${t.x + t.w} ${t.y + t.h} L${t.x + t.w / 2} ${t.y + t.h + 16} L${t.x} ${t.y + t.h} Z`} fill="#090918" stroke="url(#zawanPurple)" strokeWidth="1.2" />
+          <path d={`M${t.x + t.w / 2} ${t.y - 16} V${t.y + t.h + 16} M${t.x} ${t.y} L${t.x + t.w / 2} ${t.y + 14} L${t.x + t.w} ${t.y}`} stroke="#8b36ff" opacity=".56" />
+          {Array.from({ length: Math.floor(t.h / 23) }).map((_, j) => (
+            <path key={j} d={`M${t.x + 10} ${t.y + 28 + j * 23} h10 M${t.x + t.w - 20} ${t.y + 21 + j * 23} h10`} stroke="#c96cff" opacity=".58" />
           ))}
-          <path d={`M${t.x+32} ${t.y-18} V${t.y-48}`} stroke="#a855f7"/>
-          <circle cx={t.x+32} cy={t.y-52} r="2.5" fill="#d86bff" filter="url(#g)"/>
+          <path d={`M${t.x + t.w / 2} ${t.y - 16} V${t.y - 46}`} stroke="#a855f7" opacity=".9" />
+          <circle cx={t.x + t.w / 2} cy={t.y - 49} r="2.3" fill="#e06cff" filter="url(#neon)" />
         </g>
       ))}
 
-      {/* Central floating Z cube */}
-      <g className="float" transform="translate(265 105)">
-        <path d="M20 64 L110 18 L205 62 L205 180 L112 228 L20 180 Z" fill="#0b0920" stroke="url(#p)" strokeWidth="2"/>
-        <path d="M20 64 L112 110 L205 62 M112 110 V228" stroke="#8b36ff" opacity=".85"/>
-        <path d="M78 56 L116 36 L158 56 L116 76 Z" stroke="#7330ff" opacity=".7"/>
-        <path d="M91 91 h56 l-28 42 h35 l-70 65 28-51 H78 Z" fill="url(#p)" filter="url(#g)"/>
+      <g transform="translate(290 88)">
+        <path d="M20 223 H255" stroke="#4b148e" opacity=".75" />
+        <path d="M42 188 L137 145 L232 188 L137 235 Z" fill="#070713" stroke="url(#zawanPurple)" opacity=".86" />
+        <path d="M70 148 L137 116 L205 148 L205 185 L137 220 L70 185 Z" fill="#090918" stroke="url(#zawanPurple)" opacity=".9" />
+        <path d="M70 148 L137 182 L205 148 M137 182 V220" stroke="#7c2dff" opacity=".6" />
+        <g className="float">
+          <path d="M36 60 L137 10 L238 60 L238 150 L137 204 L36 150 Z" fill="#0c0922" stroke="url(#zawanPurple)" strokeWidth="2" />
+          <path d="M36 60 L137 111 L238 60 M137 111 V204" stroke="#a23cff" opacity=".82" />
+          <path d="M96 52 L137 31 L180 52 L137 73 Z" stroke="#7430ff" opacity=".78" />
+          <path d="M114 90 H169 L140 132 H176 L95 194 L126 144 H90 Z" fill="url(#zawanPurple)" filter="url(#neon)" />
+        </g>
       </g>
 
-      {/* Ground glow ring */}
-      <g filter="url(#g)">
-        <circle cx="380" cy="330" r="98" stroke="#8b36ff" opacity=".55"/>
-        <path d="M270 327 H140 M490 327 H660 M380 235 V158" stroke="#8b36ff" opacity=".7"/>
-        <circle className="pulse-soft" cx="380" cy="330" r="5" fill="#d86bff"/>
+      <g filter="url(#neon)" opacity=".8">
+        <circle className="pulse-soft" cx="390" cy="348" r="5.5" fill="#e06cff" />
+        <circle cx="390" cy="348" r="86" stroke="#8b36ff" opacity=".38" />
+        <path d="M390 262 V196 M304 348 H210 M476 348 H630" stroke="#8b36ff" opacity=".45" />
       </g>
     </svg>
   );
