@@ -1,61 +1,51 @@
 @import "tailwindcss";
 
-:root {
-  color-scheme: dark;
-  --zawan-purple: #9f2cff;
-  --zawan-pink: #e847ff;
-}
-
 * { box-sizing: border-box; }
-html, body { margin: 0; min-height: 100%; background: #03040b; }
-body { font-family: Arial, Helvetica, sans-serif; overflow-x: hidden; }
+html, body { margin: 0; min-height: 100%; background: #02030a; }
+body { overflow-x: hidden; font-family: Arial, Helvetica, sans-serif; }
 
-.pixel-shell {
-  min-height: 100vh;
+.page {
   width: 100%;
-  display: grid;
-  place-items: start center;
-  background:
-    radial-gradient(circle at 30% 20%, rgba(111, 0, 255, .22), transparent 30%),
-    radial-gradient(circle at 75% 35%, rgba(168, 36, 255, .16), transparent 35%),
-    #03040b;
+  min-height: 100vh;
+  background: #02030a;
 }
 
-.hero-stage {
+.heroWrap {
   position: relative;
-  width: min(100vw, 1536px);
-  aspect-ratio: 1536 / 1024;
-  min-height: 760px;
-  background-image: url('/zawan-hero.png');
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  background-position: top center;
-  filter: saturate(1.03) contrast(1.02);
+  width: 100vw;
+  min-height: 100vh;
   overflow: hidden;
+  background: #02030a;
 }
 
-/* clickable transparent areas that match the PNG buttons */
+.heroImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  object-fit: cover;
+  object-position: top center;
+  user-select: none;
+  pointer-events: none;
+}
+
 .hotspot {
   position: absolute;
-  border: 0;
+  display: block;
   background: transparent;
-  cursor: pointer;
-  border-radius: 18px;
+  border-radius: 16px;
+  z-index: 5;
 }
 .hotspot:focus-visible {
-  outline: 2px solid var(--zawan-pink);
+  outline: 2px solid #d74cff;
   outline-offset: 4px;
 }
-.try-systems { top: 3.25%; right: 4.8%; width: 9.2%; height: 5.3%; }
-.view-systems { top: 50.2%; right: 8.8%; width: 14.3%; height: 6.2%; }
-.contact-us { top: 50.2%; right: 25.4%; width: 13.8%; height: 6.2%; }
+
+.try     { top: 3.2%;  right: 3.9%;  width: 9.1%;  height: 5.3%; }
+.systems { top: 50.1%; right: 8.2%;  width: 14.5%; height: 6.0%; }
+.contact { top: 50.1%; right: 24.5%; width: 13.8%; height: 6.0%; }
 
 @media (max-width: 900px) {
-  .hero-stage {
-    width: 1536px;
-    transform: scale(calc(100vw / 1536));
-    transform-origin: top center;
-    min-height: calc(1024px * 100vw / 1536);
-  }
-  .pixel-shell { align-items: start; overflow: hidden; }
+  .heroWrap  { min-width: 1100px; }
+  .heroImage { width: 1100px; min-height: auto; }
 }
