@@ -11,9 +11,13 @@ export default function Home() {
   return (
     <main className="page">
       <header className="container nav">
-        <a className="nav-cta" href="#contact">ابدأ مشروعك ↗</a>
+        <a className="nav-cta" href="/contact">ابدأ مشروعك ↗</a>
         <nav className="links">
-          <a className="active" href="#home">الرئيسية</a><a href="#work">أعمالنا</a><a href="#about">من نحن</a><a href="#blog">المدونة</a><a href="#contact">تواصل معنا</a>
+          <a className="active" href="/">الرئيسية</a>
+          <a href="/products">الأنظمة</a>
+          <a href="#work">أعمالنا</a>
+          <a href="/services">خدماتنا</a>
+          <a href="/contact">تواصل معنا</a>
         </nav>
         <div className="brand"><span className="zmark">Z</span><span className="brand-name">ZAWAN</span></div>
       </header>
@@ -24,8 +28,8 @@ export default function Home() {
           <h1>نبني أنظمة رقمية<br />تدفع أعمالك إلى <span className="grad">الأمام</span></h1>
           <p className="lead">نقدم حلول برمجية متكاملة تساعد الشركات على النمو والتوسع من خلال التكنولوجيا والابتكار.</p>
           <div className="actions">
-            <a className="btn-primary" href="#contact">ابدأ مشروعك الآن ↗</a>
-            <a className="btn-secondary" href="#work">استعرض أعمالنا ←</a>
+            <a className="btn-primary" href="/contact">ابدأ مشروعك الآن ↗</a>
+            <a className="btn-secondary" href="/products">استعرض أعمالنا ←</a>
           </div>
         </div>
         <div className="visual" aria-hidden="true">
