@@ -18,6 +18,7 @@ export default function Navbar() {
       padding: '0 min(64px, 4vw)',
       background: 'rgba(5,4,11,.92)', backdropFilter: 'blur(20px)',
       borderBottom: '1px solid rgba(170,88,255,.14)',
+      overflow: 'visible',
     }}>
       {/* زر ابدأ مشروعك */}
       <Link href="/contact" style={{
@@ -35,12 +36,12 @@ export default function Navbar() {
           return (
             <Link key={href} href={href} style={{
               color: 'white', textDecoration: 'none', position: 'relative',
-              paddingBottom: '26px', opacity: active ? 1 : 0.88,
+              paddingBottom: '8px', opacity: active ? 1 : 0.88,
             }}>
               {label}
               {active && (
                 <span style={{
-                  position: 'absolute', bottom: 0, left: '50%',
+                  position: 'absolute', bottom: '-4px', left: '50%',
                   transform: 'translateX(-50%)',
                   width: '90px', height: '2px',
                   background: 'linear-gradient(90deg, transparent, #d844ff, transparent)',
