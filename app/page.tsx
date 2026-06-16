@@ -1,57 +1,52 @@
 const services = [
-  ['</>', 'تطوير البرمجيات'],
-  ['☁', 'الحوسبة السحابية'],
-  ['⌘', 'التطبيقات الذكية'],
-  ['◈', 'قواعد البيانات']
-];
-const steps = [
-  ['💬','تواصل معنا','أخبرنا عن احتياجاتك','01'],
-  ['🧪','اختبار وتسليم','تنفيذ وتسليم النظام','02'],
-  ['</>','تصميم وتطوير','نطور نظامك المخصص','03'],
-  ['◔','تحليل المتطلبات','نفهم احتياجات عملك','04'],
-  ['🚀','دعم وتطوير','نستمر بدعمك وتطويرك','05']
+  ['</>', 'حلول برمجية متكاملة', 'أنظمة مخصصة تلبي احتياجات أعمالك بدقة'],
+  ['▣', 'أنظمة قواعد البيانات', 'تصميم قواعد بيانات قوية ومنظمة لإدارة بياناتك'],
+  ['☁', 'الحوسبة السحابية', 'بناء ونشر أنظمة سحابية آمنة وقابلة للتوسع'],
+  ['✺', 'الذكاء الاصطناعي', 'حلول ذكية تعتمد على تحليل البيانات والأتمتة'],
+  ['▯', 'تطبيقات الموبايل', 'تطبيقات Android و iOS بتجربة استخدام عصرية'],
+  ['◎', 'تطوير المواقع', 'واجهات ومواقع ويب سريعة وحديثة للشركات'],
 ];
 
-export default function Home(){
-  return <main className="hero-bg">
-    <header className="container nav">
-      <button className="cta">جرّب الأنظمة</button>
-      <nav className="links">
-        {['الرئيسية','الأنظمة','المشاريع','الأسعار','من نحن','المدونة','تواصل معنا'].map(x=><a key={x} href="#">{x}</a>)}
-      </nav>
-      <div className="logo"><div className="logo-badge">04</div><div className="zmark">Z</div><strong>ZAWAN</strong></div>
-    </header>
+export default function Home() {
+  return (
+    <main className="page">
+      <header className="container nav">
+        <a className="nav-cta" href="#contact">ابدأ مشروعك ↗</a>
+        <nav className="links">
+          <a className="active" href="#home">الرئيسية</a><a href="#work">أعمالنا</a><a href="#about">من نحن</a><a href="#blog">المدونة</a><a href="#contact">تواصل معنا</a>
+        </nav>
+        <div className="brand"><span className="zmark">Z</span><span className="brand-name">ZAWAN</span></div>
+      </header>
 
-    <section className="container hero">
-      <div className="visual" aria-hidden="true">
-        <div className="dashboard">
-          <div className="orbit"></div><div className="orbit two"></div>
-          <div className="float-node n1">⌘</div><div className="float-node n2">☁</div><div className="float-node n3">🛡</div><div className="float-node n4">▣</div>
-          <div className="dash-grid">
-            <div className="card main">
-              <div className="status"><span className="chip"><i className="dot"></i> ZAWAN Core</span><span className="muted">Live Systems</span></div>
-              <div className="metric"><span>96%</span> Ready</div>
-              <p className="muted">واجهة نظيفة تمثل شركة برمجيات تبني أنظمة أعمال متكاملة.</p>
-              <div className="code-lines"><i className="line"></i><i className="line"></i><i className="line"></i><i className="line"></i></div>
-            </div>
-            <div className="side">
-              {services.map(([icon,title])=><div className="card mini" key={title}><div className="icon">{icon}</div><h3>{title}</h3><p className="muted">حلول مرنة وقابلة للتوسع.</p></div>)}
-            </div>
+      <section className="container hero" id="home">
+        <div className="hero-copy">
+          <div className="badge"><i /> نحو مستقبل رقمي أفضل</div>
+          <h1>نبني أنظمة رقمية<br />تدفع أعمالك إلى <span className="grad">الأمام</span></h1>
+          <p className="lead">نقدم حلول برمجية متكاملة تساعد الشركات على النمو والتوسع من خلال التكنولوجيا والابتكار.</p>
+          <div className="actions">
+            <a className="btn-primary" href="#contact">ابدأ مشروعك الآن ↗</a>
+            <a className="btn-secondary" href="#work">استعرض أعمالنا ←</a>
           </div>
         </div>
-      </div>
+        <div className="visual" aria-hidden="true">
+          <div className="watermark">ZAWAN</div>
+          <div className="stats">
+            <div className="stat"><strong>24/7</strong><span>دعم فني</span></div>
+            <div className="stat"><strong>+5</strong><span>سنوات خبرة</span></div>
+            <div className="stat"><strong>+120</strong><span>مشروع مكتمل</span></div>
+            <div className="stat"><strong>+50</strong><span>عميل سعيد</span></div>
+          </div>
+        </div>
+      </section>
 
-      <div className="copy">
-        <span className="pill">حلول برمجية متكاملة</span>
-        <h1 className="headline">من فكرة إلى نظام متكامل<br/>نحن نبرمج <span>النجاح</span></h1>
-        <p className="lead">نقدم أنظمة برمجية متكاملة تلبي احتياجات عملك وتساعدك على النمو والتوسع بثقة.</p>
-        <div className="actions"><a className="btn primary" href="#">استعرض الأنظمة ↗</a><a className="btn secondary" href="#">تواصل معنا ☎</a></div>
-      </div>
-    </section>
+      <section className="container services" id="work">
+        {services.map(([icon,title,desc]) => <article className="card" key={title}><div className="icon">{icon}</div><h3>{title}</h3><p>{desc}</p><div className="arrow">→</div></article>)}
+      </section>
 
-    <section className="container process">
-      <h2>حياة أسهل مع أنظمة ZAWAN</h2>
-      <div className="steps">{steps.map(([icon,title,desc,num])=><div className="step" key={num}><div className="icon" style={{margin:'0 auto'}}>{icon}</div><h3>{title}</h3><p className="muted">{desc}</p><div className="num">{num}</div></div>)}</div>
-    </section>
-  </main>
+      <section className="container tech">
+        <p>نستخدم أحدث التقنيات لبناء أفضل الحلول</p>
+        <div className="marquee"><span>Next.js</span><span>React</span><span>Node.js</span><span>TypeScript</span><span>AWS</span><span>Docker</span><span>PostgreSQL</span><span>MongoDB</span><span>Next.js</span><span>React</span><span>Node.js</span><span>TypeScript</span><span>AWS</span><span>Docker</span></div>
+      </section>
+    </main>
+  );
 }
