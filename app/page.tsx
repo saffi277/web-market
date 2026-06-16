@@ -1,81 +1,57 @@
-import { Code2, Cloud, Smartphone, Database, BrainCircuit, ShieldCheck, Rocket, PieChart, Users, MessageCircle, Headphones, ArrowUpLeft } from 'lucide-react';
-
-const nodes = [
-  { c: 'n1', icon: Code2, label: 'تطوير البرمجيات' },
-  { c: 'n2', icon: Cloud, label: 'الحوسبة السحابية' },
-  { c: 'n3', icon: Smartphone, label: 'التطبيقات الذكية' },
-  { c: 'n4', icon: Database, label: 'قواعد البيانات' },
-  { c: 'n5', icon: BrainCircuit, label: 'الذكاء الاصطناعي' },
-  { c: 'n6', icon: ShieldCheck, label: 'الأمن السيبراني' },
+const services = [
+  ['</>', 'تطوير البرمجيات'],
+  ['☁', 'الحوسبة السحابية'],
+  ['⌘', 'التطبيقات الذكية'],
+  ['◈', 'قواعد البيانات']
 ];
-
 const steps = [
-  ['تواصل معنا', 'أخبرنا عن احتياجاتك', MessageCircle, '01'],
-  ['اختبار وتسليم', 'تنفيذ وتسليم النظام', Users, '02'],
-  ['تصميم وتطوير', 'نطور نظامك المخصص', Code2, '03'],
-  ['تحليل المتطلبات', 'نفهم احتياجات عملك', PieChart, '04'],
-  ['دعم وتطوير', 'نستمر بدعمك وتطويرك', Rocket, '05'],
+  ['💬','تواصل معنا','أخبرنا عن احتياجاتك','01'],
+  ['🧪','اختبار وتسليم','تنفيذ وتسليم النظام','02'],
+  ['</>','تصميم وتطوير','نطور نظامك المخصص','03'],
+  ['◔','تحليل المتطلبات','نفهم احتياجات عملك','04'],
+  ['🚀','دعم وتطوير','نستمر بدعمك وتطويرك','05']
 ];
 
-export default function Home() {
-  return (
-    <main className="page font-arabic">
-      <div className="grid-bg" />
-      <div className="noise" />
-      <div className="scan" />
-      <div className="wrap">
-        <header className="nav">
-          <button className="cta-top">جرّب الأنظمة</button>
-          <nav className="links">
-            <a>الرئيسية</a><a>الأنظمة</a><a>المشاريع</a><a>الأسعار</a><a>من نحن</a><a>المدونة</a><a>تواصل معنا</a>
-          </nav>
-          <div className="brand">
-            <div className="badge">04</div>
-            <div className="logo-z">Z</div>
-            <div className="brand-name">ZAWAN</div>
-          </div>
-        </header>
+export default function Home(){
+  return <main className="hero-bg">
+    <header className="container nav">
+      <button className="cta">جرّب الأنظمة</button>
+      <nav className="links">
+        {['الرئيسية','الأنظمة','المشاريع','الأسعار','من نحن','المدونة','تواصل معنا'].map(x=><a key={x} href="#">{x}</a>)}
+      </nav>
+      <div className="logo"><div className="logo-badge">04</div><div className="zmark">Z</div><strong>ZAWAN</strong></div>
+    </header>
 
-        <section className="hero">
-          <div className="copy">
-            <div className="pill">حلول برمجية متكاملة</div>
-            <h1 className="title">من فكرة إلى نظام متكامل<br />نحن نبرمج <span className="grad">النجاح</span></h1>
-            <p className="sub">نقدم أنظمة برمجية متكاملة تلبي احتياجات عملك وتساعدك على النمو والتوسع بثقة.</p>
-            <div className="actions">
-              <button className="btn primary">استعرض الأنظمة <ArrowUpLeft size={18} /></button>
-              <button className="btn secondary">تواصل معنا <Headphones size={19} /></button>
+    <section className="container hero">
+      <div className="visual" aria-hidden="true">
+        <div className="dashboard">
+          <div className="orbit"></div><div className="orbit two"></div>
+          <div className="float-node n1">⌘</div><div className="float-node n2">☁</div><div className="float-node n3">🛡</div><div className="float-node n4">▣</div>
+          <div className="dash-grid">
+            <div className="card main">
+              <div className="status"><span className="chip"><i className="dot"></i> ZAWAN Core</span><span className="muted">Live Systems</span></div>
+              <div className="metric"><span>96%</span> Ready</div>
+              <p className="muted">واجهة نظيفة تمثل شركة برمجيات تبني أنظمة أعمال متكاملة.</p>
+              <div className="code-lines"><i className="line"></i><i className="line"></i><i className="line"></i><i className="line"></i></div>
+            </div>
+            <div className="side">
+              {services.map(([icon,title])=><div className="card mini" key={title}><div className="icon">{icon}</div><h3>{title}</h3><p className="muted">حلول مرنة وقابلة للتوسع.</p></div>)}
             </div>
           </div>
-
-          <div className="visual" aria-label="ZAWAN software ecosystem animation">
-            <div className="code-rain"><span>0101</span><span>&lt;/&gt;</span><span>API</span><span>AI</span><span>DATA</span></div>
-            <div className="ring r1" style={{'--r':'0deg'} as React.CSSProperties} />
-            <div className="ring r2" />
-            <div className="ring r3" />
-            <div className="beam b1" /><div className="beam b2" /><div className="beam b3" />
-            <div className="beam b4" /><div className="beam b5" /><div className="beam b6" />
-            <div className="core" />
-            {nodes.map(({ c, icon: Icon, label }) => (
-              <div className={`node ${c}`} key={label}>
-                <Icon />
-                <div className="label">{label}</div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <h2 className="steps-title">حياة أسهل مع أنظمة ZAWAN</h2>
-        <section className="steps">
-          {steps.map(([title, desc, Icon, num]) => (
-            <div className="step" key={num as string}>
-              <div className="step-icon"><Icon size={25}/></div>
-              <h3>{title as string}</h3>
-              <p>{desc as string}</p>
-              <div className="num">{num as string}</div>
-            </div>
-          ))}
-        </section>
+        </div>
       </div>
-    </main>
-  );
+
+      <div className="copy">
+        <span className="pill">حلول برمجية متكاملة</span>
+        <h1 className="headline">من فكرة إلى نظام متكامل<br/>نحن نبرمج <span>النجاح</span></h1>
+        <p className="lead">نقدم أنظمة برمجية متكاملة تلبي احتياجات عملك وتساعدك على النمو والتوسع بثقة.</p>
+        <div className="actions"><a className="btn primary" href="#">استعرض الأنظمة ↗</a><a className="btn secondary" href="#">تواصل معنا ☎</a></div>
+      </div>
+    </section>
+
+    <section className="container process">
+      <h2>حياة أسهل مع أنظمة ZAWAN</h2>
+      <div className="steps">{steps.map(([icon,title,desc,num])=><div className="step" key={num}><div className="icon" style={{margin:'0 auto'}}>{icon}</div><h3>{title}</h3><p className="muted">{desc}</p><div className="num">{num}</div></div>)}</div>
+    </section>
+  </main>
 }
