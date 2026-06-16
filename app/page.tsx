@@ -10,18 +10,6 @@ const services = [
 export default function Home() {
   return (
     <main className="page">
-      <header className="container nav">
-        <a className="nav-cta" href="/contact">ابدأ مشروعك ↗</a>
-        <nav className="links">
-          <a className="active" href="/">الرئيسية</a>
-          <a href="/products">الأنظمة</a>
-          <a href="#work">أعمالنا</a>
-          <a href="/services">خدماتنا</a>
-          <a href="/contact">تواصل معنا</a>
-        </nav>
-        <div className="brand"><span className="zmark">Z</span><span className="brand-name">ZAWAN</span></div>
-      </header>
-
       <section className="container hero" id="home">
         <div className="hero-copy">
           <div className="badge"><i /> نحو مستقبل رقمي أفضل</div>
