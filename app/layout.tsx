@@ -3,7 +3,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'ZAWAN | أنظمة برمجية متكاملة',
-  description: 'نقدم أنظمة برمجية متكاملة تلبي احتياجات عملك وتساعدك على النمو والتوسع بثقة',
+  description: 'من فكرة إلى نظام متكامل - ZAWAN',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
