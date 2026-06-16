@@ -1,51 +1,23 @@
-@import "tailwindcss";
-
+:root { --font-family: "Tajawal", "Cairo", "Segoe UI", Arial, sans-serif; }
 * { box-sizing: border-box; }
-html, body { margin: 0; min-height: 100%; background: #02030a; }
-body { overflow-x: hidden; font-family: Arial, Helvetica, sans-serif; }
-
-.page {
-  width: 100%;
-  min-height: 100vh;
-  background: #02030a;
+html, body { margin: 0; min-height: 100%; background: #03040b; color: white; }
+body { overflow-x: hidden; font-family: var(--font-family); }
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(139, 61, 255, .095) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 61, 255, .095) 1px, transparent 1px),
+    radial-gradient(circle at 28% 18%, rgba(126, 37, 255, .32), transparent 32%),
+    radial-gradient(circle at 78% 18%, rgba(163, 39, 255, .20), transparent 34%);
+  background-size: 72px 72px, 72px 72px, 100% 100%, 100% 100%;
 }
-
-.heroWrap {
-  position: relative;
-  width: 100vw;
-  min-height: 100vh;
-  overflow: hidden;
-  background: #02030a;
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025));
+  border: 1px solid rgba(190, 135, 255, .24);
+  box-shadow: 0 24px 70px rgba(0,0,0,.42), inset 0 1px 0 rgba(255,255,255,.08);
+  backdrop-filter: blur(18px);
 }
-
-.heroImage {
-  display: block;
-  width: 100%;
-  height: auto;
-  min-height: 100vh;
-  object-fit: cover;
-  object-position: top center;
-  user-select: none;
-  pointer-events: none;
-}
-
-.hotspot {
-  position: absolute;
-  display: block;
-  background: transparent;
-  border-radius: 16px;
-  z-index: 5;
-}
-.hotspot:focus-visible {
-  outline: 2px solid #d74cff;
-  outline-offset: 4px;
-}
-
-.try     { top: 3.2%;  right: 3.9%;  width: 9.1%;  height: 5.3%; }
-.systems { top: 50.1%; right: 8.2%;  width: 14.5%; height: 6.0%; }
-.contact { top: 50.1%; right: 24.5%; width: 13.8%; height: 6.0%; }
-
-@media (max-width: 900px) {
-  .heroWrap  { min-width: 1100px; }
-  .heroImage { width: 1100px; min-height: auto; }
-}
+.neon-text { text-shadow: 0 0 22px rgba(168, 85, 247, .45); }
+@keyframes scan { 0%{ transform: translateX(-40%); opacity:.05 } 50%{ opacity:.55 } 100%{ transform: translateX(140%); opacity:.05 } }
+.scan-line { animation: scan 4.5s ease-in-out infinite; }
+@keyframes float { 0%,100%{transform: translateY(0)} 50%{transform: translateY(-16px)} }
+.floaty { animation: float 5.5s ease-in-out infinite; }

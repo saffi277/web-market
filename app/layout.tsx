@@ -1,9 +1,9 @@
-import type { Metadata } from 'next';
-import './globals.css';
+import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'ZAWAN | أنظمة برمجية متكاملة',
-  description: 'من فكرة إلى نظام متكامل - ZAWAN',
+  title: "ZAWAN | أنظمة برمجية متكاملة",
+  description: "Hero website for ZAWAN software systems"
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
