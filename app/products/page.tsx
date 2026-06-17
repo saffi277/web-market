@@ -245,7 +245,7 @@ export default function ProductsPage() {
         margin: '4rem auto', maxWidth: 800, padding: '3rem 2rem',
         background: 'linear-gradient(135deg,rgba(139,92,246,.1),rgba(0,212,255,.05))',
         border: '1px solid rgba(139,92,246,.2)', borderRadius: 24,
-        textAlign: 'center', marginInline: '2rem',
+        textAlign: 'center',
       }}>
         <h2 style={{ fontSize: 'clamp(1.5rem,3vw,2rem)', fontWeight: 700, marginBottom: 12 }}>
           هل تحتاج نظاماً مخصصاً؟
