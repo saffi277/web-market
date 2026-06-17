@@ -54,9 +54,9 @@ export default function Navbar() {
       </nav>
 
       {/* اللوغو */}
-      <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none', color: 'white', direction: 'ltr' }}>
+      <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '2px', textDecoration: 'none', color: 'white', direction: 'ltr' }}>
         <span style={{ fontSize: '42px', fontWeight: 900, background: 'linear-gradient(135deg,#7c3cff,#d844ff)', WebkitBackgroundClip: 'text', color: 'transparent', lineHeight: 1 }}>Z</span>
-        <span style={{ fontSize: '22px', fontWeight: 900 }}>ZAWAN</span>
+        <span style={{ fontSize: '18px', fontWeight: 700, color: 'white', letterSpacing: '1px' }}>AWAN</span>
       </Link>
     </header>
   );
