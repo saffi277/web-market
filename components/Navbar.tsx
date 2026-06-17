@@ -10,7 +10,8 @@ const links = [
 ];
 
 export default function Navbar() {
-  const path = usePathname();
+  const rawPath = usePathname();
+  const path = rawPath.replace(/\/$/, '') || '/';
   return (
     <header style={{
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
@@ -32,7 +33,7 @@ export default function Navbar() {
       {/* روابط */}
       <nav style={{ display: 'flex', gap: '44px', fontSize: '16px', fontWeight: 700 }}>
         {links.map(({ href, label }) => {
-          const active = path === href;
+          const active = href === '/' ? path === '/' : path === href || path.startsWith(href + '/');
           return (
             <Link key={href} href={href} style={{
               color: 'white', textDecoration: 'none',
