@@ -6,7 +6,7 @@ const API = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000';
 type Message = {
   id: string; name: string; email: string; phone?: string;
   service?: string; budget?: string; message: string;
-  status: string; createdAt: string;
+  status: string; type: string; createdAt: string;
 };
 
 export default function AdminPage() {
@@ -17,6 +17,7 @@ export default function AdminPage() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(false);
   const [selected, setSelected] = useState<Message | null>(null);
+  const [tab, setTab] = useState<'contact'|'order'>('contact');
 
   useEffect(() => {
     const t = localStorage.getItem('zawan_token');
@@ -108,11 +109,27 @@ export default function AdminPage() {
           </button>
         </div>
 
+        {/* Tabs */}
+        <div style={{ display: 'flex', gap: 8, marginBottom: 28 }}>
+          {([['contact','طلبات التواصل','💬'],['order','طلبات الشراء','🛒']] as const).map(([key,label,icon]) => (
+            <button key={key} onClick={() => { setTab(key); setSelected(null); }}
+              style={{ padding: '10px 24px', borderRadius: 12, fontWeight: 700, fontSize: '.95rem', cursor: 'pointer', border: '1px solid', transition: 'all .2s',
+                background: tab === key ? 'linear-gradient(135deg,#7c3cff,#d844ff)' : 'rgba(255,255,255,.04)',
+                borderColor: tab === key ? 'transparent' : 'rgba(139,92,246,.2)',
+                color: 'white' }}>
+              {icon} {label}
+              <span style={{ marginRight: 8, background: 'rgba(255,255,255,.2)', borderRadius: 99, padding: '2px 8px', fontSize: '.78rem' }}>
+                {messages.filter(m => m.type === key).length}
+              </span>
+            </button>
+          ))}
+        </div>
+
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16, marginBottom: 32 }}>
           {[
-            { label: 'جديدة', count: messages.filter(m => m.status === 'unread').length, color: '#a855f7' },
-            { label: 'مقروءة', count: messages.filter(m => m.status === 'read').length, color: '#22c55e' },
-            { label: 'تم الرد', count: messages.filter(m => m.status === 'replied').length, color: '#3b82f6' },
+            { label: 'جديدة', count: messages.filter(m => m.type === tab && m.status === 'unread').length, color: '#a855f7' },
+            { label: 'مقروءة', count: messages.filter(m => m.type === tab && m.status === 'read').length, color: '#22c55e' },
+            { label: 'تم الرد', count: messages.filter(m => m.type === tab && m.status === 'replied').length, color: '#3b82f6' },
           ].map(s => (
             <div key={s.label} style={{ background: 'rgba(14,9,32,.7)', border: `1px solid ${s.color}30`, borderRadius: 16, padding: '1.2rem', textAlign: 'center' }}>
               <div style={{ fontSize: '2rem', fontWeight: 800, color: s.color }}>{s.count}</div>
@@ -126,9 +143,9 @@ export default function AdminPage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {loading ? (
               <p style={{ textAlign: 'center', color: '#94A3B8', padding: '3rem' }}>جاري التحميل...</p>
-            ) : messages.length === 0 ? (
-              <p style={{ textAlign: 'center', color: '#94A3B8', padding: '3rem' }}>لا توجد رسائل بعد</p>
-            ) : messages.map(m => (
+            ) : messages.filter(m => m.type === tab).length === 0 ? (
+              <p style={{ textAlign: 'center', color: '#94A3B8', padding: '3rem' }}>لا توجد {tab === 'contact' ? 'طلبات تواصل' : 'طلبات شراء'} بعد</p>
+            ) : messages.filter(m => m.type === tab).map(m => (
               <div key={m.id} onClick={() => { setSelected(m); if (m.status === 'unread') updateStatus(m.id, 'read'); }}
                 style={{ background: selected?.id === m.id ? 'rgba(139,92,246,.15)' : 'rgba(14,9,32,.7)', border: `1px solid ${selected?.id === m.id ? 'rgba(139,92,246,.5)' : 'rgba(139,92,246,.1)'}`, borderRadius: 14, padding: '1rem 1.2rem', cursor: 'pointer', transition: 'all .2s' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12 }}>

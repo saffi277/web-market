@@ -17,13 +17,14 @@ export async function messageRoutes(app: FastifyInstance) {
           service: { type: 'string' },
           budget:  { type: 'string' },
           message: { type: 'string', minLength: 10 },
+          type:    { type: 'string', enum: ['contact', 'order'] },
         },
       },
     },
   }, async (req, reply) => {
     const data = req.body as {
       name: string; email: string; phone?: string;
-      service?: string; budget?: string; message: string;
+      service?: string; budget?: string; message: string; type?: string;
     };
     const msg = await prisma.message.create({ data });
     return reply.code(201).send({ success: true, id: msg.id });
