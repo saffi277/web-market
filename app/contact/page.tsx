@@ -153,18 +153,20 @@ export default function ContactPage() {
           </div>
 
           {[
-            { icon: '📧', label: 'البريد الإلكتروني', value: 'info@zawan.com' },
-            { icon: '📱', label: 'واتساب', value: '+966 5x xxx xxxx' },
-            { icon: '📍', label: 'الموقع', value: 'المملكة العربية السعودية' },
-            { icon: '⏰', label: 'ساعات العمل', value: 'الأحد - الخميس: 9ص - 6م' },
+            { icon: '💬', label: 'واتساب', value: '07778650640', href: 'https://wa.me/9647778650640' },
+            { icon: '📸', label: 'انستغرام', value: '@zawan.dev', href: 'https://instagram.com/zawan.dev' },
+            { icon: '📘', label: 'فيس بوك', value: 'zawan.dev', href: 'https://facebook.com/zawan.dev' },
           ].map(item => (
-            <div key={item.label} style={{ display: 'flex', gap: 16, alignItems: 'flex-start', background: 'rgba(14,9,32,.6)', border: '1px solid rgba(139,92,246,.1)', borderRadius: 16, padding: '1.2rem 1.5rem' }}>
+            <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', gap: 16, alignItems: 'flex-start', background: 'rgba(14,9,32,.6)', border: '1px solid rgba(139,92,246,.1)', borderRadius: 16, padding: '1.2rem 1.5rem', textDecoration: 'none', transition: 'border-color .2s' }}
+              onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(139,92,246,.4)')}
+              onMouseLeave={e => (e.currentTarget.style.borderColor = 'rgba(139,92,246,.1)')}
+            >
               <span style={{ fontSize: '1.5rem', flexShrink: 0 }}>{item.icon}</span>
               <div>
                 <div style={{ fontSize: '.8rem', color: '#8B5CF6', fontWeight: 600, marginBottom: 4 }}>{item.label}</div>
                 <div style={{ fontSize: '.95rem', color: '#E2E8F0' }}>{item.value}</div>
               </div>
-            </div>
+            </a>
           ))}
 
           {/* Response time */}
