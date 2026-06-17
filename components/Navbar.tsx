@@ -17,7 +17,7 @@ export default function Navbar() {
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
       height: '96px', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       padding: '0 min(64px, 4vw)',
-      background: 'rgba(5,4,11,.92)', backdropFilter: 'blur(20px)',
+      background: 'rgba(5,4,11,.97)', backdropFilter: 'blur(20px)',
       borderBottom: '1px solid rgba(170,88,255,.14)',
       overflow: 'visible',
     }}>
