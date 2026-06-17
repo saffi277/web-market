@@ -36,13 +36,17 @@ export default function Navbar() {
           return (
             <Link key={href} href={href} style={{
               color: 'white', textDecoration: 'none',
-              paddingBottom: '6px',
               opacity: active ? 1 : 0.75,
-              borderBottom: active ? '2px solid #d844ff' : '2px solid transparent',
-              boxShadow: active ? '0 4px 18px rgba(216,68,255,0.7)' : 'none',
-              transition: 'all 0.2s ease',
+              display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px',
             }}>
               {label}
+              <span style={{
+                display: 'block', height: '2px', width: '70px',
+                background: active ? 'linear-gradient(90deg, transparent, #d844ff, transparent)' : 'transparent',
+                boxShadow: active ? '0 0 14px #d844ff' : 'none',
+                borderRadius: '2px',
+                transition: 'all 0.2s ease',
+              }} />
             </Link>
           );
         })}
