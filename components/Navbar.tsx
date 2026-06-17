@@ -88,10 +88,15 @@ export default function Navbar() {
             fontSize="34"
             fontStyle="italic"
             fontWeight="bold"
-            fill="url(#gold1)"
             filter="url(#glow)"
             letterSpacing="-0.5"
-          >Zawan</text>
+          >
+            <tspan fill="#a855f7">Z</tspan>
+            <tspan fill="#ffffff">a</tspan>
+            <tspan fill="#a855f7">w</tspan>
+            <tspan fill="#ffffff">a</tspan>
+            <tspan fill="#a855f7">n</tspan>
+          </text>
         </svg>
       </Link>
     </header>
