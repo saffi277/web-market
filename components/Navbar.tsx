@@ -54,14 +54,45 @@ export default function Navbar() {
       </nav>
 
       {/* اللوغو */}
-      <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', direction: 'ltr', gap: '1px' }}>
-        <span style={{
-          fontSize: '32px', fontWeight: 900, lineHeight: 1,
-          background: 'linear-gradient(135deg,#7c3cff,#d844ff)',
-          WebkitBackgroundClip: 'text', color: 'transparent',
-          filter: 'drop-shadow(0 0 12px rgba(168,85,247,.6))',
-        }}>Z</span>
-        <span style={{ fontSize: '20px', fontWeight: 800, color: '#fff', letterSpacing: '2px', paddingTop: '6px' }}>AWAN</span>
+      <Link href="/" style={{ textDecoration: 'none', direction: 'ltr' }}>
+        <svg width="130" height="52" viewBox="0 0 130 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gold1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#ffe066"/>
+              <stop offset="35%" stopColor="#ffd700"/>
+              <stop offset="60%" stopColor="#c8960c"/>
+              <stop offset="100%" stopColor="#ffd700"/>
+            </linearGradient>
+            <linearGradient id="swoosh" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#c8960c" stopOpacity="0"/>
+              <stop offset="40%" stopColor="#ffd700"/>
+              <stop offset="70%" stopColor="#ffe566"/>
+              <stop offset="100%" stopColor="#c8960c" stopOpacity="0"/>
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="1.5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          {/* Swoosh line */}
+          <path d="M 8 38 Q 65 44 122 34" stroke="url(#swoosh)" strokeWidth="1.5" fill="none" opacity="0.8"/>
+          <path d="M 12 41 Q 65 48 118 38" stroke="url(#swoosh)" strokeWidth="0.7" fill="none" opacity="0.5"/>
+          {/* Star sparkle */}
+          <g filter="url(#glow)" transform="translate(108,7)">
+            <path d="M0,-6 L1.2,-1.2 L6,0 L1.2,1.2 L0,6 L-1.2,1.2 L-6,0 L-1.2,-1.2 Z" fill="#ffe566"/>
+          </g>
+          {/* Zawan text */}
+          <text
+            x="8" y="34"
+            fontFamily="Georgia, 'Times New Roman', serif"
+            fontSize="34"
+            fontStyle="italic"
+            fontWeight="bold"
+            fill="url(#gold1)"
+            filter="url(#glow)"
+            letterSpacing="-0.5"
+          >Zawan</text>
+        </svg>
       </Link>
     </header>
   );
