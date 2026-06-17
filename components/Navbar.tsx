@@ -35,20 +35,14 @@ export default function Navbar() {
           const active = path === href;
           return (
             <Link key={href} href={href} style={{
-              color: 'white', textDecoration: 'none', position: 'relative',
-              paddingBottom: '8px', opacity: active ? 1 : 0.88,
+              color: 'white', textDecoration: 'none',
+              paddingBottom: '6px',
+              opacity: active ? 1 : 0.75,
+              borderBottom: active ? '2px solid #d844ff' : '2px solid transparent',
+              boxShadow: active ? '0 4px 18px rgba(216,68,255,0.7)' : 'none',
+              transition: 'all 0.2s ease',
             }}>
               {label}
-              {active && (
-                <span style={{
-                  position: 'absolute', bottom: '-4px', left: '50%',
-                  transform: 'translateX(-50%)',
-                  width: '90px', height: '2px',
-                  background: 'linear-gradient(90deg, transparent, #d844ff, transparent)',
-                  boxShadow: '0 0 18px #d844ff',
-                  borderRadius: '2px',
-                }} />
-              )}
             </Link>
           );
         })}
