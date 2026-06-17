@@ -30,7 +30,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main style={{ background: 'var(--bg)', minHeight: '100vh', paddingTop: '5rem' }}>
+    <main className="page" style={{ minHeight: '100vh', paddingTop: '5rem' }}>
 
       {/* Hero */}
       <section style={{ padding: '4rem 1.5rem 3rem', textAlign: 'center' }}>
