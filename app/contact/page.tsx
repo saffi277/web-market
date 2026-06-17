@@ -156,6 +156,7 @@ export default function ContactPage() {
             { icon: '💬', label: 'واتساب', value: '07778650640', href: 'https://wa.me/9647778650640' },
             { icon: '📸', label: 'انستغرام', value: '@zawan.dev', href: 'https://instagram.com/zawan.dev' },
             { icon: '📘', label: 'فيس بوك', value: 'zawan.dev', href: 'https://facebook.com/zawan.dev' },
+            { icon: '📍', label: 'الموقع', value: 'العراق', href: '#' },
           ].map(item => (
             <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', gap: 16, alignItems: 'flex-start', background: 'rgba(14,9,32,.6)', border: '1px solid rgba(139,92,246,.1)', borderRadius: 16, padding: '1.2rem 1.5rem', textDecoration: 'none', transition: 'border-color .2s' }}
               onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(139,92,246,.4)')}
