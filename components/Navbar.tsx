@@ -54,10 +54,14 @@ export default function Navbar() {
       </nav>
 
       {/* اللوغو */}
-      <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0', textDecoration: 'none', direction: 'ltr', background: 'rgba(124,60,255,.08)', border: '1px solid rgba(168,85,247,.25)', borderRadius: '10px', padding: '6px 14px' }}>
-        <span style={{ fontSize: '26px', fontWeight: 900, background: 'linear-gradient(135deg,#7c3cff,#d844ff)', WebkitBackgroundClip: 'text', color: 'transparent', lineHeight: 1, filter: 'drop-shadow(0 0 8px rgba(168,85,247,.8))' }}>Z</span>
-        <span style={{ fontSize: '15px', fontWeight: 800, color: 'rgba(255,255,255,.9)', letterSpacing: '3px', fontFamily: 'monospace' }}>AWAN</span>
-        <span style={{ fontSize: '11px', color: '#d844ff', fontWeight: 900, marginLeft: '3px', alignSelf: 'flex-end', marginBottom: '1px' }}>{'</>'}</span>
+      <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', direction: 'ltr', gap: '1px' }}>
+        <span style={{
+          fontSize: '32px', fontWeight: 900, lineHeight: 1,
+          background: 'linear-gradient(135deg,#7c3cff,#d844ff)',
+          WebkitBackgroundClip: 'text', color: 'transparent',
+          filter: 'drop-shadow(0 0 12px rgba(168,85,247,.6))',
+        }}>Z</span>
+        <span style={{ fontSize: '20px', fontWeight: 800, color: '#fff', letterSpacing: '2px', paddingTop: '6px' }}>AWAN</span>
       </Link>
     </header>
   );
