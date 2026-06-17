@@ -58,16 +58,16 @@ export default function Navbar() {
         <svg width="130" height="52" viewBox="0 0 130 52" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="gold1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#ffe066"/>
-              <stop offset="35%" stopColor="#ffd700"/>
-              <stop offset="60%" stopColor="#c8960c"/>
-              <stop offset="100%" stopColor="#ffd700"/>
+              <stop offset="0%" stopColor="#c084fc"/>
+              <stop offset="35%" stopColor="#a855f7"/>
+              <stop offset="60%" stopColor="#d844ff"/>
+              <stop offset="100%" stopColor="#e879f9"/>
             </linearGradient>
             <linearGradient id="swoosh" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#c8960c" stopOpacity="0"/>
-              <stop offset="40%" stopColor="#ffd700"/>
-              <stop offset="70%" stopColor="#ffe566"/>
-              <stop offset="100%" stopColor="#c8960c" stopOpacity="0"/>
+              <stop offset="0%" stopColor="#7c3cff" stopOpacity="0"/>
+              <stop offset="40%" stopColor="#a855f7"/>
+              <stop offset="70%" stopColor="#d844ff"/>
+              <stop offset="100%" stopColor="#7c3cff" stopOpacity="0"/>
             </linearGradient>
             <filter id="glow">
               <feGaussianBlur stdDeviation="1.5" result="blur"/>
@@ -79,7 +79,7 @@ export default function Navbar() {
           <path d="M 12 41 Q 65 48 118 38" stroke="url(#swoosh)" strokeWidth="0.7" fill="none" opacity="0.5"/>
           {/* Star sparkle */}
           <g filter="url(#glow)" transform="translate(108,7)">
-            <path d="M0,-6 L1.2,-1.2 L6,0 L1.2,1.2 L0,6 L-1.2,1.2 L-6,0 L-1.2,-1.2 Z" fill="#ffe566"/>
+            <path d="M0,-6 L1.2,-1.2 L6,0 L1.2,1.2 L0,6 L-1.2,1.2 L-6,0 L-1.2,-1.2 Z" fill="#e879f9"/>
           </g>
           {/* Zawan text */}
           <text
