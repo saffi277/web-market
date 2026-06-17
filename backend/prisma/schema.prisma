@@ -42,7 +42,8 @@ model Message {
   service   String?
   budget    String?
   message   String
-  status    String   @default("new")
+  status    String   @default("unread")
+  type      String   @default("contact")
   createdAt DateTime @default(now()) @map("created_at")
 
   @@map("messages")
