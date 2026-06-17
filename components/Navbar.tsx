@@ -57,11 +57,17 @@ export default function Navbar() {
       <Link href="/" style={{ textDecoration: 'none', direction: 'ltr' }}>
         <svg width="130" height="52" viewBox="0 0 130 52" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <linearGradient id="gold1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#c084fc"/>
-              <stop offset="35%" stopColor="#a855f7"/>
-              <stop offset="60%" stopColor="#d844ff"/>
-              <stop offset="100%" stopColor="#e879f9"/>
+            <linearGradient id="purpleShine" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#f0abfc"/>
+              <stop offset="30%" stopColor="#d844ff"/>
+              <stop offset="65%" stopColor="#7c3cff"/>
+              <stop offset="100%" stopColor="#a855f7"/>
+            </linearGradient>
+            <linearGradient id="whiteShine" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#ffffff"/>
+              <stop offset="40%" stopColor="#e2e8f0"/>
+              <stop offset="70%" stopColor="#a78bfa"/>
+              <stop offset="100%" stopColor="#ffffff"/>
             </linearGradient>
             <linearGradient id="swoosh" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#7c3cff" stopOpacity="0"/>
@@ -91,11 +97,11 @@ export default function Navbar() {
             filter="url(#glow)"
             letterSpacing="-0.5"
           >
-            <tspan fill="#a855f7">Z</tspan>
-            <tspan fill="#ffffff">a</tspan>
-            <tspan fill="#a855f7">w</tspan>
-            <tspan fill="#ffffff">a</tspan>
-            <tspan fill="#a855f7">n</tspan>
+            <tspan fill="url(#purpleShine)">Z</tspan>
+            <tspan fill="url(#whiteShine)">a</tspan>
+            <tspan fill="url(#purpleShine)">w</tspan>
+            <tspan fill="url(#whiteShine)">a</tspan>
+            <tspan fill="url(#purpleShine)">n</tspan>
           </text>
         </svg>
       </Link>
