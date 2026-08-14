@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #05040b;
+  --color-panel: #0d0b18;
+  --color-panel-2: #131029;
+  --color-line: rgba(170, 88, 255, 0.16);
+  --color-brand: #7c3cff;
+  --color-brand-2: #d844ff;
+  --color-brand-3: #a855f7;
+  --color-muted: #a09bb0;
+  --font-sans: system-ui, "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 15% 0%, rgba(124, 60, 255, 0.22), transparent 60%),
+    radial-gradient(ellipse 70% 60% at 90% 20%, rgba(216, 68, 255, 0.14), transparent 60%),
+    radial-gradient(ellipse 90% 50% at 50% 100%, rgba(124, 60, 255, 0.16), transparent 65%),
+    #05040b;
+  background-attachment: fixed;
+  color: #fff;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Faint grid, fixed so it never reveals a page seam on short pages. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(150, 90, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(150, 90, 255, 0.05) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.35), transparent);
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+@utility animate-rise {
+  animation: rise 0.6s ease both;
+}
+
+@utility text-gradient {
+  background: linear-gradient(135deg, #a855f7, #ee61ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility card-surface {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015));
+  border: 1px solid var(--color-line);
+  backdrop-filter: blur(14px);
+}
+
+::selection {
+  background: rgba(216, 68, 255, 0.35);
+}
+
+input, textarea, select {
+  font-family: inherit;
+}
