@@ -40,9 +40,9 @@ export default function SystemCard({ system, index = 0 }: { system: System; inde
         <p className="mt-2.5 text-sm leading-7 text-[--color-muted]">{system.descAr}</p>
 
         {system.features.length > 0 && (
-          <ul className="mt-5 grid gap-2 sm:grid-cols-2">
+          <ul className="mt-5 grid gap-2">
             {system.features.slice(0, 4).map((f) => (
-              <li key={f} className="flex items-center gap-2 text-[12.5px] text-[#cfc9dd]">
+              <li key={f} className="flex items-center gap-2 text-[12.5px] leading-6 text-[#cfc9dd]">
                 <Check size={13} className="shrink-0" style={{ color: accent }} />
                 {f}
               </li>

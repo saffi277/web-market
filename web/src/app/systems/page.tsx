@@ -6,7 +6,7 @@ import PageHero from "@/components/PageHero";
 import SystemsBrowser from "@/components/SystemsBrowser";
 import FeatureStrip, { type Feature } from "@/components/FeatureStrip";
 import CtaBand from "@/components/home/CtaBand";
-import SystemsArt from "@/components/art/SystemsArt";
+import DashboardArt from "@/components/home/DashboardArt";
 
 export const metadata: Metadata = {
   title: "الأنظمة والتطبيقات",
@@ -40,7 +40,7 @@ export default async function SystemsPage() {
             <span className="font-bold text-[#c084fc]">مجاناً</span> قبل الشراء.
           </>
         }
-        art={<SystemsArt />}
+        art={<DashboardArt />}
       />
 
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

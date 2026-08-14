@@ -31,7 +31,7 @@ function Row({
   children: React.ReactNode;
 }) {
   return (
-    <label className="grid items-center gap-2 sm:grid-cols-[110px_1fr] sm:gap-4">
+    <label className="grid items-center gap-2 sm:grid-cols-[132px_1fr] sm:gap-4">
       <span className="text-[13px] font-semibold text-[#cbd5e1]">{label}</span>
       <span className="relative block">
         {children}

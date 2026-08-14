@@ -13,7 +13,7 @@ export default function Hero() {
     <section className="mx-auto grid max-w-7xl items-center gap-10 px-4 pb-10 pt-8 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8 lg:pb-16 lg:pt-14">
       {/* Copy */}
       <div className="animate-rise order-2 text-center lg:order-1 lg:text-right">
-        <h1 className="text-[clamp(2rem,5.6vw,3.9rem)] font-black leading-[1.18] tracking-tight">
+        <h1 className="text-[clamp(1.75rem,4.2vw,3rem)] font-black leading-[1.22] tracking-tight">
           أنظمة تبهر السوق.
           <br />
           <span className="text-gradient">حلول تُظهر قوة عملك.</span>
@@ -59,7 +59,7 @@ export default function Hero() {
               <Icon size={17} style={{ color }} />
             </span>
             <span className="text-right">
-              <span className="block text-sm font-black leading-tight" style={{ color }}>
+              <span className="block text-sm font-black leading-tight" style={{ color }} dir="ltr">
                 {value}
               </span>
               <span className="block text-[11px] leading-tight text-[--color-muted]">{label}</span>

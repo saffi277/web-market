@@ -94,8 +94,8 @@ const services: Service[] = [
 const stats: Feature[] = [
   { Icon: Boxes, title: "حلول قابلة للتوسع", desc: "تنمو مع نمو أعمالك.", color: "#a855f7" },
   { Icon: Headset, title: "دعم 24/7", desc: "متواصل على مدار الساعة.", color: "#00d4ff" },
-  { Icon: Smile, title: "+98% رضا العملاء", desc: "شهادات من شركاء نجاحنا.", color: "#e879f9" },
-  { Icon: Trophy, title: "+120 مشروع", desc: "مكتمل بنجاح وتسليم في الموعد.", color: "#22c55e" },
+  { Icon: Smile, title: "رضا عملاء 98%", desc: "شهادات من شركاء نجاحنا.", color: "#e879f9" },
+  { Icon: Trophy, title: "أكثر من 120 مشروع", desc: "مكتمل بنجاح وتسليم في الموعد.", color: "#22c55e" },
 ];
 
 export default function ServicesPage() {

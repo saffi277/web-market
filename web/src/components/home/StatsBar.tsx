@@ -49,14 +49,14 @@ function StatItem({ stat, start }: { stat: Stat; start: boolean }) {
   const numeric = stat.to !== undefined;
 
   return (
-    <div className="flex items-center gap-3 px-4 py-3">
+    <div className="flex items-center gap-3 border-b border-l border-white/[0.06] px-4 py-4 last:border-l-0">
       <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#8b5cf6]/25 bg-[#8b5cf6]/10">
         <stat.Icon size={18} className="text-[#c084fc]" />
       </span>
       <span className="text-right">
         {numeric ? (
           <>
-            <span className="block text-lg font-black leading-tight text-[#00d4ff]">
+            <span className="block text-lg font-black leading-tight text-[#00d4ff]" dir="ltr">
               {stat.prefix}
               {n}
               {stat.suffix}
@@ -96,7 +96,7 @@ export default function StatsBar() {
 
   return (
     <div ref={ref} className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div className="panel grid grid-cols-2 gap-x-2 divide-y divide-white/5 rounded-2xl sm:grid-cols-3 sm:divide-y-0 lg:grid-cols-4 xl:grid-cols-8 xl:divide-x xl:divide-white/5">
+      <div className="panel grid grid-cols-2 rounded-2xl sm:grid-cols-3 lg:grid-cols-4">
         {stats.map((s) => (
           <StatItem key={s.label + s.title} stat={s} start={seen} />
         ))}

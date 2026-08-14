@@ -56,12 +56,6 @@ export default function ContactPage() {
           {channels.map(({ Icon, label, value, href, color, ltr }) => {
             const inner = (
               <>
-                <span
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl"
-                  style={{ background: `${color}1f`, border: `1px solid ${color}44` }}
-                >
-                  <Icon size={19} style={{ color }} />
-                </span>
                 <span className="flex-1 text-right">
                   <span className="block text-[13px] font-bold" style={{ color }}>
                     {label}
@@ -69,6 +63,12 @@ export default function ContactPage() {
                   <span className="mt-0.5 block text-sm text-[#e2e8f0]" dir={ltr ? "ltr" : undefined}>
                     {value}
                   </span>
+                </span>
+                <span
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl"
+                  style={{ background: `${color}1f`, border: `1px solid ${color}44` }}
+                >
+                  <Icon size={19} style={{ color }} />
                 </span>
               </>
             );
