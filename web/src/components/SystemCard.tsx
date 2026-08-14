@@ -1,61 +1,82 @@
 import Link from "next/link";
+import { Check } from "lucide-react";
 import type { System } from "@/lib/types";
 
-export default function SystemCard({ system }: { system: System }) {
+/** Fallback accents so a catalogue with no badge colours still reads as varied. */
+const accents = ["#e879f9", "#00d4ff", "#38bdf8", "#22c55e", "#f59e0b", "#a855f7"];
+
+export default function SystemCard({ system, index = 0 }: { system: System; index?: number }) {
+  const accent = system.badgeColor ?? accents[index % accents.length];
+
   return (
-    <article className="card-surface group relative flex flex-col rounded-2xl p-6 transition-all hover:-translate-y-1 hover:border-[#8b5cf6]/50 hover:shadow-[0_20px_60px_rgba(139,92,246,0.15)]">
+    <article
+      className="panel group relative flex h-full flex-col rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5"
+      style={{ borderColor: `${accent}2b` }}
+    >
+      {/* accent wash on hover */}
+      <span
+        className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        style={{ background: `radial-gradient(120% 80% at 50% 0%, ${accent}1a, transparent 70%)` }}
+      />
+
       {system.badge && (
         <span
           className="absolute left-5 top-5 rounded-full border px-2.5 py-1 text-[11px] font-bold"
-          style={{
-            color: system.badgeColor ?? "#a855f7",
-            borderColor: `${system.badgeColor ?? "#a855f7"}55`,
-            background: `${system.badgeColor ?? "#a855f7"}1f`,
-          }}
+          style={{ color: accent, borderColor: `${accent}55`, background: `${accent}1f` }}
         >
           {system.badge}
         </span>
       )}
 
-      <div className="mb-4 text-4xl">{system.icon}</div>
-
-      <h3 className="text-lg font-bold">{system.nameAr}</h3>
-      <p className="mt-1 text-xs font-medium text-[#8b5cf6]" dir="ltr">
-        {system.nameEn}
-      </p>
-      <p className="mt-3 line-clamp-3 text-sm leading-7 text-[--color-muted]">{system.descAr}</p>
-
-      {system.features.length > 0 && (
-        <ul className="mt-4 flex flex-wrap gap-2">
-          {system.features.slice(0, 4).map((f) => (
-            <li
-              key={f}
-              className="rounded-lg border border-[#8b5cf6]/20 bg-[#8b5cf6]/10 px-2.5 py-1 text-[11px] text-[#c4b5fd]"
-            >
-              {f}
-            </li>
-          ))}
-        </ul>
-      )}
-
-      <div className="mt-6 flex items-center justify-between gap-3 pt-2">
-        <span className="font-bold text-[#c084fc]">
-          {system.priceUsd ? `ابتداءً من $${system.priceUsd}` : "حسب الطلب"}
+      <div className="relative">
+        <span
+          className="flex h-14 w-14 items-center justify-center rounded-2xl text-2xl"
+          style={{ background: `${accent}1a`, border: `1px solid ${accent}3d`, boxShadow: `0 0 26px ${accent}26` }}
+        >
+          {system.icon}
         </span>
-        <div className="flex gap-2">
-          {system.demoEnabled && (
-            <Link
-              href={`/demo/${system.slug}`}
-              className="rounded-lg border border-emerald-500/40 bg-emerald-500/10 px-3 py-2 text-xs font-bold text-emerald-300 transition-colors hover:bg-emerald-500/20"
-            >
-              جرّبه
-            </Link>
+
+        <h3 className="mt-5 text-lg font-bold">{system.nameAr}</h3>
+        <p className="mt-2.5 text-sm leading-7 text-[--color-muted]">{system.descAr}</p>
+
+        {system.features.length > 0 && (
+          <ul className="mt-5 grid gap-2 sm:grid-cols-2">
+            {system.features.slice(0, 4).map((f) => (
+              <li key={f} className="flex items-center gap-2 text-[12.5px] text-[#cfc9dd]">
+                <Check size={13} className="shrink-0" style={{ color: accent }} />
+                {f}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+
+      <div className="relative mt-auto pt-6">
+        <p className="text-sm font-bold" style={{ color: accent }}>
+          {system.priceUsd ? (
+            <>
+              ابتداءً من ${system.priceUsd}
+              <span className="font-medium text-[--color-muted]"> / سنوياً</span>
+            </>
+          ) : (
+            "التسعير حسب الطلب"
           )}
+        </p>
+
+        <div className="mt-4 grid grid-cols-2 gap-2.5">
           <Link
             href={`/systems/${system.slug}`}
-            className="rounded-lg bg-gradient-to-br from-[#8b5cf6] to-[#7c3aed] px-4 py-2 text-xs font-bold transition-transform hover:scale-105"
+            className="rounded-xl px-4 py-2.5 text-center text-[13px] font-bold text-white transition-transform hover:scale-[1.03]"
+            style={{ background: `linear-gradient(135deg, ${accent}, ${accent}b3)` }}
           >
-            التفاصيل
+            عرض التفاصيل
+          </Link>
+          <Link
+            href={system.demoEnabled ? `/demo/${system.slug}` : `/contact?system=${system.slug}`}
+            className="rounded-xl border px-4 py-2.5 text-center text-[13px] font-bold transition-colors"
+            style={{ borderColor: `${accent}4d`, color: accent }}
+          >
+            طلب تجربة
           </Link>
         </div>
       </div>
