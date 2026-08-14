@@ -3,6 +3,8 @@
 import { useMemo, useState } from "react";
 import { api } from "@/lib/api";
 import type { DemoRecord } from "@/lib/types";
+import DemoStats from "./DemoStats";
+import SalesChart from "./SalesChart";
 
 const entityLabels: Record<string, string> = {
   product: "المنتجات",
@@ -91,7 +93,13 @@ export default function DemoWorkspace({
 
   return (
     <div className="mt-7">
-      <div className="flex flex-wrap gap-2">
+      <DemoStats records={records} />
+
+      <div className="mt-4">
+        <SalesChart records={records} />
+      </div>
+
+      <div className="mt-7 flex flex-wrap gap-2">
         {types.map((t) => (
           <button
             key={t}
@@ -124,7 +132,7 @@ export default function DemoWorkspace({
       </button>
 
       {adding && (
-        <form onSubmit={add} className="card-surface mt-4 rounded-2xl p-5">
+        <form onSubmit={add} className="panel mt-4 rounded-2xl p-5">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {cols.map((c) => (
               <label key={c.key} className="block">
@@ -148,7 +156,7 @@ export default function DemoWorkspace({
       )}
 
       {/* Table on wide screens, stacked cards on phones. */}
-      <div className="card-surface mt-5 hidden overflow-x-auto rounded-2xl md:block">
+      <div className="panel mt-5 hidden overflow-x-auto rounded-2xl md:block">
         <table className="w-full text-right text-sm">
           <thead className="border-b border-white/10 text-xs text-[--color-muted]">
             <tr>
@@ -161,8 +169,12 @@ export default function DemoWorkspace({
             </tr>
           </thead>
           <tbody>
-            {rows.map((r) => (
-              <tr key={r.id} className="border-b border-white/5 last:border-0 hover:bg-white/[0.03]">
+            {rows.map((r, i) => (
+              <tr
+                key={r.id}
+                className="animate-row-in border-b border-white/5 last:border-0 hover:bg-white/[0.03]"
+                style={{ animationDelay: `${Math.min(i, 12) * 30}ms` }}
+              >
                 {cols.map((c) => (
                   <td key={c.key} className="whitespace-nowrap px-5 py-4">
                     {formatCell(r.payload[c.key])}
@@ -188,8 +200,12 @@ export default function DemoWorkspace({
       </div>
 
       <ul className="mt-5 flex flex-col gap-3 md:hidden">
-        {rows.map((r) => (
-          <li key={r.id} className="card-surface rounded-2xl p-4">
+        {rows.map((r, i) => (
+          <li
+            key={r.id}
+            className="animate-row-in panel rounded-2xl p-4"
+            style={{ animationDelay: `${Math.min(i, 12) * 30}ms` }}
+          >
             <dl className="space-y-1.5 text-sm">
               {cols.map((c) => (
                 <div key={c.key} className="flex justify-between gap-3">
