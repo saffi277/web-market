@@ -91,7 +91,7 @@ export default function OrdersPanel({ orders, token, onPatch, onDelete, onRefres
                     setOpen(o);
                     setNotes(o.notes);
                   }}
-                  className={`card-surface w-full rounded-2xl p-4 text-right transition-colors ${
+                  className={`panel w-full rounded-2xl p-4 text-right transition-colors ${
                     open?.id === o.id ? "border-[#8b5cf6]/60 bg-[#8b5cf6]/10" : ""
                   }`}
                 >
@@ -118,7 +118,7 @@ export default function OrdersPanel({ orders, token, onPatch, onDelete, onRefres
           </ul>
 
           {open && (
-            <aside className="card-surface h-fit rounded-2xl p-5 lg:sticky lg:top-6">
+            <aside className="panel h-fit rounded-2xl p-5 lg:sticky lg:top-6">
               <div className="flex items-start justify-between">
                 <div>
                   <h2 className="text-lg font-bold">{open.name}</h2>
@@ -236,7 +236,7 @@ function Chip({
       aria-pressed={active}
       className={`rounded-xl font-bold transition-colors ${small ? "px-3.5 py-1.5 text-xs" : "px-4 py-2 text-sm"} ${
         active
-          ? "bg-gradient-to-br from-[#7c3cff] to-[#d844ff] text-white"
+          ? "bg-gradient-to-l from-[#7c3cff] to-[#c13cff] text-white"
           : "border border-[#8b5cf6]/20 bg-white/[0.04] text-[--color-muted] hover:text-white"
       }`}
     >

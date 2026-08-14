@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { api } from "@/lib/api";
-import type { Order, OrderStatus, Session, Stats, System } from "@/lib/types";
+import type { Category, Order, OrderStatus, Session, Stats, System } from "@/lib/types";
 import { clearSession, readSession } from "@/lib/session";
 import LoginCard from "@/components/LoginCard";
 import OrdersPanel from "@/components/admin/OrdersPanel";
@@ -19,6 +19,7 @@ export default function AdminPage() {
   const [stats, setStats] = useState<Stats | null>(null);
   const [orders, setOrders] = useState<Order[]>([]);
   const [systems, setSystems] = useState<System[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -30,14 +31,16 @@ export default function AdminPage() {
   const load = useCallback(async (token: string) => {
     setLoading(true);
     try {
-      const [s, o, sys] = await Promise.all([
+      const [s, o, sys, cats] = await Promise.all([
         api<Stats>("/admin/stats", { token }),
         api<Order[]>("/admin/orders", { token }),
         api<System[]>("/admin/systems", { token }),
+        api<Category[]>("/categories").catch(() => [] as Category[]),
       ]);
       setStats(s);
       setOrders(o);
       setSystems(sys);
+      setCategories(Array.isArray(cats) ? cats : []);
     } catch {
       // An expired or revoked token lands here — drop back to the login card.
       clearSession();
@@ -105,7 +108,7 @@ export default function AdminPage() {
           ].map(([label, value, color]) => (
             <div
               key={label as string}
-              className="card-surface rounded-2xl p-4 text-center"
+              className="panel rounded-2xl p-4 text-center"
               style={{ borderColor: `${color}33` }}
             >
               <div className="text-2xl font-black lg:text-3xl" style={{ color: color as string }}>
@@ -131,7 +134,7 @@ export default function AdminPage() {
             aria-pressed={tab === key}
             className={`rounded-xl px-5 py-2.5 text-sm font-bold transition-colors ${
               tab === key
-                ? "bg-gradient-to-br from-[#7c3cff] to-[#d844ff]"
+                ? "bg-gradient-to-l from-[#7c3cff] to-[#c13cff]"
                 : "border border-[#8b5cf6]/20 bg-white/[0.04] text-[--color-muted]"
             }`}
           >
@@ -157,7 +160,7 @@ export default function AdminPage() {
           onRefresh={() => load(token)}
         />
       ) : (
-        <SystemsPanel systems={systems} token={token} onRefresh={() => load(token)} />
+        <SystemsPanel systems={systems} categories={categories} token={token} onRefresh={() => load(token)} />
       )}
     </main>
   );

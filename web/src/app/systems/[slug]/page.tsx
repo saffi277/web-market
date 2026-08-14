@@ -68,7 +68,7 @@ export default async function SystemPage({ params }: Props) {
                 {system.features.map((f) => (
                   <li
                     key={f}
-                    className="card-surface flex items-center gap-3 rounded-xl px-4 py-3.5 text-sm"
+                    className="panel flex items-center gap-3 rounded-xl px-4 py-3.5 text-sm"
                   >
                     <Check size={16} className="shrink-0 text-emerald-400" />
                     {f}
@@ -96,7 +96,7 @@ export default async function SystemPage({ params }: Props) {
         </div>
 
         <aside className="lg:sticky lg:top-28 lg:h-fit">
-          <div className="card-surface rounded-2xl p-6">
+          <div className="panel rounded-2xl p-6">
             <p className="text-sm text-[--color-muted]">السعر</p>
             <p className="mt-1 text-3xl font-black text-[#c084fc]">
               {system.priceUsd ? `$${system.priceUsd}` : "حسب الطلب"}

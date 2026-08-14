@@ -40,7 +40,7 @@ export default function LoginCard({
 
   return (
     <div className="flex min-h-[70vh] items-center justify-center px-4 py-12">
-      <form onSubmit={submit} className="card-surface w-full max-w-sm rounded-3xl p-7 sm:p-9">
+      <form onSubmit={submit} className="panel w-full max-w-sm rounded-3xl p-7 sm:p-9">
         <div className="mb-8 text-center">
           <div className="text-4xl">🔐</div>
           <h1 className="mt-3 text-xl font-black">{title}</h1>
@@ -56,7 +56,7 @@ export default function LoginCard({
           <button
             type="submit"
             disabled={busy}
-            className="rounded-xl bg-gradient-to-br from-[#7c3cff] to-[#d844ff] py-3.5 font-extrabold transition-transform hover:scale-[1.02] disabled:opacity-60"
+            className="rounded-xl bg-gradient-to-l from-[#7c3cff] to-[#c13cff] py-3.5 font-extrabold transition-transform hover:scale-[1.02] disabled:opacity-60"
           >
             {busy ? "جاري الدخول..." : "دخول"}
           </button>

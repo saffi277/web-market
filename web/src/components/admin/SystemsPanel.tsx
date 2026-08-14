@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { api, ApiError } from "@/lib/api";
-import type { System } from "@/lib/types";
+import type { Category, System } from "@/lib/types";
 import { Field, TextArea } from "@/components/Field";
 
 const emptyDraft = {
@@ -45,10 +45,12 @@ function toDraft(s: System): Draft {
 
 export default function SystemsPanel({
   systems,
+  categories,
   token,
   onRefresh,
 }: {
   systems: System[];
+  categories: Category[];
   token: string;
   onRefresh: () => void;
 }) {
@@ -117,14 +119,14 @@ export default function SystemsPanel({
             setDraft(emptyDraft);
             setEditingId(null);
           }}
-          className="rounded-xl bg-gradient-to-br from-[#7c3cff] to-[#d844ff] px-6 py-3 text-sm font-extrabold"
+          className="rounded-xl bg-gradient-to-l from-[#7c3cff] to-[#c13cff] px-6 py-3 text-sm font-extrabold"
         >
           + إضافة نظام جديد
         </button>
       )}
 
       {draft && (
-        <form onSubmit={save} className="card-surface rounded-2xl p-5 sm:p-6">
+        <form onSubmit={save} className="panel rounded-2xl p-5 sm:p-6">
           <h2 className="mb-5 text-lg font-bold">
             {editingId ? "تعديل النظام" : "نظام جديد"}
           </h2>
@@ -140,13 +142,21 @@ export default function SystemsPanel({
               dir="ltr"
               required
             />
-            <Field
-              label="التصنيف"
-              value={draft.categorySlug}
-              onChange={set("categorySlug")}
-              placeholder="business / ecommerce / hr / accounting"
-              dir="ltr"
-            />
+            <label className="block">
+              <span className="mb-2 block text-sm text-[#cbd5e1]">التصنيف</span>
+              <select
+                value={draft.categorySlug}
+                onChange={(e) => set("categorySlug")(e.target.value)}
+                className="w-full rounded-xl border border-[#8b5cf6]/20 bg-white/[0.04] px-4 py-3 text-sm outline-none focus:border-[#8b5cf6]/60"
+              >
+                <option value="">بدون تصنيف</option>
+                {categories.map((c) => (
+                  <option key={c.slug} value={c.slug} className="bg-[#120c26]">
+                    {c.nameAr}
+                  </option>
+                ))}
+              </select>
+            </label>
             <Field label="السعر بالدولار" type="number" value={draft.priceUsd} onChange={set("priceUsd")} dir="ltr" />
             <Field label="الأيقونة (إيموجي)" value={draft.icon} onChange={set("icon")} />
             <Field label="الشارة" value={draft.badge} onChange={set("badge")} placeholder="جديد / الأكثر طلباً" />
@@ -156,6 +166,7 @@ export default function SystemsPanel({
 
           <div className="mt-4 grid gap-4">
             <TextArea label="الوصف بالعربي" value={draft.descAr} onChange={set("descAr")} rows={3} />
+            <TextArea label="الوصف بالإنجليزي" value={draft.descEn} onChange={set("descEn")} rows={2} />
             <TextArea
               label="المميزات (ميزة في كل سطر)"
               value={draft.features}
@@ -178,13 +189,18 @@ export default function SystemsPanel({
             />
           </div>
 
+          <p className="mt-3 text-[12px] leading-6 text-[--color-muted]">
+            تفعيل الديمو يجعل زر «طلب تجربة» يفتح نسخة تجريبية من النظام على{" "}
+            <span dir="ltr" className="text-[#c084fc]">/demo/{draft.slug || "slug"}</span> بدل صفحة التواصل.
+          </p>
+
           {error && <p className="mt-4 text-sm text-red-400">{error}</p>}
 
           <div className="mt-6 flex gap-3">
             <button
               type="submit"
               disabled={busy}
-              className="rounded-xl bg-gradient-to-br from-[#7c3cff] to-[#d844ff] px-6 py-3 text-sm font-extrabold disabled:opacity-60"
+              className="rounded-xl bg-gradient-to-l from-[#7c3cff] to-[#c13cff] px-6 py-3 text-sm font-extrabold disabled:opacity-60"
             >
               {busy ? "جاري الحفظ..." : "حفظ"}
             </button>
@@ -205,7 +221,7 @@ export default function SystemsPanel({
 
       <ul className="mt-6 flex flex-col gap-3">
         {systems.map((s) => (
-          <li key={s.id} className="card-surface flex flex-wrap items-center gap-4 rounded-2xl p-4">
+          <li key={s.id} className="panel flex flex-wrap items-center gap-4 rounded-2xl p-4">
             <span className="text-3xl">{s.icon}</span>
             <div className="min-w-0 flex-1">
               <p className="flex flex-wrap items-center gap-2 font-bold">

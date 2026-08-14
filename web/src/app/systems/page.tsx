@@ -1,12 +1,26 @@
 import type { Metadata } from "next";
+import { SlidersHorizontal, Headset, RefreshCw, MonitorSmartphone, TrendingUp } from "lucide-react";
 import { api } from "@/lib/api";
 import type { Category, System } from "@/lib/types";
+import PageHero from "@/components/PageHero";
 import SystemsBrowser from "@/components/SystemsBrowser";
+import FeatureStrip, { type Feature } from "@/components/FeatureStrip";
+import CtaBand from "@/components/home/CtaBand";
+import SystemsArt from "@/components/art/SystemsArt";
 
 export const metadata: Metadata = {
-  title: "الأنظمة",
-  description: "أنظمة برمجية جاهزة وقابلة للتخصيص من ZAWAN — نقاط بيع، محاسبة، موارد بشرية والمزيد.",
+  title: "الأنظمة والتطبيقات",
+  description:
+    "أنظمة برمجية جاهزة وقابلة للتخصيص من ZAWAN — نقاط بيع، محاسبة، موارد بشرية، تجارة إلكترونية. جرّبها مجاناً قبل الشراء.",
 };
+
+const features: Feature[] = [
+  { Icon: SlidersHorizontal, title: "قابل للتخصيص", desc: "نخصص الأنظمة بما يناسب احتياج عملك بدقة.", color: "#a855f7" },
+  { Icon: Headset, title: "دعم فني متميز", desc: "فريق دعم جاهز لمساعدتك في كل خطوة.", color: "#00d4ff" },
+  { Icon: RefreshCw, title: "تحديثات مستمرة", desc: "تحسينات دورية لإبقاء أنظمتك بأفضل أداء.", color: "#e879f9" },
+  { Icon: MonitorSmartphone, title: "متوافق مع كل الأجهزة", desc: "تجربة سلسة على الويب والجوال.", color: "#22c55e" },
+  { Icon: TrendingUp, title: "نمو لأعمالك", desc: "أنظمة تساعدك على التوسع والعمل بثقة.", color: "#f59e0b" },
+];
 
 export default async function SystemsPage() {
   const [systems, categories] = await Promise.all([
@@ -15,21 +29,32 @@ export default async function SystemsPage() {
   ]);
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-      <header className="mx-auto max-w-2xl text-center">
-        <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#8b5cf6]/25 bg-[#8b5cf6]/10 px-4 py-1.5 text-sm font-semibold text-[#a78bfa]">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#8b5cf6]" />
-          أنظمتنا البرمجية
-        </div>
-        <h1 className="text-[clamp(1.8rem,5vw,3rem)] font-black leading-tight">
-          حلول برمجية <span className="text-gradient">تناسب كل عمل</span>
-        </h1>
-        <p className="mt-4 text-[--color-muted]">
-          أنظمة جاهزة وقابلة للتخصيص — وبعضها تقدر تجرّبه مجاناً قبل الشراء
-        </p>
-      </header>
+    <main>
+      <PageHero
+        badge="أنظمة برمجية ذكية"
+        titleTop="حلول برمجية"
+        titleBottom="تناسب كل عمل"
+        lead={
+          <>
+            أنظمة جاهزة وقابلة للتخصيص — وبفضلها تقدر تجرّبها{" "}
+            <span className="font-bold text-[#c084fc]">مجاناً</span> قبل الشراء.
+          </>
+        }
+        art={<SystemsArt />}
+      />
 
-      <SystemsBrowser systems={systems} categories={categories} />
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <SystemsBrowser
+          systems={Array.isArray(systems) ? systems : []}
+          categories={Array.isArray(categories) ? categories : []}
+        />
+      </section>
+
+      <div className="mt-14">
+        <FeatureStrip items={features} />
+      </div>
+
+      <CtaBand />
     </main>
   );
 }
