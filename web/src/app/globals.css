@@ -38,25 +38,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Faint grid, fixed so it never reveals a page seam on short pages. */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background-image:
-    linear-gradient(rgba(150, 90, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(150, 90, 255, 0.045) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.3), transparent);
-}
-
-body > * {
-  position: relative;
-  z-index: 1;
-}
-
 @keyframes rise {
   from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: translateY(0); }

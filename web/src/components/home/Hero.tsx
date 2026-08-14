@@ -3,9 +3,9 @@ import { LayoutGrid, Code2, TrendingUp, Smile, ShieldCheck } from "lucide-react"
 import DashboardArt from "./DashboardArt";
 
 const badges = [
-  { Icon: TrendingUp, value: "+48%", label: "نمو المبيعات", color: "#00d4ff", pos: "top-[14%] -left-2 sm:left-2", delay: "0s" },
-  { Icon: Smile, value: "98%", label: "رضا العملاء", color: "#a855f7", pos: "top-[44%] -left-3 sm:left-0", delay: "1.2s" },
-  { Icon: ShieldCheck, value: "أمان", label: "وموثوقية", color: "#22c55e", pos: "top-[72%] left-4 sm:left-8", delay: "2.4s" },
+  { Icon: TrendingUp, value: "+48%", label: "نمو المبيعات", color: "#00d4ff", pos: "top-[10%] left-0", delay: "0s" },
+  { Icon: Smile, value: "98%", label: "رضا العملاء", color: "#a855f7", pos: "top-[42%] -left-1", delay: "1.2s" },
+  { Icon: ShieldCheck, value: "أمان", label: "وموثوقية", color: "#22c55e", pos: "top-[74%] left-2", delay: "2.4s" },
 ];
 
 export default function Hero() {
@@ -49,7 +49,7 @@ export default function Hero() {
         {badges.map(({ Icon, value, label, color, pos, delay }) => (
           <div
             key={label}
-            className={`animate-float absolute ${pos} panel hidden items-center gap-2.5 rounded-2xl px-3.5 py-2.5 sm:flex`}
+            className={`animate-float absolute ${pos} panel hidden items-center gap-2.5 rounded-2xl px-3.5 py-2.5 xl:flex`}
             style={{ animationDelay: delay }}
           >
             <span
