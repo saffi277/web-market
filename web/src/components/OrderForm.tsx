@@ -109,7 +109,7 @@ export default function OrderForm({ kind, systemSlug, compact = false }: Props) 
         label={compact ? "ملاحظات" : "تفاصيل المشروع"}
         value={form.message}
         onChange={set("message")}
-        placeholder={compact ? "أي متطلبات خاص؟" : "أخبرنا عن مشروعك ومتطلباتك..."}
+        placeholder={compact ? "أي متطلبات خاصة؟" : "أخبرنا عن مشروعك ومتطلباتك..."}
         rows={compact ? 3 : 5}
       />
 
