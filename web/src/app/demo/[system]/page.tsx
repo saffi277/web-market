@@ -57,7 +57,7 @@ export default function DemoPage({ params }: { params: Promise<{ system: string 
   if (session.user.role === "demo_user" && daysLeft <= 0) {
     return (
       <Shell>
-        <div className="card-surface mx-auto max-w-md rounded-3xl p-8 text-center">
+        <div className="panel mx-auto max-w-md rounded-3xl p-8 text-center">
           <div className="text-4xl">⏳</div>
           <h1 className="mt-4 text-xl font-black">انتهت فترة التجربة</h1>
           <p className="mt-3 text-sm leading-7 text-[--color-muted]">
@@ -65,7 +65,7 @@ export default function DemoPage({ params }: { params: Promise<{ system: string 
           </p>
           <Link
             href="/contact"
-            className="mt-6 inline-block rounded-xl bg-gradient-to-br from-[#7c3cff] to-[#d844ff] px-7 py-3 text-sm font-extrabold"
+            className="mt-6 inline-block rounded-xl bg-gradient-to-l from-[#7c3cff] to-[#c13cff] px-7 py-3 text-sm font-extrabold"
           >
             اطلب النظام الآن ←
           </Link>
@@ -76,10 +76,10 @@ export default function DemoPage({ params }: { params: Promise<{ system: string 
 
   return (
     <div className="min-h-screen">
-      <header className="sticky top-0 z-50 border-b border-[--color-line] bg-[#05040b]/95 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b border-[--color-line] bg-[#0a0618]/95 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6">
           <Link href="/" aria-label="ZAWAN">
-            <Logo className="h-9 w-auto" />
+            <Logo />
           </Link>
           <p className="order-3 w-full text-center text-xs text-amber-300 sm:order-none sm:w-auto">
             نسخة تجريبية — متبقٍ {daysLeft} {daysLeft === 1 ? "يوم" : "أيام"}
@@ -87,7 +87,7 @@ export default function DemoPage({ params }: { params: Promise<{ system: string 
           <div className="flex items-center gap-2">
             <Link
               href="/contact"
-              className="rounded-lg bg-gradient-to-br from-[#7c3cff] to-[#d844ff] px-4 py-2 text-xs font-bold"
+              className="rounded-lg bg-gradient-to-l from-[#7c3cff] to-[#c13cff] px-4 py-2 text-xs font-bold"
             >
               اطلب النظام
             </Link>
@@ -114,7 +114,15 @@ export default function DemoPage({ params }: { params: Promise<{ system: string 
         </p>
 
         {loading ? (
-          <p className="py-20 text-center text-[--color-muted]">جاري التحميل...</p>
+          <div className="mt-7 space-y-4">
+            <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+              {Array.from({ length: 4 }).map((_, i) => (
+                <div key={i} className="skeleton h-28 rounded-2xl" />
+              ))}
+            </div>
+            <div className="skeleton h-52 rounded-2xl" />
+            <div className="skeleton h-64 rounded-2xl" />
+          </div>
         ) : (
           <DemoWorkspace
             slug={slug}
@@ -171,7 +179,7 @@ function DemoGate({
 
   return (
     <Shell>
-      <form onSubmit={submit} className="card-surface w-full max-w-md rounded-3xl p-7 sm:p-9">
+      <form onSubmit={submit} className="panel w-full max-w-md rounded-3xl p-7 sm:p-9">
         <div className="mb-7 text-center">
           <div className="text-4xl">🚀</div>
           <h1 className="mt-3 text-xl font-black">
@@ -204,7 +212,7 @@ function DemoGate({
           <button
             type="submit"
             disabled={busy}
-            className="rounded-xl bg-gradient-to-br from-[#7c3cff] to-[#d844ff] py-3.5 font-extrabold transition-transform hover:scale-[1.02] disabled:opacity-60"
+            className="rounded-xl bg-gradient-to-l from-[#7c3cff] to-[#c13cff] py-3.5 font-extrabold transition-transform hover:scale-[1.02] disabled:opacity-60"
           >
             {busy ? "لحظة..." : mode === "register" ? "ابدأ التجربة ←" : "دخول"}
           </button>
